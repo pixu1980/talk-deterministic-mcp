@@ -1,5 +1,5 @@
 {
-	"name": "talk-template",
+	"name": "talk-deterministic-mcp",
 	"version": "0.2.5",
 	"license": "MIT",
 	"private": true,
@@ -30,16 +30,16 @@
 		"reveal.js": "6.0.1"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.4.15",
+		"@biomejs/biome": "2.5.11",
 		"@parcel/transformer-inline-string": "2.16.4",
 		"@parcel/transformer-sass": "2.16.4",
-		"baseline-browser-mapping": "2.10.32",
-		"lightningcss": "1.32.0",
+		"baseline-browser-mapping": "2.11.20",
+		"lightningcss": "1.33.0",
 		"parcel": "2.16.4",
 		"posthtml": "0.16.7",
 		"posthtml-include": "2.0.1",
-		"prettier": "3.8.3",
+		"prettier": "3.9.6",
 		"sharp": "0.33.5",
-		"svgo": "4.0.1"
+		"svgo": "4.1.0"
 	}
 }

@@ -1,34 +1,43 @@
 <section>
   <section data-transition="convex">
-    <h4>Wrapping up</h4>
+    <h4>Wrapping <mark>up</mark></h4>
+    <small balance>What the 6 measured sessions actually taught us.</small>
   </section>
   <section data-transition="convex">
     <comparison>
       <left>
-        <h4>Pros</h4>
+        <h4>Works</h4>
         <small>
           <ul>
-            <li class="fragment">pro 1</li>
-            <li class="fragment">pro 2</li>
-            <li class="fragment">pro 3</li>
-            <li class="fragment">pro 4</li>
+            <li class="fragment">Deterministic server = <mark>model-agnostic</mark> enforcement</li>
+            <li class="fragment">MCP cost &lt; 1-6% of the task — inference is the bottleneck</li>
+            <li class="fragment">Prompt caching flips the economics (<mark>$30-70 saved</mark>)</li>
+            <li class="fragment">1 prompt → <mark>MVP</mark> when the model reads the skills</li>
           </ul>
         </small>
       </left>
       <right>
-        <h4>Cons</h4>
+        <h4>Doesn&rsquo;t</h4>
         <small>
           <ul>
-            <li class="fragment">con 1</li>
-            <li class="fragment">con 2</li>
-            <li class="fragment">con 3</li>
-            <li class="fragment">con 4</li>
+            <li class="fragment">More tool calls ≠ better output (GPT: 25-30 calls, weakest result)</li>
+            <li class="fragment">Cheapest model isn&rsquo;t cheapest — retries cost developer time</li>
+            <li class="fragment">0/3 models adopted caveman/tokensave, even when asked</li>
+            <li class="fragment">No baseline yet: the server delta is inferred, not measured</li>
           </ul>
         </small>
       </right>
     </comparison>
   </section>
   <section data-transition="convex">
-    <h4>Conclusions</h4>
+    <h4><mark>Takeaways</mark></h4>
+    <small>
+      <ol>
+        <li class="fragment"><mark>Enforcement without LLM</mark> is deterministic, testable, and model-agnostic</li>
+        <li class="fragment"><mark>Skills read early</mark> beat tool spam: Sonnet 5 calls + mode:full → 6/6 specs</li>
+        <li class="fragment">The server doesn&rsquo;t replace model quality — it makes <mark>conventions measurable</mark></li>
+      </ol>
+    </small>
+    <aside class="notes">The three takeaways mirror the abstract: deterministic engine, skills-structured output, measurable safeguards.</aside>
   </section>
 </section>

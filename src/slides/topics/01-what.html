@@ -1,0 +1,106 @@
+<section>
+  <section data-topic="what" data-menu-title="What: a deterministic skill-server">
+    <h3><mark>What</mark>: a deterministic skill-server</h3>
+    <small balance>A local MCP server that enforces engineering standards instead of simply exposing tools.</small>
+  </section>
+
+  <section data-topic="what" data-menu-title="MCP in 60 seconds">
+    <h4>MCP <mark>in 60 seconds</mark></h4>
+    <small balance>The Model Context Protocol: a standard way for AI coding agents to call tools, read resources, and load prompts.</small>
+    <small>
+      <ul>
+        <li class="fragment"><mark>Tools</mark>: functions the agent can invoke (validate, scaffold, search)</li>
+        <li class="fragment"><mark>Resources</mark>: data the agent can read (<code>pix://</code> skill indexes, summaries)</li>
+        <li class="fragment"><mark>Prompts</mark>: ready-made workflows the agent can start from</li>
+        <li class="fragment"><mark>Transport</mark>: stdio (default) or HTTP+SSE — the same server behind every agent</li>
+      </ul>
+    </small>
+    <aside class="notes">Audience may know little about MCP/agentic: keep this definitional, no jargon. Bridge: "an MCP server can also NOT call an LLM — that is the deterministic trick."</aside>
+  </section>
+
+  <section data-topic="what" data-menu-title="The pix ecosystem">
+    <h4>The <mark>pix</mark> ecosystem</h4>
+    <small balance>80 modular skills covering frontend, backend, database, devops, toolchain, styleguide, process, platform, and AI.</small>
+    <small>
+      <ul>
+        <li class="fragment">Styleguides, component templates, framework best practices, design-system patterns</li>
+        <li class="fragment">Local-first: everything runs on your machine, skills live in <code>~/.agents/skills/</code></li>
+        <li class="fragment">Model-agnostic: identical behavior behind Claude, GPT, Gemini, Llama, Qwen</li>
+      </ul>
+    </small>
+    <aside class="notes">Source: pix-galaxy-mcp README v1.0.0. Note: runtime deps are MCP SDK + zod only, no build step.</aside>
+  </section>
+
+  <section data-topic="what" data-menu-title="Tools, Resources, Prompts">
+    <h4>Tools, <mark>Resources</mark>, Prompts</h4>
+    <small>
+      <table>
+        <tbody>
+          <tr>
+            <td><mark>90</mark></td>
+            <td>tools — per-skill tools + dispatcher/action tools</td>
+          </tr>
+          <tr>
+            <td><mark>168</mark></td>
+            <td>resources — <code>pix://</code> per-skill index, summary, template URIs</td>
+          </tr>
+          <tr>
+            <td><mark>21</mark></td>
+            <td>prompts — workflow, area, and legacy prompts</td>
+          </tr>
+          <tr>
+            <td><mark>80</mark></td>
+            <td>skills — indexed, searchable, guardrailed</td>
+          </tr>
+        </tbody>
+      </table>
+    </small>
+    <aside class="notes">Counts are enforced by test/docs-accuracy.test.mjs — README and reality cannot drift. Source: README v1.0.0.</aside>
+  </section>
+
+  <section data-topic="what" data-menu-title="The control engine">
+    <h4>The deterministic <mark>control engine</mark></h4>
+    <small balance>Deterministic validation + safeguards: the server never calls an LLM, so every answer is the same for every model.</small>
+    <small>
+      <ul>
+        <li class="fragment"><mark>BM25</mark> full-text search across all skill content</li>
+        <li class="fragment"><mark>Guardrail engine</mark>: 18 shared rules + framework/backend/database/devops checks</li>
+        <li class="fragment"><mark>Gateway</mark>: <code>pix_tool_gateway</code> + <code>pix_tool_apply</code> with receipt-based validation</li>
+        <li class="fragment"><mark>Fail-safe</mark>: deterministic shutdown / rejection paths — a file that fails checks never lands (dry-run preview first)</li>
+      </ul>
+    </small>
+    <aside class="notes">
+      Deterministic gateway is the star: prompt → pix_tool_gateway → guardrails → receipt → pix_tool_apply. Fail-safe references the abstract's "automatic fail-safe shutdowns and deterministic
+      validation". Tool names verified live (v1.0.0).
+    </aside>
+  </section>
+
+  <section data-topic="what" data-menu-title="Minimal tool surface">
+    <h4>Minimal <mark>tool surface</mark></h4>
+    <small balance>10 dispatcher tools instead of 90 — for clients that cap tool counts, and to cut per-turn token cost.</small>
+    <small>
+      <ul>
+        <li class="fragment">Enabled with <code>PIX_GALAXY_MCP_MINIMAL_TOOLS=1</code> (off by default) — <mark>10 registered tools, verified live</mark></li>
+        <li class="fragment">Built for Cursor, GitHub Copilot and other caps on MCP tool counts</li>
+        <li class="fragment">Same capabilities behind dispatcher/action tools</li>
+      </ul>
+    </small>
+    <aside class="notes">
+      Minimal surface is a cost lever: fewer tools in context per turn on every model. Verified live: `PIX_GALAXY_MCP_MINIMAL_TOOLS=1 pix-galaxy-mcp tools list` → 10 tools (pix_tool, update, gateway,
+      apply, search, check, scaffold, detect, process_handoff, component).
+    </aside>
+  </section>
+
+  <section data-topic="what" data-menu-title="Live demo: install + doctor">
+    <h4><mark>Live</mark> demo — install &amp; doctor</h4>
+    <small balance>From zero to a working gateway in about one minute.</small>
+    <small>
+      <ol>
+        <li class="fragment"><code>pnpm add -g pix-galaxy-mcp</code></li>
+        <li class="fragment"><code>pix-galaxy-mcp doctor</code> — health check</li>
+        <li class="fragment"><code>pix-galaxy-mcp install --agent all</code> — 23 supported agents</li>
+      </ol>
+    </small>
+    <aside class="notes">Install + doctor demo (~1 min). Preflight: node >= 20. Docker and daemon/HTTP+SSE modes exist as fallback.</aside>
+  </section>
+</section>

@@ -1,2 +1,43 @@
 @import "npm:@pixu-talks/fonts";
 @import "npm:@pixu-talks/theme";
+
+/* Talk diagrams (inline SVG) */
+.diagram {
+	display: block;
+	width: min(100%, 860px);
+	margin-inline: auto;
+	margin-block: 0.5rem;
+	color: var(--r-main-color, currentColor);
+}
+.diagram .d-box {
+	fill: transparent;
+	stroke: currentColor;
+	stroke-width: 1.5;
+	rx: 10;
+}
+.diagram .d-accent {
+	fill: transparent;
+	stroke: var(--r-highlight-color);
+	stroke-width: 1.5;
+	rx: 10;
+}
+.diagram .d-label {
+	font: 600 13px / 1.4 var(--font-family, system-ui);
+	fill: currentColor;
+	text-anchor: middle;
+	paint-order: stroke;
+	stroke: var(--r-background-color, #1a1a1a);
+	stroke-width: 3px;
+	stroke-linejoin: round;
+}
+.diagram .d-sub {
+	font: 400 10px / 1.4 var(--font-family, system-ui);
+	fill: currentColor;
+	opacity: 0.65;
+	text-anchor: middle;
+}
+.diagram .d-arrow {
+	stroke: currentColor;
+	stroke-width: 1.5;
+	marker-end: url(#arrow);
+}

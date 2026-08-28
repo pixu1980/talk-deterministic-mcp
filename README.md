@@ -1,8 +1,17 @@
-# talk-template
+# talk-deterministic-mcp
 
-Reusable reveal.js talk template for Pixu / Dev Dojo presentations.
+Deterministic MCP Server — how a local MCP server enforces engineering standards rather than simply exposing tools.
 
-Live deck: [Talk Template](https://pixu1980.github.io/talk-template/)
+Live deck: _pending (GitHub Pages after first release tag)_
+
+## About this talk
+
+- **Subject**: `pix-galaxy-mcp` — deterministic MCP server for the pix-* skill ecosystem (90 tools, 168 resources, 21 prompts, 80 skills, guardrail engine + gateway).
+- **Evidence**: real benchmark sessions — same prompt, 3 models (Claude Sonnet / GPT / DeepSeek), 2 projects (phonebook, bookmarks manager), telemetry from billed token usage.
+- **Narrative**: What → Why → How → Proof → Future (mix 30/40/30), 25-30 min, English.
+- **Style**: based on the shared Pixu talk template (`@pixu-talks/*`), reusing concepts from `talk-aidd-from-spec-to-app`.
+
+Research artifacts live in [`docs/research/`](docs/research/) (benchmark evidence pack + slide map). The execution plan is in [`docs/plans/execution-plan.md`](docs/plans/execution-plan.md).
 
 ## What this template gives you
 

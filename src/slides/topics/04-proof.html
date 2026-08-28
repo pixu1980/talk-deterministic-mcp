@@ -1,0 +1,230 @@
+<section>
+  <section data-topic="proof" data-menu-title="Proof: same prompt, 3 models">
+    <h3><mark>Proof</mark>: same prompt, 3 models</h3>
+    <small balance>Two real projects, six measured sessions, from billed token usage — not vibes.</small>
+  </section>
+
+  <section data-topic="proof" data-menu-title="Method">
+    <h4><mark>Method</mark></h4>
+    <small balance>Identical prompt per project · 3 agents (openai-codex, opencode-go, github-copilot) · session logs JSONL.</small>
+    <small>
+      <ul>
+        <li class="fragment"><mark>Metric discipline</mark>: peak context, output tokens, billed cost, cacheWrite, uncached input</li>
+        <li class="fragment">Misleading trap avoided: summing <code>input + cacheRead + output</code> ≠ total tokens (N × context)</li>
+        <li class="fragment">Projects: phonebook (client-only, Electron+React) · bookmarks-manager (full-stack, Express/TS, scraping, SSRF)</li>
+      </ul>
+    </small>
+    <aside class="notes">Source: benchmark-evidence §1. Methodology slide so numbers are believable.</aside>
+  </section>
+
+  <section data-topic="proof" data-menu-title="Phonebook KPI">
+    <h4>Phonebook <mark>KPI</mark> — client-only</h4>
+    <small>
+      <table>
+        <tbody>
+          <tr>
+            <td></td>
+            <td>🥇 Sonnet 4.6</td>
+            <td>🥈 GPT 5.6 Luna</td>
+            <td>🥉 DS4 v4 Flash</td>
+          </tr>
+          <tr>
+            <td>User prompts → MVP</td>
+            <td><mark>1</mark> ✅</td>
+            <td>1 (2 tech retries)</td>
+            <td><mark>4</mark> ❌</td>
+          </tr>
+          <tr>
+            <td>Cost</td>
+            <td>$5.38</td>
+            <td>$1.54</td>
+            <td><mark>$0.075</mark></td>
+          </tr>
+          <tr>
+            <td>LOC</td>
+            <td><mark>5.708</mark></td>
+            <td>805 ⚠️</td>
+            <td>4.239</td>
+          </tr>
+          <tr>
+            <td>MCP tools called</td>
+            <td>5</td>
+            <td><mark>25</mark></td>
+            <td>14</td>
+          </tr>
+          <tr>
+            <td>Spec score (6)</td>
+            <td><mark>6/6</mark></td>
+            <td>1.5/6</td>
+            <td>4.5/6</td>
+          </tr>
+          <tr>
+            <td>Cache write</td>
+            <td><mark>285.619</mark> ✅</td>
+            <td>0 ❌</td>
+            <td>0 ❌</td>
+          </tr>
+        </tbody>
+      </table>
+    </small>
+    <aside class="notes">Data: benchmark-evidence §2.1. Recreated as HTML table (no screenshots). Story: more tools ≠ better.</aside>
+  </section>
+
+  <section data-topic="proof" data-menu-title="Bookmarks KPI">
+    <h4>Bookmarks <mark>KPI</mark> — full-stack</h4>
+    <small>
+      <table>
+        <tbody>
+          <tr>
+            <td></td>
+            <td>🥇 Sonnet 5</td>
+            <td>🥈 GPT 5.6 Luna</td>
+            <td>🥉 DS4 v4 Flash</td>
+          </tr>
+          <tr>
+            <td>User prompts → MVP</td>
+            <td><mark>1</mark> ✅</td>
+            <td>2</td>
+            <td><mark>3</mark> ❌</td>
+          </tr>
+          <tr>
+            <td>Cost</td>
+            <td>$5.49</td>
+            <td>$1.88</td>
+            <td><mark>$0.067</mark></td>
+          </tr>
+          <tr>
+            <td>LOC</td>
+            <td><mark>3.479</mark></td>
+            <td>2.132</td>
+            <td>2.505</td>
+          </tr>
+          <tr>
+            <td>Tests</td>
+            <td>6 files ✅</td>
+            <td>6 files ✅</td>
+            <td>0 ❌</td>
+          </tr>
+          <tr>
+            <td>Spec score (8)</td>
+            <td><mark>6.5/8</mark></td>
+            <td>5.5/8</td>
+            <td>3.5/8</td>
+          </tr>
+          <tr>
+            <td>Cache write</td>
+            <td><mark>275.803</mark> ✅</td>
+            <td>0 ❌</td>
+            <td>0 ❌</td>
+          </tr>
+          <tr>
+            <td>Bundle</td>
+            <td><mark>166K</mark> JS</td>
+            <td>391K JS ⚠️</td>
+            <td>never built</td>
+          </tr>
+        </tbody>
+      </table>
+    </small>
+    <aside class="notes">Data: benchmark-evidence §3.1. GPT filled 51% of its 372K context window; Sonnet 2.9% tool error vs 11-12%.</aside>
+  </section>
+
+  <section data-topic="proof" data-menu-title="Spec compliance">
+    <h4><mark>Spec</mark> compliance</h4>
+    <small balance>How much of the user's brief actually landed — a measurable fraction, not a feeling.</small>
+    <small>
+      <table>
+        <tbody>
+          <tr>
+            <td></td>
+            <td>🥇 Sonnet</td>
+            <td>🥈 GPT 5.6 Luna</td>
+            <td>🥉 DS4 v4 Flash</td>
+          </tr>
+          <tr>
+            <td>Phonebook (6 specs)</td>
+            <td><mark>6/6</mark> ✅</td>
+            <td>1.5/6</td>
+            <td>4.5/6</td>
+          </tr>
+          <tr>
+            <td>Bookmarks (8 specs)</td>
+            <td><mark>6.5/8</mark> ✅</td>
+            <td>5.5/8</td>
+            <td>3.5/8</td>
+          </tr>
+          <tr>
+            <td>Aderenza MCP rules</td>
+            <td>8/11 · 9/10</td>
+            <td>4/11 · 7/10</td>
+            <td>7/11 · 4/10</td>
+          </tr>
+          <tr>
+            <td>MVP al 1° prompt</td>
+            <td><mark>both</mark> ✅</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </small>
+    <aside class="notes">Data: benchmark-evidence §2.1 / §3.1 spec scores + adherence scores. Sonnet is the only model with MVP-on-first-prompt in both projects.</aside>
+  </section>
+
+  <section data-topic="proof" data-menu-title="What the apps looked like">
+    <h4>What the <mark>apps</mark> looked like</h4>
+    <small balance>Two production-shaped apps out of the same prompt — phonebook (Electron) and bookmarks (full-stack).</small>
+    <comparison>
+      <example code class="fragment">
+        <small>Phonebook · Sonnet 4.6</small>
+        <pre>
+          <code class="hljs language-text" data-trim data-line-numbers>
+11 components · 24 rich contacts
+GroupFilter bonus feature
+tokens.css 7.5KB design system
+adoptedStyleSheets micro-interaction
+          </code>
+        </pre>
+      </example>
+      <example code class="fragment">
+        <small>Bookmarks · Sonnet 5</small>
+        <pre>
+          <code class="hljs language-text" data-trim data-line-numbers>
+166K JS bundle · 7 ADRs
+three-layer test strategy
+SSRF DNS-lookup + ipaddr.js
+zero-CSS-class design system
+          </code>
+        </pre>
+      </example>
+    </comparison>
+    <small class="fragment"><mark>TODO M6</mark>: replace the text cards with real screenshots (capture from <code>pnp</code> phonebook-sonnet46 / bookmarks-sonnet5) + alt text.</small>
+    <aside class="notes">Data: benchmark-evidence §5 file trees + §5.2/§5.3. Screenshots pending — capture before the talk.</aside>
+  </section>
+
+  <section data-topic="proof" data-menu-title="Insights">
+    <h4><mark>Insights</mark> that survive both projects</h4>
+    <small>
+      <ul>
+        <li class="fragment"><mark>Cost ≠ value</mark>: most expensive model was the only one delivering MVP on the 1st prompt</li>
+        <li class="fragment"><mark>Prompt caching</mark> flips the economics: ~280K cacheWrite → tens of fresh input tokens</li>
+        <li class="fragment"><mark>MCP cost is tiny</mark>: &lt;1% phonebook, &lt;6% bookmarks of total task cost</li>
+        <li class="fragment"><mark>Deterministic guardrails</mark> are what make conventions measurable — that is the server's job</li>
+      </ul>
+    </small>
+    <aside class="notes">TODO M6: add app screenshots (phonebook + bookmarks) beside these insights.</aside>
+  </section>
+
+  <section data-topic="proof" data-menu-title="Live demo: benchmark re-run">
+    <h4><mark>Live</mark> demo — benchmark re-run</h4>
+    <small balance>One prompt snippet, one model, the same loop from the benchmark.</small>
+    <small>
+      <ol>
+        <li class="fragment">Paste a trimmed version of the bookmarks prompt</li>
+        <li class="fragment">Watch the model call <code>pix_gateway</code> / skills</li>
+        <li class="fragment">Show the receipt before any file is written</li>
+      </ol>
+    </small>
+    <aside class="notes">Demo 3 (~3-4 min). Keep the prompt small and timeout-safe. Pre-recorded fallback.</aside>
+  </section>
+</section>
