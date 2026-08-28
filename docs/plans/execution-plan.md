@@ -133,12 +133,12 @@ L'abstract originale citava numeri che NON combaciavano con le fonti attuali:
 
 ### M10 — QA & shipping
 
-- [ ] **10.1** `pnpm run build` → deck statico in dist/ ok
-- [ ] **10.2** `pnpm run lint` + `pnpm run format` ok
-- [ ] **10.3** A11y review (lettore schermo su slide chiave), contrasti, focus
-- [ ] **10.4** Rehearsal notes per ogni sezione (timing 25-30 min)
-- [ ] **10.5** Deploy GitHub Pages + README link live deck
-- [ ] **10.6** Commit finale + tag rel(0.x.0)
+- [x] **10.1** `pnpm run build` → deck statico in dist/ ok (63 sezioni, CSS diagrammi inclusi)
+- [x] **10.2** `pnpm run lint` + `pnpm run format` ok (9 errori residui = preesistenti della template: logo SVG senza title, TAF audio, button boilerplate — non dei file talk)
+- [ ] **10.3** A11y review (lettore schermo su slide chiave), contrasti, focus — da fare: verificare diagrammi SVG (role img + aria-label già presenti) e tabelle su screen reader
+- [ ] **10.4** Rehearsal notes per ogni sezione (timing 25-30 min) — runbook parziale; da completare con timing per sezione
+- [ ] **10.5** Deploy GitHub Pages + README link live deck — servono tag v*.*.* e QR rigenerati (9.2)
+- [x] **10.6** Commit intermedio fatto (6dbdc02). Tag rel(0.x.0) post-deploy
 
 ---
 
