@@ -1,13 +1,13 @@
-# Benchmark Evidence Pack — Talk "Deterministic MCP Server"
+# Benchmark Evidence Pack - Talk "Deterministic MCP Server"
 
 > **Scopo**: fonte unica e verificata per le slide della sezione PROOF (KPI tables). Tutti i numeri citati in deck devono venire da qui.
 > **Fonti**:
 >
-> - `phonebook/docs/reports/webidoo-ai-mcp-phonebook-benchmark.md` (~/Projects/work/webidoo/poc/)
-> - `bookmarks-manager/docs/reports/webidoo-ai-mcp-bookmarks-benchmark.md`
+> - `phonebook/docs/reports/pix-galaxy-mcp-phonebook-benchmark.md` (~/Projects/work/webidoo/poc/)
+> - `bookmarks-manager/docs/reports/pix-galaxy-mcp-bookmarks-benchmark.md`
 > - `pix-galaxy-mcp/README.md` (surface server v1.0.0)
 >
-> ⚠️ **Attenzione**: i report misurano `webidoo-ai-mcp` (variante con 207 tools, 21+1 risorse/router), NON `pix-galaxy-mcp` v1.0.0 (90 tools / 168 resources / 21 prompts / 80 skills). Nella talk vanno presentati come "stesso progetto rinominato" (decisione intervista) — il server demo è pix-galaxy-mcp, i benchmark provano il concetto.
+> ⚠️ **Attenzione**: i report misurano `pix-galaxy-mcp` (variante con 207 tools, 21+1 risorse/router), NON `pix-galaxy-mcp` v1.0.0 (90 tools / 168 resources / 21 prompts / 80 skills). Nella talk vanno presentati come "stesso progetto rinominato" (decisione intervista) - il server demo è pix-galaxy-mcp, i benchmark provano il concetto.
 
 ---
 
@@ -26,16 +26,16 @@
 | ------------ | --------------------------------------- | ---------------------------- |
 | `input`      | Token nuovi (non cached) in questa call | ✅ sì, ma cumulato su N call |
 | `output`     | Token generati                          | ✅ sì                        |
-| `cacheRead`  | Token letti dalla cache                 | ⚠️ NON unique — N × context  |
+| `cacheRead`  | Token letti dalla cache                 | ⚠️ NON unique - N × context  |
 | `cacheWrite` | Token messi in cache (nuovi)            | ✅ sì                        |
 
-**Errore comune da sfatare**: sommare `input + cacheRead + output` NON dà i token totali — dà un multiplo del context window (es. 89 call × 105K = 19M di cacheRead ma context unico 276K).
+**Errore comune da sfatare**: sommare `input + cacheRead + output` NON dà i token totali - dà un multiplo del context window (es. 89 call × 105K = 19M di cacheRead ma context unico 276K).
 
 **Le metriche che contano**: Peak context (MAX totalTokens), output cumulato, cost fatturato, cacheWrite, input uncached.
 
 ---
 
-## 2. Benchmark 1 — Phonebook (client-only, 2026-07-11)
+## 2. Benchmark 1 - Phonebook (client-only, 2026-07-11)
 
 ### 2.1 KPI master (3 modelli, stesso prompt)
 
@@ -72,7 +72,7 @@
 
 ---
 
-## 3. Benchmark 2 — Bookmarks Manager (full-stack, 2026-07-11)
+## 3. Benchmark 2 - Bookmarks Manager (full-stack, 2026-07-11)
 
 ### 3.1 KPI master (3 modelli, stesso prompt)
 
@@ -102,9 +102,9 @@
 ### 3.2 Insight chiave (bookmarks)
 
 1. **Stessa storia del phonebook, confermata su full-stack**: Sonnet 1 prompt → MVP completo; cache write 275.803 → input fresh **178 token** su 89 call → risparmio stimato **$50-70/sessione**.
-2. **GPT al 51% della context window** (189K/372K) — ha headroom < 1× il peak: una sessione più lunga l'avrebbe portato al limite (truncation).
+2. **GPT al 51% della context window** (189K/372K) - ha headroom < 1× il peak: una sessione più lunga l'avrebbe portato al limite (truncation).
 3. **Costo MCP < 6% del totale** (Sonnet $0.30 stimato su $5.49).
-4. **Tool error rate**: Sonnet 2.9% vs GPT 11.3% vs DS4 12.5% — Sonnet pianifica prima di eseguire (meno trial-and-error).
+4. **Tool error rate**: Sonnet 2.9% vs GPT 11.3% vs DS4 12.5% - Sonnet pianifica prima di eseguire (meno trial-and-error).
 5. **DS4 ha "barato" diversamente**: 10 componenti (più di tutti) ma 0 test, persistenza JSON file, SSRF solo localhost, mai buildato (`dist/` vuoto).
 6. **Pattern d'uso MCP emergente**: GPT = loop check→fix (5×); Sonnet = `process_adr` (5×) + indice globale skill (`get_all_webidoo_skills_index` 1×, 11.565 chars) poi drill-down chirurgico; DS4 = pochi tool in `mode:"full"`.
 
@@ -125,14 +125,14 @@
 ### Il claim "~5% dello sforzo totale" dell'abstract
 
 - Supportato da: costo MCP < 1-6% del costo monetario del task (entrambi i report).
-- Da formulare in deck come: _"the MCP server accounted for ~5% (or less) of the total project cost/effort — the bottleneck is model inference, not tooling."_
+- Da formulare in deck come: _"the MCP server accounted for ~5% (or less) of the total project cost/effort - the bottleneck is model inference, not tooling."_
 - ⚠️ I report misurano **costo**, non ore-uomo. Se si vuole "effort" in senso di tempo/context, la metrica proxy è: tool result chars ≈ 68-108K chars su sessioni da 11-19M cacheRead → singola cifra percentuale. Coerente.
 
 ---
 
 ## 5. Riconciliazione numeri (open question da validare col proprietario)
 
-| Metrica             | Abstract talk | README pix-galaxy-mcp v1.0.0 | Report (webidoo-ai-mcp)  | Verdetto da deck                                                                                             |
+| Metrica             | Abstract talk | README pix-galaxy-mcp v1.0.0 | Report (pix-galaxy-mcp)  | Verdetto da deck                                                                                             |
 | ------------------- | ------------- | ---------------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------ |
 | Tools               | 235           | **90**                       | 207                      | Usare 90 (pix-galaxy-mcp) + nota "la variante nei benchmark ne esponeva 207"                                 |
 | Prompts + resources | 146           | 21 prompts + 168 resources   | 3 get_* + 1 router       | Usare 21/168 (pix-galaxy-mcp)                                                                                |
@@ -140,11 +140,11 @@
 | Progetti            | 4             | n/a                          | 2 (phonebook, bookmarks) | Casa base: 2 progetti dimostrati + eventuale citazione altri PoC (link-manager, token-forge…) senza metriche |
 | Sessioni            | 12            | n/a                          | 6 (2 p × 3 m)            | Usare 6 misurate (2 report da cui derivano TUTTI i numeri slide)                                             |
 
-**Decisione (intervista utente, M0)**: **usare i numeri verificati** — 90 tools / 168 resources / 21 prompts / 80 skills (pix-galaxy-mcp v1.0.0) e 2 progetti / 6 sessioni misurate. L'abstract della talk va corretto di conseguenza. Nota storica in speaker notes: la variante aziendale `webidoo-ai-mcp` espose più surface (207 tools) ai tempi dei benchmark (2026-07-11).
+**Decisione (intervista utente, M0)**: **usare i numeri verificati** - 90 tools / 168 resources / 21 prompts / 80 skills (pix-galaxy-mcp v1.0.0) e 2 progetti / 6 sessioni misurate. L'abstract della talk va corretto di conseguenza. Nota storica in speaker notes: la variante aziendale `pix-galaxy-mcp` espose più surface (207 tools) ai tempi dei benchmark (2026-07-11).
 
 ### Altri PoC esistenti (senza report benchmark, potenziali citazioni "ecosystem")
 
-`link-manager`, `react-gantt`, `token-forge`, `vinyl-collection`, `calculator`, `jooice-scheduler`, `react-scheduler` — tutti in `~/Projects/work/webidoo/poc/`. Alcuni hanno ADR e docs (react-gantt: 10 ADR; react-scheduler: 13 ADR) → utili come slide "real world adoption" senza numeri.
+`link-manager`, `react-gantt`, `token-forge`, `vinyl-collection`, `calculator`, `jooice-scheduler`, `react-scheduler` - tutti in `~/Projects/work/webidoo/poc/`. Alcuni hanno ADR e docs (react-gantt: 10 ADR; react-scheduler: 13 ADR) → utili come slide "real world adoption" senza numeri.
 
 ---
 
@@ -164,7 +164,7 @@
 
 **Messaggio "honest" per il deck** (esperimenti falliti / caveat):
 
-- zero dei 3 modelli ha attivato caveman/tokensave in lettura — anche quando il prompt lo chiedeva esplicitamente (bookmarks)
+- zero dei 3 modelli ha attivato caveman/tokensave in lettura - anche quando il prompt lo chiedeva esplicitamente (bookmarks)
 - GPT "baro" su architettura (monolite phonebook, CSS a classi); DS4 "baro" su integrazione (0 test, no build, SSRF minimale)
 - i modelli hanno interpretato i tool MCP in modo molto diverso (check/fix-loop vs mode:full vs indice globale)
 - manca una sessione "baseline senza server" → il delta _grazie al_ server è dedotto, non misurato

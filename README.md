@@ -1,26 +1,13 @@
 # talk-deterministic-mcp
 
-Deterministic MCP Server — how a local MCP server enforces engineering standards rather than simply exposing tools.
-
-Live deck: _pending (GitHub Pages after first release tag)_
+Deterministic MCP Server ,  how a local MCP server enforces engineering standards rather than only exposing tools.
 
 ## About this talk
 
-- **Subject**: `pix-galaxy-mcp` — deterministic MCP server for the pix-* skill ecosystem (90 tools, 168 resources, 21 prompts, 80 skills, guardrail engine + gateway).
-- **Evidence**: real benchmark sessions — same prompt, 3 models (Claude Sonnet / GPT / DeepSeek), 2 projects (phonebook, bookmarks manager), telemetry from billed token usage.
-- **Narrative**: What → Why → How → Proof → Future (mix 30/40/30), 25-30 min, English.
-- **Style**: based on the shared Pixu talk template (`@pixu-talks/*`), reusing concepts from `talk-aidd-from-spec-to-app`.
-
-Research artifacts live in [`docs/research/`](docs/research/) (benchmark evidence pack + slide map). The execution plan is in [`docs/plans/execution-plan.md`](docs/plans/execution-plan.md).
-
-## What this template gives you
-
-- A Parcel based reveal.js presentation.
-- Shared Pixu talk fonts, theme, and core setup through `@pixu-talks/*` packages.
-- Modular PostHTML slide includes, so each slide or topic can live in a small file.
-- Standard intro, summary, topic, and outro sections.
-- Speaker profile, links, QR code slides, and the TAF outro slide.
-- Boilerplate topic slides for common talk patterns.
+- **Subject**: `pix-galaxy-mcp` ,  89 skills · 107 tools · 186 resources · 37 prompts · 40 slash commands (from `pnpm census`).
+- **Narrative**: What → Why → How → Proof → CTA (short deck, English).
+- **Stack**: Parcel + Pixu talk template (content-only changes; no tech migration).
+- **Docs**: public site Home / Getting Started / Reference in the MCP repo (`pnpm docs:dev`).
 
 ## Requirements
 

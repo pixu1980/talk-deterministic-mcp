@@ -1,11 +1,11 @@
-# Demo Runbook — Talk "Deterministic MCP Server"
+# Demo Runbook - Talk "Deterministic MCP Server"
 
 > **Stato**: verificato 2026-07-11 con `pix-galaxy-mcp v1.0.0` (MCP SDK 1.30.0, Node 24.19.0, darwin/arm64).
 > Ogni demo ha: prerequisiti → comandi → cosa mostrare → fallback.
 
 ---
 
-## Demo 1 — Install + doctor (~1 min)
+## Demo 1 - Install + doctor (~1 min)
 
 ### Prerequisiti
 
@@ -51,7 +51,7 @@ Screenshot del doctor già salvato (TODO: catturare PNG prima della talk).
 
 ---
 
-## Demo 2 — Gateway check/apply con anteprima (~2-3 min)
+## Demo 2 - Gateway check/apply con anteprima (~2-3 min)
 
 ### Prerequisiti
 
@@ -60,7 +60,7 @@ Screenshot del doctor già salvato (TODO: catturare PNG prima della talk).
 
 ### Flusso
 
-1. **Gateway** — chiamare il tool MCP `pix_tool_gateway` con il componente draft:
+1. **Gateway** - chiamare il tool MCP `pix_tool_gateway` con il componente draft:
    ```json
    {
      "prompt": "build an accessible BookmarkCard component",
@@ -75,7 +75,7 @@ Screenshot del doctor già salvato (TODO: catturare PNG prima della talk).
 
 ### Talking points
 
-- "Validate before write" — il file che fallisce i check non atterra nel repo.
+- "Validate before write" - il file che fallisce i check non atterra nel repo.
 - Receipt legato all'hash esatto: codice modificato → receipt invalido.
 - Dry-run = fail-safe: nessuna sorpresa in produzione.
 
@@ -85,25 +85,25 @@ Registrazione pre-registrata (Loom / cast screen 30s).
 
 ---
 
-## Demo 3 — Benchmark re-run (~3-4 min)
+## Demo 3 - Benchmark re-run (~3-4 min)
 
 ### Prerequisiti
 
 - Un agente con il server attivo (pi consigliato: già configurato ✅).
-- Prompt ridotto (version abridged del bookmarks prompt — già in slide "The verbatim prompt").
+- Prompt ridotto (version abridged del bookmarks prompt - già in slide "The verbatim prompt").
 
 ### Flusso
 
 1. Incollare il prompt abridged nella sessione agente.
 2. Mostrare il primo tool call MCP del modello (es. `pix_tool_ai` / `pix_tool_gateway`).
 3. Far notare il **receipt** prima di qualsiasi scrittura.
-4. Chiusura: "this is the loop the benchmark measured — 1 prompt, watching the rails".
+4. Chiusura: "this is the loop the benchmark measured - 1 prompt, watching the rails".
 
 ### Talking points
 
 - Il server è il costante, il modello è la variabile.
 - Il prompt è lo stesso del benchmark → il pubblico vede esattamente cosa è stato misurato.
-- Aspettarsi un comportamento diverso dal vivo (tempo, modello) — è normale ed onesto dirlo.
+- Aspettarsi un comportamento diverso dal vivo (tempo, modello) - è normale ed onesto dirlo.
 
 ### Fallback
 
@@ -117,7 +117,7 @@ Screenshot della sessione benchmark originale (dal report, Allegato B tool calls
 # 1. server sano
 pix-galaxy-mcp doctor
 
-# 2. surface coincide col deck (90 tools / 10 minimal) — VERIFICATO 2026-07-11
+# 2. surface coincide col deck (90 tools / 10 minimal) - VERIFICATO 2026-07-11
 pix-galaxy-mcp tools list | head
 PIX_GALAXY_MCP_MINIMAL_TOOLS=1 pix-galaxy-mcp tools list | head  # → 10 registered
 

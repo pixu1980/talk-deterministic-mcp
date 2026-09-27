@@ -1,4 +1,4 @@
-# Slide Map — "Deterministic MCP Server" (25-30 min, EN)
+# Slide Map - "Deterministic MCP Server" (25-30 min, EN)
 
 > Fonti per claim: **E** = benchmark-evidence.md · **R** = README pix-galaxy-mcp · **D** = docs/** (server) · **A** = talk-aidd (concetti riciclati)
 > Template: tutti i componenti standard (intro/_pixu, _doodle, _main-topic, summary, boilerplate topics, outro TAF+links+QR, speaker)
@@ -9,8 +9,8 @@
 
 | #   | Slide                                           | Contenuto                                                                                                                                                       | Fonte    | Template |
 | --- | ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- |
-| 1   | `_pixu`                                         | Logo Pixu                                                                                                                                                       | —        | intro    |
-| 2   | `_doodle`                                       | Doodle (MCP deterministico? robot/guardrail?)                                                                                                                   | —        | intro    |
+| 1   | `_pixu`                                         | Logo Pixu                                                                                                                                                       | -        | intro    |
+| 2   | `_doodle`                                       | Doodle (MCP deterministico? robot/guardrail?)                                                                                                                   | -        | intro    |
 | 3   | `_main-topic`                                   | **"What happens when a local MCP server is designed to enforce engineering standards rather than simply exposing tools?"** + agenda (What→Why→How→Proof→Future) | abstract | intro    |
 | 4   | But what is an MCP server? (mini-intro per dev) | tool/resource/prompt, transport stdio/SSE, "il server NON chiama LLM" = deterministico                                                                          | R        | concept  |
 
@@ -22,17 +22,17 @@
 
 ### TOPICS
 
-#### WHAT — cosa è pix-galaxy-mcp (30%, ~5 slide verticali)
+#### WHAT - cosa è pix-galaxy-mcp (30%, ~5 slide verticali)
 
 | #   | Slide                            | Contenuto                                                                                                                | Fonte | Template                   |
 | --- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------ | ----- | -------------------------- |
-| 6   | Section opener                   | "What: a deterministic skill-server"                                                                                     | —     | boilerplate _01            |
+| 6   | Section opener                   | "What: a deterministic skill-server"                                                                                     | -     | boilerplate _01            |
 | 7   | The ecosystem                    | 80 skills (frontend/backend/data/devops/toolchain/styleguide/process/platform/ai), installabile globalmente, local-first | R     | concept                    |
 | 8   | Tools, Resources, Prompts        | 90 tools · 168 resources (pix://) · 21 prompts                                                                           | R     | code-walkthrough (tabella) |
 | 9   | The deterministic control engine | guardrails (18 shared) + gateway `pix_gateway`/`pix_apply` + receipt                                                     | R/D   | concept                    |
 | 10  | Minimal tool surface             | `PIX_GALAXY_MCP_MINIMAL_TOOLS=1` → 10 dispatcher tools (Cursor/Copilot, taglio token)                                    | R     | code+output                |
 
-#### WHY — perché esiste (40%, ~6 slide)
+#### WHY - perché esiste (40%, ~6 slide)
 
 | #   | Slide                                | Contenuto                                                                                                                         | Fonte | Template         |
 | --- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------- | ----- | ---------------- |
@@ -43,16 +43,16 @@
 | 15  | Il claim del ~5% e il prompt caching | MCP < 1-6% del costo task; cache write ~280K → input fresh a singola cifra → $30-70 risparmiati                                   | E     | code-walkthrough |
 | 16  | Esperimenti falliti (honest)         | 0/3 hanno attivato caveman/tokensave in lettura; modelli barano (monolite, no build, SSRF minimale); niente baseline senza server | E     | support-note     |
 
-#### HOW — come è fatto (30%, ~5 slide)
+#### HOW - come è fatto (30%, ~5 slide)
 
 | #   | Slide                        | Contenuto                                                                                             | Fonte | Template               |
 | --- | ---------------------------- | ----------------------------------------------------------------------------------------------------- | ----- | ---------------------- |
-| 17  | Section opener               | "How: architecture & gateway"                                                                         | —     | boilerplate _01        |
+| 17  | Section opener               | "How: architecture & gateway"                                                                         | -     | boilerplate _01        |
 | 18  | Architettura                 | SVG: agent → transport stdio/SSE → MCP server SDK → registry tools/resources → skills+BM25+guardrails | R     | code-walkthrough (SVG) |
 | 19  | Il gateway deterministico    | SVG flusso: prompt → pix_gateway → guardrails check → (receipt) → pix_apply; dry-run anteprima        | R/D   | code+output            |
 | 20  | Guardrail engine + installer | 18 shared rules + framework-specific; installer multi-agent (23 agent), daemon, docker, `doctor`      | R     | concept                |
 
-#### PROOF — i benchmark (proof-points, ~4 slide)
+#### PROOF - i benchmark (proof-points, ~4 slide)
 
 | #   | Slide                     | Contenuto                                                                             | Fonte  | Template        |
 | --- | ------------------------- | ------------------------------------------------------------------------------------- | ------ | --------------- |
