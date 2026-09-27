@@ -1,6 +1,15 @@
 @import "npm:@pixu-talks/fonts";
 @import "npm:@pixu-talks/theme";
 
+/* The request-path line is wider than the theme's `pre` max-width, and the
+   theme hides the scrollbar, so a long line was clipped at the right edge.
+   Wrap it and center it instead. */
+.reveal .slides section pre {
+	white-space: pre-wrap;
+	text-align: center;
+	font-size: 1em;
+}
+
 /* Talk diagrams (inline SVG) */
 .diagram {
 	display: block;

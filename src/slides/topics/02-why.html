@@ -1,155 +1,25 @@
 <section>
-  <section data-topic="why" data-menu-title="Why: control over the slot machine">
-    <h3><mark>Why</mark>: control over the slot machine</h3>
-    <small balance>Vibe coding without rules turns the codebase into a slot machine — the server exists to make output measurable.</small>
-    <aside class="notes">Bridge narrative from talk-aidd ("Vibe Coding with Rigor"): this MCP server is the step forward from the aidd operating cycle.</aside>
-  </section>
-
-  <section data-topic="why" data-menu-title="The problem">
-    <h4>The <mark>problem</mark></h4>
-    <small balance>Vague coding conventions cannot be enforced or measured — and every model interprets them differently.</small>
+  <section data-topic="why" data-menu-title="Why">
+    <h3><mark>Why</mark></h3>
+    <small balance>Vague conventions cannot be enforced. Models drift. Nothing gates the output.</small>
     <small>
       <ul>
-        <li class="fragment"><mark>Vague</mark>: "UI degna di Apple", "design system", "best practice" — uncheckable, unmeasurable</li>
-        <li class="fragment"><mark>Model drift</mark>: same prompt → 4 iterations with one model, 1 with another</li>
-        <li class="fragment"><mark>No quality gate</mark>: nothing verifies the output before it lands in the repo</li>
+        <li class="fragment">Same prompt → different quality per model</li>
+        <li class="fragment">No measurable “best practice” without a check</li>
+        <li class="fragment">Server-side rules stay identical for every model</li>
       </ul>
     </small>
-    <aside class="notes">Benchmark evidence: DS4 needed 3-4 user prompts vs Sonnet's 1 for the same prompt. Source: benchmark-evidence §2.1, §3.1.</aside>
   </section>
 
-  <section data-topic="why" data-menu-title="Deterministic = model-agnostic">
+  <section data-topic="why" data-menu-title="Deterministic">
     <h4><mark>Deterministic</mark> = model-agnostic</h4>
-    <small balance>The server never calls an LLM — so every model sees the same tools, the same rules, the same answers.</small>
+    <small balance>The agent still calls the model. The server compresses what it reads and gates what it writes.</small>
     <small>
       <ul>
-        <li class="fragment">No hidden prompt, no vendor lock-in, no per-token cost for the server itself</li>
-        <li class="fragment">Works behind Claude, GPT, Gemini, DeepSeek, Llama, Qwen — identical behavior</li>
-        <li class="fragment">Runtime deps: <code>@modelcontextprotocol/sdk</code> + <code>zod</code> only</li>
+        <li class="fragment">Routing, evidence and guardrails arrive <mark>compressed</mark>, so the tokens go to the answer</li>
+        <li class="fragment">The same rules run behind Claude, GPT, Gemini, Llama, Qwen…</li>
+        <li class="fragment">Local-first: skills on disk</li>
       </ul>
     </small>
-    <aside class="notes">This is the talk's core claim: enforcement without LLM = deterministic = testable everywhere.</aside>
-  </section>
-
-  <section data-topic="why" data-menu-title="Same prompt, very different outcomes">
-    <h4>Same prompt → <mark>very different</mark> outcomes</h4>
-    <small balance>One user prompt, three models: the MCP server is the constant — the model is the variable.</small>
-    <small>
-      <table>
-        <tbody>
-          <tr>
-            <td></td>
-            <td>Sonnet</td>
-            <td>GPT 5.6 Luna</td>
-            <td>DeepSeek v4 Flash</td>
-          </tr>
-          <tr>
-            <td>User prompts → MVP</td>
-            <td><mark>1</mark></td>
-            <td>1-2</td>
-            <td>3-4</td>
-          </tr>
-          <tr>
-            <td>LOC generated</td>
-            <td>5.708 / 3.479</td>
-            <td>805 / 2.132</td>
-            <td>4.239 / 2.505</td>
-          </tr>
-          <tr>
-            <td>Cost</td>
-            <td>$5.38 / $5.49</td>
-            <td>$1.54 / $1.88</td>
-            <td>$0.075 / $0.067</td>
-          </tr>
-        </tbody>
-      </table>
-    </small>
-    <aside class="notes">Numbers are verified (M0 decision): phonebook / bookmarks respectively. Full tables in the Proof section.</aside>
-  </section>
-
-  <section data-topic="why" data-menu-title="The verbatim prompt">
-    <h4>The <mark>verbatim</mark> prompt</h4>
-    <small balance>Identical user text in every session — only the model behind the agent changed.</small>
-    <pre>
-      <code class="hljs language-text" data-trim data-line-numbers="1-3|4-7|8-10">
-use webidoo-ai-mcp to create a react app implementing a bookmarks manager:
-- implement all standards from the MCP server's skills and tools
-- accessible frontend: paste a link, trigger scraping, og images, metadata, text preview
-- backend in node/express/typescript matching the frontend specs
-- documentation and ADRs taken during development
-- handoff document at the end of the session
-- an apple-worthy UI and microinteractions
-- a base design system: proportional typography, spacings, focus, radii, elevations
-      </code>
-    </pre>
-    <aside class="notes">Verbatim prompt (abridged for readability) from bookmarks benchmark §1.1. The same prompt ran on openai-codex, opencode-go, github-copilot.</aside>
-  </section>
-
-  <section data-topic="why" data-menu-title="TCO: dollars vs user time">
-    <h4><mark>TCO</mark>: dollars vs user time</h4>
-    <small balance>The cheapest model in dollars is the dearest in developer time.</small>
-    <small>
-      <table>
-        <tbody>
-          <tr>
-            <td></td>
-            <td>Sonnet</td>
-            <td>GPT 5.6 Luna</td>
-            <td>DS4 v4 Flash</td>
-          </tr>
-          <tr>
-            <td>User prompts → MVP</td>
-            <td><mark>1</mark> ✅</td>
-            <td>1-2</td>
-            <td>3-4 ❌</td>
-          </tr>
-          <tr>
-            <td>Cost / project</td>
-            <td>~$5.4</td>
-            <td>~$1.7</td>
-            <td><mark>~$0.07</mark></td>
-          </tr>
-          <tr>
-            <td>Time lost in retries</td>
-            <td><mark>0</mark></td>
-            <td>~5 min</td>
-            <td>~10-18 min</td>
-          </tr>
-          <tr>
-            <td>Developer-time cost @ €30/h</td>
-            <td>—</td>
-            <td>~€2.5</td>
-            <td>~€7-9</td>
-          </tr>
-        </tbody>
-      </table>
-    </small>
-    <aside class="notes">Source: benchmark-evidence §2.8 / §3.x (cost per completeness + TCO reasoning in the reports). The dollar does not capture the opportunity cost of retries.</aside>
-  </section>
-
-  <section data-topic="why" data-menu-title="The ~5% claim">
-    <h4>The <mark>~5%</mark> claim</h4>
-    <small balance>The MCP server accounts for roughly 5% of total project cost — model inference is the bottleneck, not tooling.</small>
-    <small>
-      <ul>
-        <li class="fragment">MCP cost &lt; 1% (phonebook) and &lt; 6% (bookmarks) of total billed cost</li>
-        <li class="fragment">Prompt caching changes the economics: Sonnet wrote ~280K cached tokens → <mark>59-178 input tokens</mark> of fresh input for the whole session</li>
-        <li class="fragment">Estimated caching savings: <mark>$30-70 per session</mark></li>
-      </ul>
-    </small>
-    <aside class="notes">Source: benchmark-evidence §2.2, §2.4, §3.2. Honest framing: measured on cost; effort proxy in tool-result chars.</aside>
-  </section>
-
-  <section data-topic="why" data-menu-title="Honest failures">
-    <h4>Honest <mark>failures</mark></h4>
-    <small balance>Not every experiment worked — and the caveats matter as much as the wins.</small>
-    <small>
-      <ul>
-        <li class="fragment"><mark>0/3 models</mark> used caveman/tokensave in read mode — even when the prompt asked explicitly</li>
-        <li class="fragment">GPT "cheated" on architecture (805 LOC monolith); DS4 "cheated" on integration (0 tests, no build, minimal SSRF)</li>
-        <li class="fragment">No baseline session without the server → the delta is inferred, not measured</li>
-      </ul>
-    </small>
-    <aside class="notes">Honesty is a stated goal of the talk (abstract: "deep, honest technical analysis ... and failed experiments").</aside>
   </section>
 </section>

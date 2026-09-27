@@ -1,176 +1,25 @@
 <section>
-  <section data-topic="how" data-menu-title="How: architecture & gateway">
-    <h3><mark>How</mark>: architecture &amp; gateway</h3>
-    <small balance>One small MCP server SDK - the rest is deterministic rules, not magic.</small>
+  <section data-topic="how" data-menu-title="How">
+    <h3><mark>How</mark></h3>
+    <small balance>One request path for every agent.</small>
+    <pre class="fragment">Agent → MCP → Router → Skill/Tool → Guardrails → Response</pre>
   </section>
 
-  <section data-topic="how" data-menu-title="Architecture">
-    <h4><mark>Architecture</mark></h4>
-    <svg viewBox="0 0 920 240" role="img" aria-label="pix-galaxy-mcp architecture: agent, transports, MCP server SDK, tool and resource registries, skills, BM25 and guardrails" class="diagram">
-      <defs>
-        <marker id="arrowArch" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
-        </marker>
-      </defs>
-
-      <rect class="d-accent" x="20" y="40" width="170" height="66" />
-      <text class="d-label" x="105" y="68">AI coding agent</text>
-      <text class="d-sub" x="105" y="89">Claude · GPT · Gemini · Pi</text>
-
-      <line class="d-arrow" marker-end="url(#arrowArch)" x1="190" y1="73" x2="250" y2="73" />
-
-      <rect class="d-box" x="250" y="40" width="160" height="66" />
-      <text class="d-label" x="330" y="68">Transport</text>
-      <text class="d-sub" x="330" y="89">stdio · HTTP+SSE</text>
-
-      <line class="d-arrow" marker-end="url(#arrowArch)" x1="410" y1="73" x2="470" y2="73" />
-
-      <rect class="d-accent" x="470" y="40" width="180" height="66" />
-      <text class="d-label" x="560" y="68">MCP server SDK</text>
-      <text class="d-sub" x="560" y="89">@modelcontextprotocol/sdk</text>
-
-      <line class="d-arrow" marker-end="url(#arrowArch)" x1="650" y1="73" x2="710" y2="73" />
-
-      <rect class="d-box" x="710" y="40" width="190" height="66" />
-      <text class="d-label" x="805" y="68">Registry</text>
-      <text class="d-sub" x="805" y="89">90 tools · 168 resources · 21 prompts</text>
-
-      <line class="d-arrow" marker-end="url(#arrowArch)" x1="805" y1="106" x2="805" y2="150" />
-
-      <rect class="d-box" x="530" y="150" width="370" height="76" />
-      <text class="d-label" x="715" y="176">Deterministic core (never calls an LLM)</text>
-      <text class="d-sub" x="715" y="197">80 skills · BM25 search · 18 shared guardrails</text>
-      <text class="d-sub" x="715" y="213">gateway + receipt · fail-safe · minimal mode · doctor</text>
-    </svg>
-    <aside class="notes">Architecture SVG. Lower box = deterministic core; note the agent box lists the same models as the benchmark.</aside>
-  </section>
-
-  <section data-topic="how" data-menu-title="One config shape">
-    <h4>One <mark>config</mark> shape</h4>
-    <small balance>The same server.json / mcp.json contract every agent consumes.</small>
-    <pre>
-      <code class="hljs language-json" data-trim data-line-numbers="1-3|4-7|8-10">
-{
-  "mcpServers": {
-    "pix-galaxy-mcp": {
-      "command": "pix-galaxy-mcp",
-      "args": ["serve"],
-      "transport": "stdio"
-    }
-  }
-}
-      </code>
-    </pre>
-    <small class="fragment">Minimal mode: <code>PIX_GALAXY_MCP_MINIMAL_TOOLS=1</code> - 10 dispatcher tools instead of 90.</small>
-    <aside class="notes">Config lives in server.json (registry metadata) and mcp.json (per-agent). Minimal mode targets Cursor/Copilot caps.</aside>
-  </section>
-
-  <section data-topic="how" data-menu-title="The gateway">
-    <h4>The deterministic <mark>gateway</mark></h4>
-    <small balance>Single entry point: route the prompt, validate the code, return a receipt.</small>
-    <svg viewBox="0 0 920 230" role="img" aria-label="deterministic gateway flow: route, guardrail check, receipt, apply" class="diagram">
-      <defs>
-        <marker id="arrowGw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
-        </marker>
-      </defs>
-
-      <rect class="d-box" x="20" y="30" width="140" height="66" />
-      <text class="d-label" x="90" y="58">Prompt</text>
-      <text class="d-sub" x="90" y="80">+ files draft</text>
-
-      <line class="d-arrow" marker-end="url(#arrowGw)" x1="160" y1="63" x2="220" y2="63" />
-
-      <rect class="d-accent" x="220" y="30" width="140" height="66" />
-      <text class="d-label" x="290" y="58">pix_tool_gateway</text>
-      <text class="d-sub" x="290" y="80">route + skill evidence</text>
-
-      <line class="d-arrow" marker-end="url(#arrowGw)" x1="360" y1="63" x2="420" y2="63" />
-
-      <rect class="d-box" x="420" y="30" width="150" height="66" />
-      <text class="d-label" x="495" y="58">Guardrails</text>
-      <text class="d-sub" x="495" y="80">18 shared · fail until allPass</text>
-
-      <line class="d-arrow" marker-end="url(#arrowGw)" x1="570" y1="63" x2="630" y2="63" />
-
-      <rect class="d-accent" x="630" y="30" width="130" height="66" />
-      <text class="d-label" x="695" y="58">Receipt</text>
-      <text class="d-sub" x="695" y="80">hash-bound · path-bound</text>
-
-      <line class="d-arrow" marker-end="url(#arrowGw)" x1="760" y1="63" x2="820" y2="63" />
-
-      <rect class="d-box" x="820" y="30" width="80" height="66" />
-      <text class="d-label" x="860" y="58">Apply</text>
-      <text class="d-sub" x="860" y="80">dry-run first</text>
-
-      <line class="d-arrow" marker-end="url(#arrowGw)" x1="695" y1="96" x2="695" y2="156" />
-
-      <rect class="d-box" x="570" y="156" width="250" height="54" />
-      <text class="d-label" x="695" y="180">pix_tool_apply</text>
-      <text class="d-sub" x="695" y="199">rejects modified code</text>
-    </svg>
-    <small balance class="fragment">A file that fails guardrails <mark>never lands</mark> - fail-safe before write.</small>
-    <aside class="notes">TODO M9 completed: gateway SVG. Exposed tools: pix_tool_gateway → pix_tool_apply (verified v1.0.0). Receipt bound to exact hash - modified code rejected.</aside>
-  </section>
-
-  <section data-topic="how" data-menu-title="Receipt, not opinion">
-    <h4>Receipt, <mark>not</mark> opinion</h4>
-    <small balance>Validation is a token you can show, not a claim you repeat.</small>
-    <pre>
-      <code class="hljs language-json" data-trim data-line-numbers="1-3|4-6|7-9">
-{
-  "file": "src/components/BookmarkCard.tsx",
-  "guardrails": ["a11y", "naming", "structure"],
-  "allPass": true,
-  "receipt": "pk_gw_a1b2c3…",
-  "hash": "sha256:9f8e…",
-  "dryRun": true
-}
-      </code>
-    </pre>
-    <small balance class="fragment">A file that fails checks never lands - <mark>fail-safe</mark> before write, preview first.</small>
-    <aside class="notes">Based on gateway/apply semantics from README + gateway.test.mjs. Exact JSON shape is illustrative - verify against the live tool before the talk.</aside>
-  </section>
-
-  <section data-topic="how" data-menu-title="Guardrail engine">
-    <h4><mark>Guardrail</mark> engine</h4>
-    <small balance>Testable assertions instead of vague conventions.</small>
+  <section data-topic="how" data-menu-title="Command · Tool · Skill">
+    <h4>Command · Tool · Skill</h4>
+    <small balance>Slash stays dash, tools stay underscore, skills stay dash. The census keeps the three names aligned.</small>
     <small>
-      <ul>
-        <li class="fragment"><mark>18 shared rules</mark>: a11y, naming, validation, structure</li>
-        <li class="fragment"><mark>Framework-specific</mark>: backend (security, API design), data, devops</li>
-        <li class="fragment"><mark>Runs before write</mark>: the model cannot ship a file that fails the checks</li>
-      </ul>
+      <table>
+        <thead>
+          <tr><td>Command</td><td>Tool</td><td>Skill</td></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>/pix</code></td><td><code>pix_tool</code></td><td><code>pix</code></td></tr>
+          <tr><td><code>/pix-area-ui</code></td><td><code>pix_tool_ui</code></td><td><code>pix-ui</code></td></tr>
+          <tr><td><code>/pix-check</code></td><td><code>pix_tool_check</code></td><td>routed skill</td></tr>
+          <tr><td><code>/pix-fix</code></td><td><code>pix_tool_fix</code></td><td>all rules</td></tr>
+        </tbody>
+      </table>
     </small>
-    <aside class="notes">Source: README (guardrail engine, enforcement). More in docs/03-engineering-guides.md.</aside>
-  </section>
-
-  <section data-topic="how" data-menu-title="Ops: install, daemon, docker">
-    <h4><mark>Ops</mark>: install, daemon, docker</h4>
-    <small balance>One package, many deployment shapes - model-agnostic everywhere.</small>
-    <small>
-      <ul>
-        <li class="fragment"><mark>Installer</mark>: <code>install --agent all</code> - 23 supported agents, self-healing scripts</li>
-        <li class="fragment"><mark>Doctor</mark>: health check for config, skills, transports</li>
-        <li class="fragment"><mark>Daemon</mark> / HTTP+SSE: long-running server for Pi and VS Code</li>
-        <li class="fragment"><mark>Docker</mark>: containerized server with TLS cert generation</li>
-        <li class="fragment"><mark>Fail-safe</mark>: deterministic shutdown paths guarded by tests</li>
-      </ul>
-    </small>
-    <aside class="notes">Source: README (CLI reference, daemon & services, Docker). Fail-safe shutdown demo is part of the "safeguards" the abstract promises.</aside>
-  </section>
-
-  <section data-topic="how" data-menu-title="Live demo: gateway check/apply">
-    <h4><mark>Live</mark> demo - gateway check/apply</h4>
-    <small balance>Validate a component against guardrails, preview the dry-run, then apply.</small>
-    <small>
-      <ol>
-        <li class="fragment">Call <code>pix_gateway</code> with a component draft</li>
-        <li class="fragment">Review guardrail results - fix until <code>allPass: true</code></li>
-        <li class="fragment"><code>pix_apply</code> dry-run to preview the write</li>
-        <li class="fragment">Apply with the validated receipt</li>
-      </ol>
-    </small>
-    <aside class="notes">Demo 2 (~2-3 min). Fallback: pre-recorded demo if network/tooling is unsafe.</aside>
   </section>
 </section>

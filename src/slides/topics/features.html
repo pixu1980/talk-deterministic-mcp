@@ -1,0 +1,73 @@
+<section>
+  <section data-topic="cache" data-menu-title="Cache">
+    <h4><mark>Cache</mark></h4>
+    <small balance>A result is reused until a skill it read changes.</small>
+    <small>
+      <ul>
+        <li class="fragment">Key: tool + arguments + the digest of every skill the answer used</li>
+        <li class="fragment">Editing one skill drops only the entries that depended on it</li>
+        <li class="fragment">Hit or miss, the answer is the same bytes</li>
+      </ul>
+    </small>
+  </section>
+
+  <section data-topic="flight" data-menu-title="Flight Recorder">
+    <h4><mark>Flight Recorder</mark></h4>
+    <small balance>Every call is recorded locally, on this machine.</small>
+    <small>
+      <ul>
+        <li class="fragment">Calls, cache hits, tokens saved, latency, cost per session</li>
+        <li class="fragment"><code>/pix-stats</code>: reads the log back</li>
+        <li class="fragment">Nothing leaves the machine; secrets are redacted</li>
+      </ul>
+    </small>
+  </section>
+
+  <section data-topic="handoff" data-menu-title="Handoff / Handon">
+    <h4><mark>Handoff</mark> / <mark>Handon</mark></h4>
+    <small balance>A session ends with a file, not with a lost context.</small>
+    <small>
+      <ul>
+        <li class="fragment"><code>/pix-handoff</code>: commits pending work in atomic commits, writes the handoff</li>
+        <li class="fragment"><code>/pix-handon</code>: verifies every claim against the repository before trusting it</li>
+        <li class="fragment">Each claim arrives labeled still true, changed, or unverified</li>
+      </ul>
+    </small>
+  </section>
+
+  <section data-topic="personas" data-menu-title="Personas">
+    <h4><mark>Personas</mark></h4>
+    <small balance>19 expert roles, one command each.</small>
+    <small>
+      <ul>
+        <li class="fragment"><code>/pix-persona-security</code> asks one role for a run</li>
+        <li class="fragment">The request decides the depth: audit, audit + review, audit + review + plan</li>
+        <li class="fragment">The run writes <code>docs/audits</code>, <code>docs/reviews</code>, <code>docs/plans</code></li>
+      </ul>
+    </small>
+  </section>
+
+  <section data-topic="areas" data-menu-title="Areas">
+    <h4><mark>Areas</mark></h4>
+    <small balance>11 hubs route free text to the leaf skills.</small>
+    <small>
+      <ul>
+        <li class="fragment"><code>/pix-area-frontend</code> collects the request</li>
+        <li class="fragment">The hub names the leaf skills and tools to load</li>
+        <li class="fragment">Leaf skills keep tools, no per-leaf slash</li>
+      </ul>
+    </small>
+  </section>
+
+  <section data-topic="guardrails" data-menu-title="Guardrails">
+    <h4><mark>Guardrails</mark></h4>
+    <small balance>Each skill ships the rules it can prove.</small>
+    <small>
+      <ul>
+        <li class="fragment"><code>/pix-check</code>: reports failures against the routed skills applying all the related guardrails</li>
+        <li class="fragment"><code>/pix-fix</code>; applies the mechanical fixes for blank lines, braces, ASCII, spelling and all the other guardrails</li>
+        <li class="fragment">A failed guardrail blocks the write, not the model's turn</li>
+      </ul>
+    </small>
+  </section>
+</section>

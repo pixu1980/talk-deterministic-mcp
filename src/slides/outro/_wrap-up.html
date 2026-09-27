@@ -1,43 +1,16 @@
 <section>
   <section data-transition="convex">
     <h4>Wrapping <mark>up</mark></h4>
-    <small balance>What the 6 measured sessions actually taught us.</small>
-  </section>
-  <section data-transition="convex">
-    <comparison>
-      <left>
-        <h4>Works</h4>
-        <small>
-          <ul>
-            <li class="fragment">Deterministic server = <mark>model-agnostic</mark> enforcement</li>
-            <li class="fragment">MCP cost &lt; 1-6% of the task — inference is the bottleneck</li>
-            <li class="fragment">Prompt caching flips the economics (<mark>$30-70 saved</mark>)</li>
-            <li class="fragment">1 prompt → <mark>MVP</mark> when the model reads the skills</li>
-          </ul>
-        </small>
-      </left>
-      <right>
-        <h4>Doesn&rsquo;t</h4>
-        <small>
-          <ul>
-            <li class="fragment">More tool calls ≠ better output (GPT: 25-30 calls, weakest result)</li>
-            <li class="fragment">Cheapest model isn&rsquo;t cheapest — retries cost developer time</li>
-            <li class="fragment">0/3 models adopted caveman/tokensave, even when asked</li>
-            <li class="fragment">No baseline yet: the server delta is inferred, not measured</li>
-          </ul>
-        </small>
-      </right>
-    </comparison>
+    <small balance>The model is called. The enrichment is compressed, the output is gated.</small>
   </section>
   <section data-transition="convex">
     <h4><mark>Takeaways</mark></h4>
     <small>
       <ol>
-        <li class="fragment"><mark>Enforcement without LLM</mark> is deterministic, testable, and model-agnostic</li>
-        <li class="fragment"><mark>Skills read early</mark> beat tool spam: Sonnet 5 calls + mode:full → 6/6 specs</li>
-        <li class="fragment">The server doesn&rsquo;t replace model quality — it makes <mark>conventions measurable</mark></li>
+        <li class="fragment"><mark>Cache + Flight Recorder</mark>: reuse the answer, measure the session</li>
+        <li class="fragment"><mark>Handoff / Handon</mark>: a session ends with a file the next one verifies</li>
+        <li class="fragment"><mark>Personas + Areas + Guardrails</mark>: one role, one hub, one gate per request</li>
       </ol>
     </small>
-    <aside class="notes">The three takeaways mirror the abstract: deterministic engine, skills-structured output, measurable safeguards.</aside>
   </section>
 </section>
