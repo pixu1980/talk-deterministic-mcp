@@ -9,44 +9,44 @@
 
 ## 1. Interview decisions (round 2 — narrative rework)
 
-| Topic            | Decision                                                                                                      |
-| ---------------- | ------------------------------------------------------------------------------------------------------------- |
-| Duration         | **35-40 min**, ~30-34 slide declared, **35 planned** (some are bench reserve)                                  |
-| Language         | **English** everywhere, `lang="en"` unchanged                                                                  |
-| Structure        | **3 acts / 9 chapters**, chapter = vertical stack + opener; agenda stack removed                               |
-| 1 Introductions  | Speaker bio only (`_pixu` component), no Dev Dojo / Webidoo block in this chapter                              |
-| Intro visual     | The intro keeps the reworked vocabulary (`data-part`, `data-kicker`, `figure[data-layout]`) **and** the matrix rain (`matrix-code.js` + CSS); the rest of the deck still uses the master theme vocabulary |
-| 2 What I do    | **Head of DevX @ Webidoo Engineering** + what working in a company demands from agents                         |
-| 3 The need     | All five blocks of the rework `02-problem`: simple request, manual workflow, model drift, weak prompt contracts, policy outside the model. Plus the **rotation** frame |
-| Rotation frame   | What rotates: **people** (turnover, onboarding) and **AI resources** (Claude/Codex/Gemini/Cursor)             |
-| 4 Experiments| Benchmark (2 projects × 3 models), **failed experiments**, **company PoCs without numbers**; 1 slide per experiment, budget 5 |
-| 5 The idea         | Claim **"One rule set. Every coding agent. Every Dev."** (extension of the ported title claim) + 3 principles + conceptual diagram + the ported "One task. Many agents." story |
-| 6 The solution   | Architecture request path, deterministic gateway, the six mechanisms, validated surface, multi-agent installer; budget 9-10 |
-| Demo             | **Deferred**: slides are demo-ready, live demo decided after the first full build                             |
-| 7 Case studies   | The 2 benchmark projects told as stories (not the KPI tables again) + the server in use by the DevX team; 1 slide per case, screenshot + one number |
-| 8 Contribute    | 4 asks: install it, write a skill, report what breaks, bring your team's standards                            |
-| 9 Goodbye         | Thanks + TAF + QR (slides repo, pixu.dev, Dev Dojo)                                                            |
-| Numbers          | Validated set only: 80 skills · 90 tools · 21 prompts · 168 resources · 2 projects · 6 measured sessions        |
-| Repo layout      | `src/slides/NN-chapter/` per chapter, old files removed (content migrates)                                    |
-| Docs             | This plan + `docs/research/slide-map.md` rewritten                                                             |
-| ADR              | **Not requested**; ADR 001 becomes stale and is listed under open decisions                                     |
-| Commits          | One Conventional Commit per chapter, plus one for the structure migration                                       |
+| Topic           | Decision                                                                                                                                                                                                  |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Duration        | **35-40 min**, ~30-34 slide declared, **35 planned** (some are bench reserve)                                                                                                                             |
+| Language        | **English** everywhere, `lang="en"` unchanged                                                                                                                                                             |
+| Structure       | **3 acts / 9 chapters**, chapter = vertical stack + opener; agenda stack removed                                                                                                                          |
+| 1 Introductions | Speaker bio only (`_pixu` component), no Dev Dojo / Webidoo block in this chapter                                                                                                                         |
+| Intro visual    | The intro keeps the reworked vocabulary (`data-part`, `data-kicker`, `figure[data-layout]`) **and** the matrix rain (`matrix-code.js` + CSS); the rest of the deck still uses the master theme vocabulary |
+| 2 What I do     | **Head of DevX @ Webidoo Engineering** + what working in a company demands from agents                                                                                                                    |
+| 3 The need      | All five blocks of the rework `02-problem`: simple request, manual workflow, model drift, weak prompt contracts, policy outside the model. Plus the **rotation** frame                                    |
+| Rotation frame  | What rotates: **people** (turnover, onboarding) and **AI resources** (Claude/Codex/Gemini/Cursor)                                                                                                         |
+| 4 Experiments   | Benchmark (2 projects × 3 models), **failed experiments**, **company PoCs without numbers**; 1 slide per experiment, budget 5                                                                             |
+| 5 The idea      | Claim **"One rule set. Every coding agent. Every Dev."** (extension of the ported title claim) + 3 principles + conceptual diagram + the ported "One task. Many agents." story                            |
+| 6 The solution  | Architecture request path, deterministic gateway, the six mechanisms, validated surface, multi-agent installer; budget 9-10                                                                               |
+| Demo            | **Deferred**: slides are demo-ready, live demo decided after the first full build                                                                                                                         |
+| 7 Case studies  | The 2 benchmark projects told as stories (not the KPI tables again) + the server in use by the DevX team; 1 slide per case, screenshot + one number                                                       |
+| 8 Contribute    | 4 asks: install it, write a skill, report what breaks, bring your team's standards                                                                                                                        |
+| 9 Goodbye       | Thanks + TAF + QR (slides repo, pixu.dev, Dev Dojo)                                                                                                                                                       |
+| Numbers         | Validated set only: 80 skills · 90 tools · 21 prompts · 168 resources · 2 projects · 6 measured sessions                                                                                                  |
+| Repo layout     | `src/slides/NN-chapter/` per chapter, old files removed (content migrates)                                                                                                                                |
+| Docs            | This plan + `docs/research/slide-map.md` rewritten                                                                                                                                                        |
+| ADR             | **Not requested**; ADR 001 becomes stale and is listed under open decisions                                                                                                                               |
+| Commits         | One Conventional Commit per chapter, plus one for the structure migration                                                                                                                                 |
 
 ---
 
 ## 2. Acts and chapters
 
-| Act | Chapter | Slides | Minutes | Files |
-| --- | ------- | ------ | ------- | ----- |
-| 1 — Who / why we are here | 1 Introductions | 2 | 1.5 | `01-introductions/_01-title.html`, `_02-speaker.html` |
-| | 2 What I do | 3 | 3 | `02-what-i-do/_01-role.html`, `_02-company.html`, `_03-community.html` |
-| | 3 The need | 3 | 4 | `03-the-need/_01-simple-request.html`, `_02-manual-workflow.html`, `_03-weak-contracts.html` |
-| 2 — What we tried and what came out | 4 Experiments | 5 | 7 | `04-experiments/_01-method.html`, `_02-phonebook.html`, `_03-bookmarks.html`, `_04-failures.html`, `_05-poc.html` |
-| | 5 The idea | 4 | 4 | `05-idea/_01-claim.html`, `_02-principles.html`, `_03-story.html`, `_04-diagram.html` |
-| | 6 The solution | 10 | 11 | `06-solution/_01-architecture.html` … `_10-installer.html` |
-| 3 — Proof, call to action, goodbye | 7 Case studies | 4 | 4 | `07-case-studies/_01-phonebook.html`, `_02-bookmarks.html`, `_03-devx-team.html`, `_04-insight.html` |
-| | 8 Contribute | 2 | 2 | `08-contribute/_01-cta.html`, `_02-where.html` |
-| | 9 Goodbye | 2 | 1.5 | `09-goodbye/_01-thanks.html`, `_02-links.html` |
+| Act                                 | Chapter         | Slides | Minutes | Files                                                                                                             |
+| ----------------------------------- | --------------- | ------ | ------- | ----------------------------------------------------------------------------------------------------------------- |
+| 1 — Who / why we are here           | 1 Introductions | 2      | 1.5     | `01-introductions/_01-title.html`, `_02-speaker.html`                                                             |
+|                                     | 2 What I do     | 3      | 3       | `02-what-i-do/_01-role.html`, `_02-company.html`, `_03-community.html`                                            |
+|                                     | 3 The need      | 3      | 4       | `03-the-need/_01-simple-request.html`, `_02-manual-workflow.html`, `_03-weak-contracts.html`                      |
+| 2 — What we tried and what came out | 4 Experiments   | 5      | 7       | `04-experiments/_01-method.html`, `_02-phonebook.html`, `_03-bookmarks.html`, `_04-failures.html`, `_05-poc.html` |
+|                                     | 5 The idea      | 4      | 4       | `05-idea/_01-claim.html`, `_02-principles.html`, `_03-story.html`, `_04-diagram.html`                             |
+|                                     | 6 The solution  | 10     | 11      | `06-solution/_01-architecture.html` … `_10-installer.html`                                                        |
+| 3 — Proof, call to action, goodbye  | 7 Case studies  | 4      | 4       | `07-case-studies/_01-phonebook.html`, `_02-bookmarks.html`, `_03-devx-team.html`, `_04-insight.html`              |
+|                                     | 8 Contribute    | 2      | 2       | `08-contribute/_01-cta.html`, `_02-where.html`                                                                    |
+|                                     | 9 Goodbye       | 2      | 1.5     | `09-goodbye/_01-thanks.html`, `_02-links.html`                                                                    |
 
 Total: **35 slides, ~38 minutes**.
 
@@ -56,13 +56,13 @@ Total: **35 slides, ~38 minutes**.
 
 ### Phase 0 — Structure and migration (deck must keep building)
 
-- [ ] **0.1** Create `src/slides/NN-chapter/` folders; move the ported intro slides (`_doodle` → `01-introductions/_01-title.html`, `_pixu` → `_02-speaker.html`)
-- [ ] **0.2** Split `intro/_main-topic.html`: question → `03-the-need/_01-simple-request.html`, story → `05-idea/_03-story.html`
-- [ ] **0.3** Move `topics/features.html` → six files under `06-solution/` (cache, flight recorder, handoff, personas, areas, guardrails); `03-how.html` → architecture + gateway; `01-what.html` → surface
-- [ ] **0.4** Move `outro/_taf.html` + `_thanks.html` → `09-goodbye/_01-thanks.html`; `outro/_links.html` → `09-goodbye/_02-links.html`
-- [ ] **0.5** Archive `summary/_topics.html`, `_dive-in.html`, `outro/_wrap-up.html`, `topics/02-why.html`, `04-proof.html`, `05-future.html` under `src/slides/_archive/`; move `boilerplate/` → `src/slides/_boilerplate/`
-- [ ] **0.6** Rewrite `src/slides/slides.html` with the 9-chapter composition (3 acts as comments)
-- [ ] **0.7** Placeholder files for the empty chapters (02, 04, 07, 08) so includes resolve; verify `pnpm dev` and commit `refactor(slides): regroup the deck into nine chapters`
+- [x] **0.1** Create English-named chapter folders and retain the ported title and speaker slides.
+- [x] **0.2** Move the story to the idea chapter and rewrite the need chapter.
+- [x] **0.3** Rebuild the solution chapter around the request path and six mechanisms.
+- [x] **0.4** Restore the original `master` outro under `src/slides/outro/` as requested; keep its original composition.
+- [x] **0.5** Retain the archived sections and boilerplate under `src/slides/_archive/` and `src/slides/_boilerplate/`.
+- [x] **0.6** Compose nine chapters in `src/slides/slides.html`.
+- [x] **0.7** Verify the included deck runs; the original regrouping was committed as `3f15859`.
 
 ### Phase 1 — Act 1 (chapters 1-3)
 
@@ -72,7 +72,7 @@ Total: **35 slides, ~38 minutes**.
 - [x] **1.4** `03-the-need/_02`: manual workflow without a shared server (5 steps list)
 - [x] **1.5** `03-the-need/_03`: model drift + weak prompt contracts + "move the policy outside the model" close; the comparison is labeled illustrative
 - [x] **1.6** Add speaker notes identifying interview-confirmed context and illustrative examples; reference `docs/research/benchmark-evidence.md` for measured results.
-- [ ] **1.7** Verify `pnpm dev`, commit `feat(slides): act one — who I am and what the work needs`
+- [x] **1.7** Verify the development server and record the work in the combined narrative commit `e6b9549`.
 
 ### Phase 2 — Act 2 (chapters 4-6)
 
@@ -91,7 +91,7 @@ Total: **35 slides, ~38 minutes**.
 - [x] **2.13** `06-solution/_09`: tools, resources and prompts; counts omitted because the current server census differs from the historical plan
 - [x] **2.14** `06-solution/_10`: multi-agent installer and doctor
 - [x] **2.15** Mark the demo slot (notes only) until the build is green
-- [ ] **2.16** Commit per chapter: `feat(slides): experiments`, `feat(slides): the idea`, `feat(slides): the solution`
+- [x] **2.16** Record the chapters in the combined narrative commit `e6b9549`, as requested.
 
 ### Phase 3 — Act 3 (chapters 7-9)
 
@@ -101,37 +101,40 @@ Total: **35 slides, ~38 minutes**.
 - [x] **3.4** `07-case-studies/_04`: limitations shared across cases
 - [x] **3.5** `08-contribute/_01`: the four asks
 - [x] **3.6** `08-contribute/_02`: repository, install commands and documentation
-- [ ] **3.7** `09-goodbye/_01`: thanks + TAF; `_02`: QR codes; verify the generic audio caption and QR destinations before release
-- [ ] **3.8** Commit `feat(slides): act three — case studies, contribute, goodbye`
+- [x] **3.7** Restore the original `master` outro, with accessible SVG and music caption. Its links remain commented out as in `master`; the QR assets were decoded and the slide-repository QR was corrected.
+- [x] **3.8** Record the restored outro and final verification work in the follow-up commit.
 
 ### Phase 4 — Docs, QA, release
 
-- [ ] **4.1** `docs/research/slide-map.md`: 35-row map (chapter → file → content → source → template)
-- [ ] **4.2** README: project structure and slide composition sections updated to the nine chapters
-- [ ] **4.3** `pnpm run lint` (only the 9 pre-existing a11y errors may remain) + `pnpm run format` on touched files only
-- [ ] **4.4** `pnpm run build` and inspect the static deck
-- [ ] **4.5** Rehearsal timing per chapter, adjust the budget
-- [ ] **4.6** Decide the live demo (O3) and the `dist/` rebuild policy (O5)
+- [x] **4.1** Update `docs/research/slide-map.md` with the 41 active slides and source paths.
+- [x] **4.2** Update the README for the actual nine-chapter composition and restored outro.
+- [x] **4.3** Run Biome lint, the Node test suite, and Prettier checks on the updated documentation and tests.
+- [x] **4.4** Build the final static deck; inspect all 41 slides with axe-core and check 39 horizontal slide positions at three viewport sizes. Manual review remains in the rehearsal checklist.
+- [ ] **4.5** Rehearse the talk with the speaker and adjust the timing; proposed budgets and the checklist are in `docs/research/rehearsal.md`. Automated checks cannot replace a live rehearsal.
+- [x] **4.6** No live demo is planned, per speaker confirmation; rebuild `dist/` once for the final production check.
+- [ ] **4.7** Translate remaining historical research and archived documents to English without changing evidence or quotations.
+- [ ] **4.8** Publish or deploy only when explicitly authorized; a successful build is not a deployment.
 
 ---
 
 ## 4. Open decisions
 
-| # | Decision | Default if nobody answers |
-| - | -------- | ------------------------- |
-| O1 | Opening slide: does the title restate the claim used in `05-idea/_01`, or does it open with something else? | Bookend: title states it, chapter 5 answers with it |
-| O2 | "Every Dev" wording in English — is it the final phrasing? | Keep as written; one line, easy to change |
-| O3 | Live demo inside chapter 6 | Slides demo-ready, no live demo until asked |
-| O4 | ADR 001 ("40-slide workflow story") is stale; supersede it or leave it? | Left as is, noted here |
-| O5 | `dist/` committed build: rebuild at the end of each phase or once at the end? | Rebuild once, at the end |
+| #   | Decision                                                                                                    | Default if nobody answers                           |
+| --- | ----------------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
+| O1  | Opening slide: does the title restate the claim used in `05-idea/_01`, or does it open with something else? | Bookend: title states it, chapter 5 answers with it |
+| O2  | "Every Dev" wording in English — is it the final phrasing?                                                  | Keep as written; one line, easy to change           |
+| O3  | Live demo inside chapter 6                                                                                  | Resolved: no live demo                              |
+| O4  | ADR 001 ("40-slide workflow story") is stale; supersede it or leave it?                                     | Left as is, noted here                              |
+| O5  | `dist/` committed build: rebuild at the end of each phase or once at the end?                               | Resolved: rebuild once for the final check          |
 
 ---
 
 ## 5. Verification per phase
 
 ```bash
-pnpm dev            # localhost:6001, deck navigable
-pnpm run lint       # 9 pre-existing a11y errors tolerated
+pnpm dev            # default development server
+pnpm run lint       # Biome lint
+node --test tests/*.test.mjs
 pnpm run build      # static deck in dist/
 ```
 

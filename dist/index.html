@@ -3,14 +3,19 @@
     <title>Deterministic MCP Server</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark">
-    <link rel="stylesheet" href="/talk-deterministic-mcp.ebeadb08.css">
+    <link rel="stylesheet" href="talk-deterministic-mcp.03ed21e3.css">
   </head>
   <body>
     <main class="reveal">
+      <matrix-code aria-hidden="true"></matrix-code>
       <div class="slides">
-        <section intro="">
-  <h2>Deterministic <mark>MCP</mark> Server</h2>
-  <small balance="" class="fragment">A local MCP server that <mark>enforces the standards</mark>, whatever is the <mark>model in charge</mark>.</small>
+        <!-- Act 1 — Who I am, what the work needs -->
+
+<!-- 1. Introductions -->
+<section data-part="slide" data-chapter="intro" data-matrix="" data-menu-title="Title">
+  <p data-kicker="">Deterministic MCP Server<br>(DevFest Pescara 2026 Matrix Edition)</p>
+  <h1>One rule set.<br><mark>Every coding agent.</mark></h1>
+  <p>RuleMCP turns engineering standards into executable workflows.</p>
 </section>
 
 <section>
@@ -19,16 +24,19 @@
       <left>
         <figure>
           <picture>
-            <source srcset="/pixu.8dc4bcd7.webp" type="image/webp">
-            <img src="/pixu.8cd71433.jpg" alt="Pixu">
+            <source srcset="pixu.ea6d4c65.webp" type="image/webp">
+            <img src="pixu.06482de6.jpg" alt="Pixu">
           </picture>
         </figure>
         <h3>Emiliano <mark>Pisu</mark></h3>
         <small balance="" class="fragment">
-          <p><mark>Father</mark> of 2 lovely "monsters"</p>
-          <p><mark>D&amp;D</mark> master, player ... whatever</p>
           <p>
-            Senior <mark>Design Engineer</mark>, <mark>Sensei</mark> &amp; Co-Host
+            Head of <mark>DevX</mark>
+            <br>
+            @ <mark>Webidoo</mark> Engineering
+          </p>
+          <p>
+            <mark>Sensei</mark> &amp; Co-Host
             <br>
             @ Dev <mark>Dojo</mark> IT
           </p>
@@ -36,31 +44,31 @@
       </left>
       <right class="fragment">
         <h6>
-          <img src="/linkedin.1b8d1573.svg" alt="pixu1980@linkedin">
+          <img src="linkedin.2f713ea5.svg" alt="pixu1980@linkedin">
           linkedin.com/in/pixu1980
         </h6>
         <h6>
-          <img src="/github.dd65c88f.svg" alt="pixu1980@github">
+          <img src="github.b4a81907.svg" alt="pixu1980@github">
           github.com/pixu1980
         </h6>
         <h6>
-          <img src="/codepen.1d70fbe2.svg" alt="pixu1980@codepen">
+          <img src="codepen.8164e268.svg" alt="pixu1980@codepen">
           codepen.io/pixu1980
         </h6>
         <h6>
-          <img src="/linkedin.1b8d1573.svg" alt="devdojo@linkedin">
+          <img src="linkedin.2f713ea5.svg" alt="devdojo@linkedin">
           linkedin.com/company/dev-dojo-it/
         </h6>
         <h6>
-          <img src="/youtube.33d88a05.svg" alt="devdojo@youtube">
+          <img src="youtube.b26cff68.svg" alt="devdojo@youtube">
           youtube.com/@devdojo_it
         </h6>
         <h6>
-          <img src="/twitch.b8c97bdd.svg" alt="devdojo@twitch">
+          <img src="twitch.2a5c37f8.svg" alt="devdojo@twitch">
           twitch.tv/devdojo_it
         </h6>
         <h6>
-          <img src="/telegram.baf0a86a.svg" alt="devdojo@telegram">
+          <img src="telegram.bea23548.svg" alt="devdojo@telegram">
           @devdojo_it
         </h6>
       </right>
@@ -68,238 +76,348 @@
   </section>
 </section>
 
-<section>
-  <section balance="">
-    <h3>What if your MCP server <mark>enforced standards</mark> instead of only exposing tools?</h3>
-  </section>
-  <section balance="">
-    <h4><mark>pix-galaxy-mcp</mark></h4>
-    <small balance="">89 skills · 107 tools · 186 resources · 37 prompts · 40 slash commands.</small>
-  </section>
+
+<!-- 2. What I do -->
+<section data-part="slide" data-chapter="who" data-menu-title="What I do">
+  <p data-kicker="">What I do</p>
+  <h2>Head of <mark>DevX</mark> at <mark>Webidoo</mark></h2>
+  <p>I own the path from a developer's intent to a shipped change.</p>
+  <figure data-layout="three-paths" aria-label="What the role covers">
+    <article><strong>Guidance</strong><small>Docs, guides and standards a team can follow</small></article>
+    <article><strong>Tooling</strong><small>Scripts, pipelines and agents that apply them</small></article>
+    <article><strong>Evidence</strong><small>Measurements that show what actually shipped</small></article>
+  </figure>
+  <aside class="notes">Speaker's description of the Head of DevX role, confirmed in the talk interview.</aside>
+</section>
+
+<section data-part="slide" data-chapter="who" data-menu-title="In a company">
+  <p data-kicker="">What I do</p>
+  <h2>Shared standards.<br><mark>Continuity.</mark></h2>
+  <ol data-layout="takeaways">
+    <li><mark>One standard</mark>: the rules do not change with the repository.</li>
+    <li><mark>No lost context</mark>: a handover keeps what the last person knew.</li>
+  </ol>
+  <aside class="notes">These are goals for company workflows, not guarantees. Confirmed in the talk interview.</aside>
+</section>
+
+<section data-part="slide" data-chapter="who" data-menu-title="Review and cost">
+  <p data-kicker="">What I do</p>
+  <h2>Reviewable work.<br><mark>Measured cost.</mark></h2>
+  <ol data-layout="takeaways" start="3">
+    <li><mark>Reviewable output</mark>: a change can be checked before it lands.</li>
+    <li><mark>Measured cost</mark>: tokens and time are part of the bill.</li>
+  </ol>
+  <aside class="notes">These are goals for company workflows, not guarantees. Context and cost needs were confirmed in the talk interview.</aside>
+</section>
+
+<section data-part="slide" data-chapter="who" data-menu-title="Dev Dojo">
+  <p data-kicker="">What I do</p>
+  <h2>The same work, <mark>outside</mark> the company</h2>
+  <p>Dev <mark>Dojo</mark> IT runs the same playbook in public: talks, workshops and open-source tooling. Standards that survive a team also survive a community.</p>
+  <figure data-layout="split" aria-label="Two places, one playbook">
+    <article><strong>Webidoo</strong><small>Teams, products, delivery</small></article>
+    <article><strong>Dev Dojo</strong><small>Talks, workshops, open source</small></article>
+  </figure>
+  <aside class="notes">The speaker confirmed Dev Dojo's talks, workshops and open-source activities in the talk interview.</aside>
 </section>
 
 
-<section>
-  <section>
-    <h4>What are we going to <br><mark>talk about</mark> today?</h4>
-  </section>
-  <section>
-    <h4>Six <mark>mechanisms</mark></h4>
-    <small>
-      <ul>
-        <li class="fragment"><mark>Cache</mark>: reuse the answer until a skill changes</li>
-        <li class="fragment"><mark>Flight Recorder</mark>: every call, measured locally</li>
-        <li class="fragment"><mark>Handoff / Handon</mark>: end a session, resume it verified</li>
-        <li class="fragment"><mark>Personas</mark>: 19 expert roles, one command each</li>
-        <li class="fragment"><mark>Areas</mark>: 11 hubs that route free text</li>
-        <li class="fragment"><mark>Guardrails</mark>: deterministic rules that gate the output</li>
-      </ul>
-    </small>
-  </section>
+<!-- 3. The need -->
+<section data-part="slide" data-chapter="need" data-menu-title="The task">
+  <p data-kicker="">The need</p>
+  <h2>The request looks simple</h2>
+  <blockquote>Build an accessible app with tests, docs, and a design system.</blockquote>
+  <p>What makes it hard is not the request. It is the <mark>rotation</mark>: people leave, new colleagues join, and a different agent takes the next ticket.</p>
+  <aside class="notes">Illustrative request. The rotation of people and coding agents is the speaker's stated motivation.</aside>
 </section>
 
-<section class="slide-dive-in" data-auto-animate="">
-  <div sr-only="" data-menu-title="">Let's dive in</div>
-  <dive-in>
-    <stack-container>
-      <stack-item>Let's <mark>dive</mark> in</stack-item>
-      <stack-item>Let's <mark>dive</mark> in</stack-item>
-      <stack-item>Let's <mark>dive</mark> in</stack-item>
-      <stack-item>Let's <mark>dive</mark> in</stack-item>
-      <stack-item>Let's <mark>dive</mark> in</stack-item>
-    </stack-container>
-  </dive-in>
+<section data-part="slide" data-chapter="need" data-menu-title="Manual workflow">
+  <p data-kicker="">The need</p>
+  <h2>Without a shared server, the work repeats</h2>
+  <p>Every session and every handover starts from zero.</p>
+  <ol data-layout="steps">
+    <li>Explain every standard again.</li>
+    <li>Find the right guide.</li>
+    <li>Repeat the missing rules.</li>
+    <li>Review the output.</li>
+    <li>Ask for fixes.</li>
+  </ol>
+  <p><mark>Five steps</mark>, for every task and every new person.</p>
+  <aside class="notes">Illustrative workflow, not a measured count. Repetition across sessions and handovers was confirmed in the talk interview.</aside>
+</section>
+
+<section data-part="slide" data-chapter="need" data-menu-title="Weak contracts">
+  <p data-kicker="">The need</p>
+  <h2>Prompt rules are <mark>weak contracts</mark></h2>
+  <ul>
+    <li>Long prompts consume the context the task needs.</li>
+    <li>An agent can skip an instruction, and nothing stops it.</li>
+    <li>Reviews happen after generation, not before.</li>
+  </ul>
+  <aside class="notes">Prompt instructions can be missed and require review; the speaker confirmed this workflow in the talk interview.</aside>
+</section>
+
+<section data-part="slide" data-chapter="need" data-menu-title="Model drift">
+  <p data-kicker="">The need</p>
+  <h2>Same request. <mark>Different outcomes.</mark></h2>
+  <figure data-layout="three-paths" aria-label="Same prompt, three models">
+    <article><strong>Model A</strong><small>Complete</small></article>
+    <article><strong>Model B</strong><small>One fix needed</small></article>
+    <article><strong>Model C</strong><small>Three fixes needed</small></article>
+  </figure>
+  <small>Illustrative example, not benchmark results.</small>
+  <p><mark>Policy</mark> has to live somewhere a model cannot skip.</p>
+  <aside class="notes">Illustrative example. For measured results, see docs/research/benchmark-evidence.md.</aside>
 </section>
 
 
-<section>
-  <section data-topic="what" data-menu-title="What">
-    <h3><mark>What</mark></h3>
-    <small balance="">A local MCP server for the pix skill catalog: tools, resources, prompts, and guardrails ,  deterministic, model-agnostic.</small>
-    <small>
-      <ul>
-        <li class="fragment"><mark>Tools</mark> the agent can call (route, check, scaffold, search)</li>
-        <li class="fragment"><mark>Resources</mark> it can read (<code>pix://</code> skill evidence)</li>
-        <li class="fragment"><mark>Prompts / slash commands</mark> that start the right workflow</li>
-      </ul>
-    </small>
-  </section>
+<!-- Act 2 — What we tried, what came out, what the idea is -->
 
-  <section data-topic="what" data-menu-title="Surface">
-    <h4>Live surface</h4>
-    <small>
-      <table>
-        <tbody>
-          <tr><td><mark>89</mark></td><td>catalog skills</td></tr>
-          <tr><td><mark>107</mark></td><td>MCP tools (18 action + 89 skill)</td></tr>
-          <tr><td><mark>186</mark></td><td>resources</td></tr>
-          <tr><td><mark>37</mark></td><td>prompts · <mark>40</mark> slash commands</td></tr>
-        </tbody>
-      </table>
-    </small>
-    <aside class="notes">Counts from pix-galaxy-mcp pnpm census.</aside>
-  </section>
+<!-- 4. Experiments -->
+<section data-part="slide" data-chapter="experiments" data-menu-title="Experiments">
+  <p data-kicker="">Experiments</p>
+  <h2>Two projects. <mark>Three models.</mark></h2>
+  <p>The same project prompt for each model; six measured sessions in total.</p>
+  <ul><li>Phonebook: Electron and React.</li><li>Bookmarks: React and Express.</li><li>Session logs report billed cost, iterations and outcomes.</li></ul>
+  <p>These are case studies, not a controlled comparison without the server.</p>
+  <aside class="notes">Method: docs/research/benchmark-evidence.md §1 and §4. The agents also differed across models; costs are billed API usage, not person-hours.</aside>
 </section>
 
-<section>
-  <section data-topic="why" data-menu-title="Why">
-    <h3><mark>Why</mark></h3>
-    <small balance="">Vague conventions cannot be enforced. Models drift. Nothing gates the output.</small>
-    <small>
-      <ul>
-        <li class="fragment">Same prompt → different quality per model</li>
-        <li class="fragment">No measurable “best practice” without a check</li>
-        <li class="fragment">Server-side rules stay identical for every model</li>
-      </ul>
-    </small>
-  </section>
-
-  <section data-topic="why" data-menu-title="Deterministic">
-    <h4><mark>Deterministic</mark> = model-agnostic</h4>
-    <small balance="">The agent still calls the model. The server compresses what it reads and gates what it writes.</small>
-    <small>
-      <ul>
-        <li class="fragment">Routing, evidence and guardrails arrive <mark>compressed</mark>, so the tokens go to the answer</li>
-        <li class="fragment">The same rules run behind Claude, GPT, Gemini, Llama, Qwen…</li>
-        <li class="fragment">Local-first: skills on disk</li>
-      </ul>
-    </small>
-  </section>
+<section data-part="slide" data-chapter="experiments" data-menu-title="Experiments">
+  <p data-kicker="">Experiments</p>
+  <h2>Experiment: <mark>Phonebook</mark></h2>
+  <p>One prompt to build an Electron and React contact app.</p>
+  <figure data-layout="three-paths" aria-label="Phonebook iterations by model">
+    <article><strong>Sonnet 4.6</strong><small>1 user iteration</small></article>
+    <article><strong>GPT 5.6 Luna</strong><small>1 user iteration; 2 technical retries</small></article>
+    <article><strong>DeepSeek V4 Flash</strong><small>4 user iterations</small></article>
+  </figure>
+  <aside class="notes">Source: docs/research/benchmark-evidence.md §2.1. This is one session per model, not a statistical sample.</aside>
 </section>
 
-<section>
-  <section data-topic="how" data-menu-title="How">
-    <h3><mark>How</mark></h3>
-    <small balance="">One request path for every agent.</small>
-    <pre class="fragment">Agent → MCP → Router → Skill/Tool → Guardrails → Response</pre>
-  </section>
-
-  <section data-topic="how" data-menu-title="Command · Tool · Skill">
-    <h4>Command · Tool · Skill</h4>
-    <small balance="">Slash stays dash, tools stay underscore, skills stay dash. The census keeps the three names aligned.</small>
-    <small>
-      <table>
-        <thead>
-          <tr><td>Command</td><td>Tool</td><td>Skill</td></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>/pix</code></td><td><code>pix_tool</code></td><td><code>pix</code></td></tr>
-          <tr><td><code>/pix-area-ui</code></td><td><code>pix_tool_ui</code></td><td><code>pix-ui</code></td></tr>
-          <tr><td><code>/pix-check</code></td><td><code>pix_tool_check</code></td><td>routed skill</td></tr>
-          <tr><td><code>/pix-fix</code></td><td><code>pix_tool_fix</code></td><td>all rules</td></tr>
-        </tbody>
-      </table>
-    </small>
-  </section>
+<section data-part="slide" data-chapter="experiments" data-menu-title="Experiments">
+  <p data-kicker="">Experiments</p>
+  <h2>Experiment: <mark>Bookmarks</mark></h2>
+  <p>One prompt to build a full-stack bookmark manager.</p>
+  <figure data-layout="three-paths" aria-label="Bookmark manager iterations by model">
+    <article><strong>Sonnet 5</strong><small>1 user iteration</small></article>
+    <article><strong>GPT 5.6 Luna</strong><small>2 user iterations</small></article>
+    <article><strong>DeepSeek V4 Flash</strong><small>3 user iterations</small></article>
+  </figure>
+  <aside class="notes">Source: docs/research/benchmark-evidence.md §3.1. The GPT follow-up fixed CORS. Each result represents one session.</aside>
 </section>
 
-<section>
-  <section data-topic="cache" data-menu-title="Cache">
-    <h4><mark>Cache</mark></h4>
-    <small balance="">A result is reused until a skill it read changes.</small>
-    <small>
-      <ul>
-        <li class="fragment">Key: tool + arguments + the digest of every skill the answer used</li>
-        <li class="fragment">Editing one skill drops only the entries that depended on it</li>
-        <li class="fragment">Hit or miss, the answer is the same bytes</li>
-      </ul>
-    </small>
-  </section>
-
-  <section data-topic="flight" data-menu-title="Flight Recorder">
-    <h4><mark>Flight Recorder</mark></h4>
-    <small balance="">Every call is recorded locally, on this machine.</small>
-    <small>
-      <ul>
-        <li class="fragment">Calls, cache hits, tokens saved, latency, cost per session</li>
-        <li class="fragment"><code>/pix-stats</code>: reads the log back</li>
-        <li class="fragment">Nothing leaves the machine; secrets are redacted</li>
-      </ul>
-    </small>
-  </section>
-
-  <section data-topic="handoff" data-menu-title="Handoff / Handon">
-    <h4><mark>Handoff</mark> / <mark>Handon</mark></h4>
-    <small balance="">A session ends with a file, not with a lost context.</small>
-    <small>
-      <ul>
-        <li class="fragment"><code>/pix-handoff</code>: commits pending work in atomic commits, writes the handoff</li>
-        <li class="fragment"><code>/pix-handon</code>: verifies every claim against the repository before trusting it</li>
-        <li class="fragment">Each claim arrives labeled still true, changed, or unverified</li>
-      </ul>
-    </small>
-  </section>
-
-  <section data-topic="personas" data-menu-title="Personas">
-    <h4><mark>Personas</mark></h4>
-    <small balance="">19 expert roles, one command each.</small>
-    <small>
-      <ul>
-        <li class="fragment"><code>/pix-persona-security</code> asks one role for a run</li>
-        <li class="fragment">The request decides the depth: audit, audit + review, audit + review + plan</li>
-        <li class="fragment">The run writes <code>docs/audits</code>, <code>docs/reviews</code>, <code>docs/plans</code></li>
-      </ul>
-    </small>
-  </section>
-
-  <section data-topic="areas" data-menu-title="Areas">
-    <h4><mark>Areas</mark></h4>
-    <small balance="">11 hubs route free text to the leaf skills.</small>
-    <small>
-      <ul>
-        <li class="fragment"><code>/pix-area-frontend</code> collects the request</li>
-        <li class="fragment">The hub names the leaf skills and tools to load</li>
-        <li class="fragment">Leaf skills keep tools, no per-leaf slash</li>
-      </ul>
-    </small>
-  </section>
-
-  <section data-topic="guardrails" data-menu-title="Guardrails">
-    <h4><mark>Guardrails</mark></h4>
-    <small balance="">Each skill ships the rules it can prove.</small>
-    <small>
-      <ul>
-        <li class="fragment"><code>/pix-check</code>: reports failures against the routed skills applying all the related guardrails</li>
-        <li class="fragment"><code>/pix-fix</code>; applies the mechanical fixes for blank lines, braces, ASCII, spelling and all the other guardrails</li>
-        <li class="fragment">A failed guardrail blocks the write, not the model's turn</li>
-      </ul>
-    </small>
-  </section>
+<section data-part="slide" data-chapter="experiments" data-menu-title="Experiments">
+  <p data-kicker="">Experiments</p>
+  <h2>Not every experiment <mark>worked</mark></h2>
+  <ul><li>None of the three models used caveman or tokensave for reading in either benchmark.</li><li>Outputs still needed review: monolithic code, missing tests or limited SSRF protection appeared in some results.</li><li>There was no measured baseline without the server.</li></ul>
+  <aside class="notes">Source: docs/research/benchmark-evidence.md §§2.1, 3.1 and 4. Do not infer a causal improvement from these observations.</aside>
 </section>
 
-<section>
-  <section data-topic="proof" data-menu-title="Proof">
-    <h3><mark>Proof</mark></h3>
-    <small balance="">Same prompt, different models, the MCP surface stays fixed.</small>
-    <small>
-      <ul>
-        <li class="fragment">Guardrails reject unsafe or off-style output before apply</li>
-        <li class="fragment">census regenerates inventories from live registries</li>
-        <li class="fragment">Docs site: Home · Getting Started · Reference</li>
-      </ul>
-    </small>
-  </section>
+<section data-part="slide" data-chapter="experiments" data-menu-title="Experiments">
+  <p data-kicker="">Experiments</p>
+  <h2>Beyond the benchmarks: <mark>PoCs</mark></h2>
+  <p>Other company prototypes explored different kinds of work.</p>
+  <figure data-layout="agent-row" aria-label="Other prototypes"><span>link-manager</span><span>react-gantt</span><span>token-forge</span><span>vinyl-collection</span></figure>
+  <p>These examples have no benchmark report; they are not part of the six measured sessions.</p>
+  <aside class="notes">Source: docs/research/benchmark-evidence.md §5, other existing PoCs. Do not claim measured results or adoption levels.</aside>
 </section>
 
-<!-- Commented out until the MCP server is released.
 
-<section>
-  <section data-topic="cta" data-menu-title="Try it">
-    <h3><mark>Try it</mark></h3>
-    <small balance>Clone · install · wire your agent · open the docs.</small>
-    <small>
-      <ul>
-        <li class="fragment"><code>github.com/pixu1980/pix-galaxy-mcp</code></li>
-        <li class="fragment"><code>pnpm install && ./scripts/install.sh</code></li>
-        <li class="fragment"><code>pix-galaxy-mcp doctor</code> · <code>pnpm docs:dev</code></li>
-      </ul>
-    </small>
-  </section>
+<!-- 5. The idea -->
+<section data-part="slide" data-chapter="idea" data-menu-title="The idea">
+  <p data-kicker="">The idea</p>
+  <h2>One rule set.<br>Every coding agent.<br><mark>Every Dev.</mark></h2>
+  <p>Shared standards should travel with the work.</p>
 </section>
 
--->
+<section data-part="slide" data-chapter="idea" data-menu-title="The idea">
+  <p data-kicker="">The idea</p>
+  <h2>One idea, <mark>three principles</mark></h2>
+  <figure data-layout="three-paths" aria-label="Three principles">
+    <article><strong>Deterministic</strong><small>Checks follow explicit rules.</small></article>
+    <article><strong>Local-first</strong><small>Standards live close to the work.</small></article>
+    <article><strong>Measurable</strong><small>Results can be inspected.</small></article>
+  </figure>
+</section>
+
+<section data-part="slide" data-chapter="intro" data-menu-title="Story">
+  <h2>One task. Many agents.</h2>
+  <p>We will follow one request from prompt to verified result.</p>
+  <figure data-layout="agent-row" aria-label="Coding agents">
+    <span>Claude</span>
+    <span>Codex</span>
+    <span>Gemini</span>
+    <span>Cursor</span>
+    <span>Pi</span>
+  </figure>
+</section>
+
+<section data-part="slide" data-chapter="idea" data-menu-title="The idea">
+  <p data-kicker="">The idea</p>
+  <h2>Move the standards <mark>outside the prompt</mark></h2>
+  <figure data-layout="split" aria-label="Prompt-only approach compared with shared standards">
+    <article><strong>Prompt only</strong><small>Repeat the rules in every conversation.</small></article>
+    <article><strong>Shared server</strong><small>Give people and agents a common reference.</small></article>
+  </figure>
+</section>
 
 
+<!-- 6. The solution -->
+<section data-part="slide" data-chapter="solution" data-menu-title="Architecture">
+  <p data-kicker="">The solution</p>
+  <h2>From request to <mark>evidence</mark></h2>
+  <figure data-layout="agent-row" aria-label="Request path"><span>Agent</span><span>MCP</span><span>Router</span><span>Skill</span><span>Checks</span></figure>
+  <p>The model stays in the agent. The server routes and checks.</p>
+  <aside class="notes">rule-mcp/docs/02-architecture.md, Request path.</aside>
+</section>
+
+<section data-part="slide" data-chapter="solution" data-menu-title="Gateway">
+  <p data-kicker="">The solution</p>
+  <h2>A <mark>gate</mark> before writing</h2>
+  <figure data-layout="agent-row" aria-label="Gateway and apply flow"><span>Route</span><span>Check</span><span>Receipt</span><span>Apply</span></figure>
+  <p>The receipt ties the checked content to the apply step.</p>
+  <aside class="notes">MCP tool descriptions: rule_tool_gateway and rule_tool_apply. Apply defaults to preview; a valid receipt is required for writing.</aside>
+</section>
+
+<section data-part="slide" data-chapter="solution" data-menu-title="Cache">
+  <p data-kicker="">The solution</p>
+  <h2><mark>Cache</mark> the result</h2>
+  <p>Reuse a tool response instead of computing it again.</p>
+  <p>Inspect it with <code>rule-mcp cache stats</code>.</p>
+  <aside class="notes">rule-mcp/docs/01-getting-started.md, main flows: Cache.</aside>
+</section>
+
+<section data-part="slide" data-chapter="solution" data-menu-title="Flight Recorder">
+  <p data-kicker="">The solution</p>
+  <h2><mark>Flight Recorder</mark></h2>
+  <p>Calls and usage can be inspected on your machine.</p>
+  <p><code>rule-mcp stats</code> reads the local data.</p>
+  <aside class="notes">rule-mcp/docs/11-privacy.md, summary and local data. Telemetry can be disabled; prompts may be recorded unless disabled.</aside>
+</section>
+
+<section data-part="slide" data-chapter="solution" data-menu-title="Handoff">
+  <p data-kicker="">The solution</p>
+  <h2>End a session. <mark>Resume with context.</mark></h2>
+  <figure data-layout="split" aria-label="Handoff and handon"><article><strong>Handoff</strong><small>Write the session handoff.</small></article><article><strong>Handon</strong><small>Compare it with the repository.</small></article></figure>
+  <aside class="notes">rule-mcp/docs/01-getting-started.md, main flows: Handoff.</aside>
+</section>
+
+<section data-part="slide" data-chapter="solution" data-menu-title="Personas">
+  <p data-kicker="">The solution</p>
+  <h2>One task. <mark>Different lenses.</mark></h2>
+  <p>Personas bring review roles to an audit, review or plan.</p>
+  <figure data-layout="agent-row" aria-label="Example review roles"><span>Security</span><span>Accessibility</span><span>Architecture</span></figure>
+  <aside class="notes">rule-mcp/docs/01-getting-started.md, main flows: Personas; docs/18-personas.md.</aside>
+</section>
+
+<section data-part="slide" data-chapter="solution" data-menu-title="Areas">
+  <p data-kicker="">The solution</p>
+  <h2>From a request to <mark>the right skill</mark></h2>
+  <p>Area hubs route broad requests to more specific skills.</p>
+  <figure data-layout="agent-row" aria-label="Examples of area hubs"><span>Frontend</span><span>Backend</span><span>Data</span><span>Styleguide</span></figure>
+  <aside class="notes">rule-mcp/docs/02-architecture.md, skill layers and design rules; docs/21-surface-map.md.</aside>
+</section>
+
+<section data-part="slide" data-chapter="solution" data-menu-title="Guardrails">
+  <p data-kicker="">The solution</p>
+  <h2>Rules become <mark>checks</mark></h2>
+  <p><code>rule_tool_check</code> runs deterministic guardrails.</p>
+  <p>A failure signals work that must be fixed before proceeding.</p>
+  <aside class="notes">rule-mcp/docs/01-getting-started.md, main flows: Check and Fix. Workflow enforcement depends on the integration.</aside>
+</section>
+
+<section data-part="slide" data-chapter="solution" data-menu-title="Surface">
+  <p data-kicker="">The solution</p>
+  <h2>The server's <mark>surface</mark></h2>
+  <figure data-layout="three-paths" aria-label="MCP surfaces"><article><strong>Tools</strong><small>Route and check</small></article><article><strong>Resources</strong><small>Read skill evidence</small></article><article><strong>Prompts</strong><small>Start workflows</small></article></figure>
+  <aside class="notes">rule-mcp/README.md and docs/02-architecture.md, Surfaces. Counts intentionally omitted: the local current census differs from the historical talk plan.</aside>
+</section>
+
+<section data-part="slide" data-chapter="solution" data-menu-title="Installer">
+  <p data-kicker="">The solution</p>
+  <h2>Connect the <mark>agent</mark></h2>
+  <p>The setup wizard detects agents and writes their MCP configuration.</p>
+  <p><code>rule-mcp doctor</code> checks the installation.</p>
+  <aside class="notes">rule-mcp/docs/01-getting-started.md, Install and Do a check of the install. Demo decision deferred.</aside>
+</section>
+
+
+<!-- Act 3 — Proof, call to action, goodbye -->
+
+<!-- 7. Case studies -->
+<section data-part="slide" data-chapter="closing" data-menu-title="Case study: Phonebook">
+  <p data-kicker="">Case studies</p>
+  <h2>Phonebook: <mark>one request</mark></h2>
+  <p>Three models built the same Electron and React contact app.</p>
+  <p>In the recorded sessions, the number of user iterations ranged from <mark>1 to 4</mark>.</p>
+  <aside class="notes">docs/research/benchmark-evidence.md §2.1. The GPT session also required two technical retries. Screenshots remain to be captured.</aside>
+</section>
+
+<section data-part="slide" data-chapter="closing" data-menu-title="Phonebook preview">
+  <p data-kicker="">Case studies</p>
+  <h2>Phonebook <mark>preview</mark></h2>
+  <figure>
+    <img src="phonebook.2c07a7c9.png" alt="Phonebook application preview" width="800">
+    <figcaption><small>Browser preview with bundled sample contacts.</small></figcaption>
+  </figure>
+  <aside class="notes">Screenshot captured with Playwright from the benchmark application. Browser preview with bundled sample contacts.</aside>
+</section>
+
+<section data-part="slide" data-chapter="closing" data-menu-title="Case study: Bookmarks">
+  <p data-kicker="">Case studies</p>
+  <h2>Bookmarks: <mark>full-stack</mark></h2>
+  <p>Three models tackled a React and Express bookmark manager.</p>
+  <p>The recorded sessions required <mark>1 to 3</mark> user iterations.</p>
+  <aside class="notes">docs/research/benchmark-evidence.md §3.1. A single session per model; screenshots remain to be captured.</aside>
+</section>
+
+<section data-part="slide" data-chapter="closing" data-menu-title="Bookmarks preview">
+  <p data-kicker="">Case studies</p>
+  <h2>Bookmarks <mark>preview</mark></h2>
+  <figure>
+    <img src="bookmarks.3e824ce8.png" alt="Bookmarks application preview" width="800">
+    <figcaption><small>Browser preview with an empty mocked API response.</small></figcaption>
+  </figure>
+  <aside class="notes">Screenshot captured with Playwright from the benchmark application. Browser preview with an empty mocked API response.</aside>
+</section>
+
+<section data-part="slide" data-chapter="closing" data-menu-title="DevX context">
+  <p data-kicker="">Case studies</p>
+  <h2>From experiment to <mark>team workflow</mark></h2>
+  <p>People and coding agents change. The team still needs a shared way to find and check its standards.</p>
+  <aside class="notes">The speaker confirmed the team context and rotation need during the interview. No deployment or adoption metrics are claimed.</aside>
+</section>
+
+<section data-part="slide" data-chapter="closing" data-menu-title="Case study insight">
+  <p data-kicker="">Case studies</p>
+  <h2>What the results <mark>do not prove</mark></h2>
+  <p>Different outcomes appeared across models and sessions.</p>
+  <p>Without a no-server baseline, these experiments cannot establish a causal improvement.</p>
+  <aside class="notes">docs/research/benchmark-evidence.md §§1–4. Agents also differed across models.</aside>
+</section>
+
+
+<!-- 8. Contribute -->
+<section data-part="slide" data-chapter="closing" data-menu-title="Contribute">
+  <p data-kicker="">Contribute</p>
+  <h2>Bring your <mark>standards</mark></h2>
+  <ol><li>Try the server.</li><li>Write a skill.</li><li>Report what breaks.</li><li>Share what your team needs.</li></ol>
+  <aside class="notes">Audience calls to action agreed in the talk interview.</aside>
+</section>
+
+<section data-part="slide" data-chapter="closing" data-menu-title="Get started">
+  <p data-kicker="">Contribute</p>
+  <h2>Get started with <mark>RuleMCP</mark></h2>
+  <p><a href="https://github.com/pixu1980/rule-mcp">github.com/pixu1980/rule-mcp</a></p>
+  <pre><code>pnpm install --frozen-lockfile
+./scripts/install.sh</code></pre>
+  <p>Run from the cloned repository; see the getting-started guide.</p>
+  <aside class="notes">rule-mcp/docs/01-getting-started.md. Installation runs project setup; consult the guide before running commands.</aside>
+</section>
+
+
+<!-- 9. Goodbye -->
 <section>
   <section data-transition="convex">
     <h4>Wrapping <mark>up</mark></h4>
@@ -321,7 +439,9 @@
   <!-- <include src="./slides/outro/_links.html"></include> -->
   <section class="slide-outro-taf" data-transition="convex">
   <!-- <div sr-only data-menu-title>That's All Folks</div> -->
-  <audio data-autoplay="" src="/taf.d3b3531a.mp3"></audio>
+  <audio data-autoplay="" src="taf.f9b512b9.mp3">
+    <track kind="captions" src="taf-captions.ed55937e.vtt" srclang="en" label="English" default="">
+  </audio>
   <div class="taf-wrapper">
     <div class="circles">
       <div class="circle one"></div>
@@ -334,11 +454,12 @@
     </div>
     <figure speaker="">
       <picture>
-        <source srcset="/pixu.8dc4bcd7.webp" type="image/webp">
-        <img src="/pixu.8cd71433.jpg" alt="Pixu">
+        <source srcset="pixu.ea6d4c65.webp" type="image/webp">
+        <img src="pixu.06482de6.jpg" alt="Pixu">
       </picture>
     </figure>
     <svg style="isolation: isolate" viewBox="0 0 566.44 157.5">
+      <title>That’s all folks</title>
       <g id="thats-all-folks">
         <path id="Q1" data-name="Q1" d="M14.07,103.92c-1.34,6.6-2,9.89-3.2,16.46l-1.65.87c.14-6,.23-9,.46-15Z"></path>
         <path id="Q2" data-name="Q2" d="M22.06,99.79c-1.4,6.62-2.07,9.91-3.35,16.49l-1.66.86c.21-6,.34-9,.62-15.09Z"></path>
@@ -394,12 +515,12 @@
       </div>
       <a brand="" href="https://www.devdojo.it" target="_blank" rel="noopener noreferrer">
   <figure>
-    <img src="/dev-dojo.2f055838.png" alt="Dev Dojo IT Logo">
+    <img src="dev-dojo.3f2f430c.png" alt="Dev Dojo IT Logo">
   </figure>
 </a>
 
     </main>
-    <script src="/talk-deterministic-mcp.c6396971.js" type="module"></script>
+    <script src="talk-deterministic-mcp.92459834.js" type="module"></script>
   
 
 </body></html>

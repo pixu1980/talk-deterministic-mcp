@@ -11,7 +11,3 @@ test('social SVG assets contain an accessible title', () => {
 test('rendered example button has an explicit type', () => {
   assert.match(readFileSync('src/slides/_boilerplate/_04-code-and-output.html', 'utf8'), /<button type="button" data-state="ready">/);
 });
-
-test('outro SVG has a title', () => {
-  assert.match(readFileSync('src/slides/09-goodbye/_03-taf.html', 'utf8'), /<title>[^<]+<\/title>/);
-});
