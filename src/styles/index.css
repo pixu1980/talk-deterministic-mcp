@@ -47,3 +47,198 @@
 	stroke: currentColor;
 	stroke-width: 1.5;
 }
+/* Ported from fix/visual-rework: the intro slides keep their own vocabulary
+   (data-part, data-kicker, figure[data-layout]) and the matrix rain. */
+
+:root {
+	--talk-border: color-mix(in srgb, currentColor 24%, transparent);
+	--talk-surface: color-mix(in srgb, currentColor 7%, transparent);
+	--talk-soft: color-mix(in srgb, var(--r-highlight-color) 14%, transparent);
+}
+
+section[data-part="slide"] {
+	font-size: 0.68em;
+	line-height: 1.25;
+	text-wrap: balance;
+}
+
+section[data-part="slide"] h1 {
+	font-size: 2.05em;
+	line-height: 1.05;
+}
+
+section[data-part="slide"] h2 {
+	font-size: 1.55em;
+	line-height: 1.1;
+}
+
+section[data-part="slide"] h3,
+section[data-part="slide"] h4 {
+	font-size: 1.3em;
+	line-height: 1.15;
+}
+
+section[data-part="slide"] p,
+section[data-part="slide"] li,
+section[data-part="slide"] td,
+section[data-part="slide"] th {
+	line-height: 1.3;
+}
+
+section[data-chapter] > p {
+	max-inline-size: 30em;
+	margin-inline: auto;
+}
+
+p[data-kicker] {
+	color: var(--r-highlight-color);
+	font-size: 0.55em;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+blockquote {
+	max-inline-size: 24em;
+	margin: 1.5em auto 0;
+	padding: 1em 1.2em;
+	border-inline-start: 0.16em solid var(--r-highlight-color);
+	background: var(--talk-surface);
+	text-align: start;
+}
+
+figure[data-layout] {
+	max-inline-size: 32em;
+	margin: 1.4em auto 0;
+	line-height: 1.25;
+}
+
+section[data-part="slide"] figure[data-layout] + p,
+section[data-part="slide"] table[data-layout] + p {
+	margin-block-start: 0.8em;
+}
+
+figure[data-layout] article {
+	display: flex;
+	flex: 1 1 10em;
+	flex-direction: column;
+	justify-content: center;
+	gap: 0.35em;
+	min-block-size: 4.5em;
+	padding: 0.8em;
+	border: 0.04em solid var(--talk-border);
+	border-radius: 0.45em;
+	background: var(--talk-surface);
+}
+
+figure[data-layout] article strong {
+	color: var(--r-highlight-color);
+}
+
+figure[data-layout] article small {
+	font-size: 0.75em;
+}
+
+figure[data-layout="agent-row"],
+figure[data-layout="area-cloud"],
+figure[data-layout="many-to-one"] {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.45em;
+}
+
+figure[data-layout="agent-row"] span,
+figure[data-layout="area-cloud"] span,
+figure[data-layout="many-to-one"] span {
+	padding: 0.35em 0.65em;
+	border: 0.04em solid var(--talk-border);
+	border-radius: 99em;
+	background: var(--talk-surface);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.62em;
+	line-height: 1.1;
+}
+
+/* Matrix rain - deck background, shown only on the title slide */
+
+main.reveal > matrix-code {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+	pointer-events: none;
+}
+
+/* Each column holds block chars of fixed height: line-height cannot change it. */
+main.reveal > matrix-code span {
+	display: block;
+	width: 1vmax;
+	height: 1vmax;
+	font-size: 1vmax;
+	color: #9bff9b11;
+	text-align: center;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+main.reveal > matrix-code[hidden] {
+	display: none;
+}
+
+/* Corner veils keep the deck controls readable over the rain. */
+main.reveal > matrix-code::before,
+main.reveal > matrix-code::after {
+	content: "";
+	position: absolute;
+	pointer-events: none;
+	background: radial-gradient(
+		ellipse at center,
+		color-mix(in srgb, var(--r-background-color) 94%, transparent) 0%,
+		color-mix(in srgb, var(--r-background-color) 76%, transparent) 50%,
+		transparent 84%
+	);
+}
+
+main.reveal > matrix-code::before {
+	inset-block-start: 0;
+	inset-inline-start: 0;
+	inline-size: 360px;
+	block-size: 170px;
+}
+
+main.reveal > matrix-code::after {
+	inset-block-end: 0;
+	inset-inline-end: 0;
+	inline-size: 320px;
+	block-size: 240px;
+}
+
+/* Veil: paints over the rain and under the text, fading at the edges. */
+section[data-matrix] > * {
+	position: relative;
+	z-index: 1;
+}
+
+section[data-matrix]::after {
+	content: "";
+	position: absolute;
+	inset: -55% -12%;
+	z-index: 0;
+	pointer-events: none;
+	background: radial-gradient(
+		ellipse at center,
+		color-mix(in srgb, var(--r-background-color) 96%, transparent) 0%,
+		color-mix(in srgb, var(--r-background-color) 82%, transparent) 45%,
+		transparent 68%
+	);
+}
+
+@media (prefers-reduced-motion: reduce), print {
+	main.reveal > matrix-code {
+		display: none;
+	}
+}
