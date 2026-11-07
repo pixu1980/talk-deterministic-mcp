@@ -15,6 +15,7 @@
 | Language         | **English** everywhere, `lang="en"` unchanged                                                                  |
 | Structure        | **3 acts / 9 chapters**, chapter = vertical stack + opener; agenda stack removed                               |
 | 1 Presentazioni  | Speaker bio only (`_pixu` component), no Dev Dojo / Webidoo block in this chapter                              |
+| Intro visual     | The intro keeps the reworked vocabulary (`data-part`, `data-kicker`, `figure[data-layout]`) **and** the matrix rain (`matrix-code.js` + CSS); the rest of the deck still uses the master theme vocabulary |
 | 2 Cosa faccio    | **Head of DevX @ Webidoo Engineering** + what working in a company demands from agents                         |
 | 3 Il bisogno     | All five blocks of the rework `02-problem`: simple request, manual workflow, model drift, weak prompt contracts, policy outside the model. Plus the **rotation** frame |
 | Rotation frame   | What rotates: **people** (turnover, onboarding) and **AI resources** (Claude/Codex/Gemini/Cursor)             |
@@ -65,7 +66,7 @@ Total: **35 slides, ~38 minutes**.
 
 ### Phase 1 — Act 1 (chapters 1-3)
 
-- [ ] **1.1** `01-presentazioni`: title slide (deck claim, no duplicated claim in chapter 5 — see open decision O1) + speaker bio
+- [ ] **1.1** `01-presentazioni`: title slide (reworked markup + matrix rain, claim bookend — see open decision O1) + speaker bio (verbatim from `fix/visual-rework`, Head of DevX and links)
 - [ ] **1.2** `02-cosa-faccio`: Head of DevX role, the company context (teams, standards, agents), Dev Dojo line
 - [ ] **1.3** `03-bisogno/_01`: simple request + rotation frame (people rotate, AI resources rotate)
 - [ ] **1.4** `03-bisogno/_02`: manual workflow without a shared server (5 steps list, existing `data-layout` style kept in master vocabulary)
