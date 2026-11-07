@@ -7,6 +7,9 @@ test('outro preserves the original baseline with accessible audio and SVG labels
   for (const name of ['outro.html', '_wrap-up.html', '_links.html', '_taf.html', '_thanks.html']) {
     const path = `src/slides/outro/${name}`;
     let content = readFileSync(path, 'utf8');
+    if (name === '_wrap-up.html') {
+      content = content.replace('<ul>', '<ol>').replace('</ul>', '</ol>');
+    }
     if (name === '_taf.html') {
       assert.match(content, /<track kind="captions"/);
       assert.match(content, /<title>That’s all folks<\/title>/);

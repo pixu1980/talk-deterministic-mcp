@@ -2,6 +2,14 @@ import { readFileSync } from 'node:fs';
 import { test } from 'node:test';
 import { strict as assert } from 'node:assert';
 
+test('roadmap appears before the closing slides', () => {
+  const deck = readFileSync('src/slides/slides.html', 'utf8');
+  const roadmap = readFileSync('src/slides/08-contribute/_03-roadmap.html', 'utf8');
+  assert.match(roadmap, /Decision Models/i);
+  assert.match(roadmap, /skills.*tools.*prompts.*resources/i);
+  assert.ok(deck.indexOf('_03-roadmap.html') >= 0 && deck.indexOf('_03-roadmap.html') < deck.indexOf('outro/outro.html'));
+});
+
 test('case study slides reference their screenshots', () => {
   for (const name of ['phonebook', 'bookmarks']) {
     const slide = readFileSync(`src/slides/07-case-studies/_0${name === 'phonebook' ? '1' : '2'}-${name}.html`, 'utf8');

@@ -2,6 +2,11 @@ import { readFileSync } from 'node:fs';
 import { test } from 'node:test';
 import { strict as assert } from 'node:assert';
 
+test('role slide uses the requested title', () => {
+  const slide = readFileSync('src/slides/02-what-i-do/_01-role.html', 'utf8');
+  assert.match(slide, /Head of <mark>DevX<\/mark> @ <mark>Webidoo<\/mark>/);
+});
+
 test('phase one narrative slides include speaker notes', () => {
   for (const file of [
     '02-what-i-do/_01-role.html',

@@ -51,7 +51,7 @@ section[data-chapter] > p {
 
 p[data-kicker] {
   color: var(--r-highlight-color);
-  font-size: 0.55em;
+  font-size: 0.66em;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -189,8 +189,8 @@ figure[data-layout='flow'] li:not(:last-child)::after {
   color: var(--r-highlight-color);
 }
 
-ol[data-layout='steps'],
-ol[data-layout='takeaways'] {
+ul[data-layout='steps'],
+ul[data-layout='takeaways'] {
   display: flex;
   flex-direction: column;
   gap: 0.45em;
@@ -198,8 +198,8 @@ ol[data-layout='takeaways'] {
   margin-inline: auto;
 }
 
-ol[data-layout='steps'] li,
-ol[data-layout='takeaways'] li {
+ul[data-layout='steps'] li,
+ul[data-layout='takeaways'] li {
   padding: 0.4em 0.6em;
   border-block-end: 0.04em solid var(--talk-border);
 }
