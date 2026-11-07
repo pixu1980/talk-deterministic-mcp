@@ -27111,7 +27111,7 @@ ${this.parser.parse(e)}</blockquote>
 `;
         }
         listitem(e) {
-            return `<li class="fragment">${this.parser.parse(e.tokens)}</li>
+            return `<li>${this.parser.parse(e.tokens)}</li>
 `;
         }
         checkbox({ checked: e }) {
@@ -28980,7 +28980,7 @@ ${this.parser.parse(e)}</blockquote>
 `;
         }
         listitem(e) {
-            return `<li class="fragment">${this.parser.parse(e.tokens)}</li>
+            return `<li>${this.parser.parse(e.tokens)}</li>
 `;
         }
         checkbox({ checked: e }) {
