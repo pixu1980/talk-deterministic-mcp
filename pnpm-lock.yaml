@@ -9,13 +9,13 @@ importers:
   .:
     dependencies:
       '@pixu-talks/core':
-        specifier: workspace:*
+        specifier: workspace:0.4.4
         version: link:../talks-libraries/packages/core
       '@pixu-talks/fonts':
-        specifier: workspace:*
+        specifier: workspace:0.4.4
         version: link:../talks-libraries/packages/fonts
       '@pixu-talks/theme':
-        specifier: workspace:*
+        specifier: workspace:0.4.4
         version: link:../talks-libraries/packages/theme
       reveal.js:
         specifier: 6.0.1
