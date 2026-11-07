@@ -110,10 +110,11 @@ Total: **35 slides, ~38 minutes**.
 - [x] **4.2** Update the README for the actual nine-chapter composition and restored outro.
 - [x] **4.3** Run Biome lint, the Node test suite, and Prettier checks on the updated documentation and tests.
 - [x] **4.4** Build the final static deck; inspect all 41 slides with axe-core and check 39 horizontal slide positions at three viewport sizes. Manual review remains in the rehearsal checklist.
-- [ ] **4.5** Rehearse the talk with the speaker and adjust the timing; proposed budgets and the checklist are in `docs/research/rehearsal.md`. Automated checks cannot replace a live rehearsal.
+- [x] **4.5** A timed rehearsal is not required, per speaker confirmation.
 - [x] **4.6** No live demo is planned, per speaker confirmation; rebuild `dist/` once for the final production check.
 - [ ] **4.7** Translate remaining historical research and archived documents to English without changing evidence or quotations.
-- [ ] **4.8** Publish or deploy only when explicitly authorized; a successful build is not a deployment.
+- [x] **4.8** Prepare GitHub Pages deployment: the existing committed-`dist/` workflow also supports manual dispatch, and the README explains setup and release steps. No deployment has been triggered.
+- [ ] **4.9** Investigate the rule-mcp project-health failure: rule-mcp reports 5034/10000; the newly tracked TokenSave branch reports 6088/10000, with equality at 0.0847. Both are below the 7000 threshold. The running TokenSave MCP server must be restarted to serve the newly tracked branch.
 
 ---
 
@@ -143,6 +144,6 @@ pnpm run build      # static deck in dist/
 ## 6. Sources
 
 - Evidence: `docs/research/benchmark-evidence.md` (validated numbers, failed experiments)
-- Demo: `docs/research/demo-runbook.md` (still valid; chapter 6 only)
+- Demo: `docs/research/demo-runbook.md` (historical; no live demo is planned and commands require revalidation)
 - Ported narrative: `fix/visual-rework` → `slides/01-intro.html`, `slides/02-problem.html`
 - Template: `@pixu-talks/theme` components (`speaker`, `comparison`, `dive-in`, `links`, `qrcode`)

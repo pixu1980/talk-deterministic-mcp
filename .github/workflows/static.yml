@@ -2,6 +2,7 @@
 name: Deploy Talk static content to Pages
 
 on:
+  workflow_dispatch:
   push:
     tags:
       - 'v*.*.*'

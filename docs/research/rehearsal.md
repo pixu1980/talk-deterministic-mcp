@@ -15,12 +15,10 @@ Target duration: 35–40 minutes. These are proposed budgets, not measurements f
 | Goodbye       |  2 min | Original wrap-up, TAF and thanks                  |
 | Transitions   |  1 min | Move between sections                             |
 
-Total target: 38 minutes. No live demo is planned, as confirmed by the speaker.
+Total target: 38 minutes. No live demo or timed rehearsal is planned, as confirmed by the speaker. The timing above is optional planning context, not a release gate.
 
-## Rehearsal checklist
+## Venue checklist
 
-- [ ] Perform one complete timed run with the speaker and record actual chapter durations.
-- [ ] Confirm that the content fits the event's speaking time and revise or omit slides as needed.
 - [ ] Check the venue's projector, contrast, sound level and reduced-motion behavior.
 - [ ] Check the external links and QR destinations that will actually be shown. The restored outro keeps its links section commented out.
 - [ ] Confirm that the sample phonebook contacts are appropriate for the intended public audience.

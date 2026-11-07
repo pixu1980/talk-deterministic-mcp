@@ -1,26 +1,25 @@
-# Demo Runbook - Talk "Deterministic MCP Server"
+# Demo Runbook — Historical "Deterministic MCP Server" Plan
 
-> **Stato**: verificato 2026-07-11 con `pix-galaxy-mcp v1.0.0` (MCP SDK 1.30.0, Node 24.19.0, darwin/arm64).
-> Ogni demo ha: prerequisiti → comandi → cosa mostrare → fallback.
+> Historical status: verified on 2026-07-11 with `pix-galaxy-mcp v1.0.0` (MCP SDK 1.30.0, Node 24.19.0, Darwin/arm64). The current talk does **not** plan a live demo. The commands and counts below describe the historical server and must be revalidated before reuse.
+>
+> Each historical demo lists prerequisites, commands, talking points, and a fallback.
 
----
+## Demo 1 — Install and doctor (~1 minute)
 
-## Demo 1 - Install + doctor (~1 min)
+### Prerequisites
 
-### Prerequisiti
+- `pix-galaxy-mcp` installed globally (`which pix-galaxy-mcp` returned `~/.pnpm/bin/pix-galaxy-mcp`).
+- Node >= 20, as required by the historical setup.
 
-- `pix-galaxy-mcp` installato globalmente (`which pix-galaxy-mcp` → `~/.pnpm/bin/pix-galaxy-mcp`)
-- Node >= 20
-
-### Comandi
+### Command
 
 ```bash
 pix-galaxy-mcp doctor
 ```
 
-### Output atteso (verificato)
+### Expected output at the time
 
-```
+```text
 ╔══════════════════════════════════════════════╗
 ║  🩺 pix-galaxy-mcp doctor                    ║
 ║  healthy                                     ║
@@ -35,32 +34,23 @@ Status: ✅ healthy
 
 ### Talking points
 
-1. "90 tools registered" → allineato al numero del deck (verificato via `docs-accuracy` test: README non può divergere dalla realtà).
-2. "Configured 2/23" → script `install --agent all` installa per tutti gli agent.
-3. Doctor è lui stesso deterministico: output identico su qualsiasi macchina.
+1. The 90 registered tools matched the historical deck and its `docs-accuracy` test.
+2. `install --agent all` installed configuration for all supported agents; the example had 2 of 23 configured.
+3. Doctor is deterministic, but actual output depends on the local machine and configuration.
 
-### Comando di riserva (se doctor fallisce)
+If doctor fails, use `pix-galaxy-mcp --help`. The historical fallback was a doctor screenshot, which had not yet been captured.
 
-```bash
-pix-galaxy-mcp --help
-```
+## Demo 2 — Gateway check/apply with preview (~2–3 minutes)
 
-### Fallback
+### Prerequisites
 
-Screenshot del doctor già salvato (TODO: catturare PNG prima della talk).
+- Server integrated with an agent, historically tested with pi or Claude.
+- A minimal example component prepared in `~/tmp/gateway-demo/`; this was still a TODO in the original runbook.
 
----
+### Flow
 
-## Demo 2 - Gateway check/apply con anteprima (~2-3 min)
+1. Call `pix_tool_gateway` with a draft component:
 
-### Prerequisiti
-
-- Server integrato con un agente (pi o claude: stress-tested con `agent integration`).
-- File di esempio pronto (TODO M7: creare `~/tmp/gateway-demo/` con un componente minimale).
-
-### Flusso
-
-1. **Gateway** - chiamare il tool MCP `pix_tool_gateway` con il componente draft:
    ```json
    {
      "prompt": "build an accessible BookmarkCard component",
@@ -68,71 +58,51 @@ Screenshot del doctor già salvato (TODO: catturare PNG prima della talk).
      "framework": "react"
    }
    ```
-2. **Mostrare il risultato guardrail** → `allPass` / failure list (a11y, naming, structure…).
-3. **Receipt** → hash del file + receipt token → prova che il codice validato è quello esatto.
-4. **Apply dry-run** (`pix_tool_apply` con `dryRun: true`) → anteprima dei file che verrebbero scritti.
-5. **Apply reale** con il receipt.
 
-### Talking points
+2. Show `allPass` or the failure list: accessibility, naming, structure and other guardrails.
+3. Show the receipt: file hash and receipt token bind validation to the exact code.
+4. Call `pix_tool_apply` with `dryRun: true` to preview the files.
+5. Apply with the receipt only after validation.
 
-- "Validate before write" - il file che fallisce i check non atterra nel repo.
-- Receipt legato all'hash esatto: codice modificato → receipt invalido.
-- Dry-run = fail-safe: nessuna sorpresa in produzione.
+Talking points: validate before writing; modified code invalidates the receipt; dry-run provides a preview. The planned fallback was a prerecorded 30-second screen capture.
 
-### Fallback
+## Demo 3 — Benchmark rerun (~3–4 minutes)
 
-Registrazione pre-registrata (Loom / cast screen 30s).
+### Prerequisites
 
----
+- An agent connected to the server; pi was recommended in the historical setup.
+- An abridged version of the bookmarks prompt.
 
-## Demo 3 - Benchmark re-run (~3-4 min)
+### Flow
 
-### Prerequisiti
+1. Paste the abridged prompt into an agent session.
+2. Show the first MCP tool call, for example `pix_tool_ai` or `pix_tool_gateway`.
+3. Point out the receipt before writing.
+4. Explain the measured workflow: one prompt while observing the guardrails.
 
-- Un agente con il server attivo (pi consigliato: già configurato ✅).
-- Prompt ridotto (version abridged del bookmarks prompt - già in slide "The verbatim prompt").
+Talking points: the server is held constant while the model changes; the audience sees the benchmark prompt. A live rerun may differ in timing and model behavior. The planned fallback was a screenshot of the original benchmark session from report appendix B.
 
-### Flusso
-
-1. Incollare il prompt abridged nella sessione agente.
-2. Mostrare il primo tool call MCP del modello (es. `pix_tool_ai` / `pix_tool_gateway`).
-3. Far notare il **receipt** prima di qualsiasi scrittura.
-4. Chiusura: "this is the loop the benchmark measured - 1 prompt, watching the rails".
-
-### Talking points
-
-- Il server è il costante, il modello è la variabile.
-- Il prompt è lo stesso del benchmark → il pubblico vede esattamente cosa è stato misurato.
-- Aspettarsi un comportamento diverso dal vivo (tempo, modello) - è normale ed onesto dirlo.
-
-### Fallback
-
-Screenshot della sessione benchmark originale (dal report, Allegato B tool calls).
-
----
-
-## Verifiche ambientali pre-talk (T-1 giorno)
+## Historical environment checks
 
 ```bash
-# 1. server sano
+# 1. Server health
 pix-galaxy-mcp doctor
 
-# 2. surface coincide col deck (90 tools / 10 minimal) - VERIFICATO 2026-07-11
+# 2. Historical surface: 90 tools and 10 in minimal mode
 pix-galaxy-mcp tools list | head
-PIX_GALAXY_MCP_MINIMAL_TOOLS=1 pix-galaxy-mcp tools list | head  # → 10 registered
+PIX_GALAXY_MCP_MINIMAL_TOOLS=1 pix-galaxy-mcp tools list | head
 
-# 3. agent pi pronto
+# 3. Check the pi agent configuration
 cat ~/.pi/agent/mcp.json | grep -A3 pix-galaxy
 
-# 4. demo gateway su file di esempio
-# (TODO M7: test end-to-end con componente minimale, registrare output JSON)
+# 4. Gateway example: end-to-end fixture and JSON output were still TODO
 
-# 5. fallback materiale pronto
-ls ~/tmp/gateway-demo/ 2>/dev/null || echo "creare ~/tmp/gateway-demo/"
+# 5. Check fallback material
+ls ~/tmp/gateway-demo/ 2>/dev/null || echo "Create ~/tmp/gateway-demo/"
 ```
 
-## Note sulla demo dal vivo
+## Historical live-demo notes
 
-- **Mai fare inference**: il server non chiama LLM → nessun rischio "il modello non risponde".
-- I tempi delle demo sono misurati e inclusi nel timing totale (25-30 min).
-- Se una demo fallisce: si salta alla prossima senza rottura narrativa (le slide demo sono "isolate" tra sezioni).
+- The server does not call an LLM itself; the agent can still call a model.
+- The original plan included demo time in a 25–30 minute talk.
+- If a demo failed, the speaker could skip to the next isolated section.

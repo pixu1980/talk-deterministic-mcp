@@ -55,4 +55,10 @@ Benchmark results describe two projects and six recorded sessions, not a control
 
 ## Accessibility and release
 
-Run the tests and lint before building. The speaker confirmed that the TAF audio contains only music; its caption labels the outro music. The restored outro has the original thanks text and commented-out links. No live demo is planned. Check the final QR destinations and rehearse the talk before publishing. Do not treat a successful build as a deploy or a rehearsal.
+Run the tests and lint before building. The speaker confirmed that the TAF audio contains only music; its caption labels the outro music. The restored outro has the original thanks text and commented-out links. No live demo or timed rehearsal is planned. Check the final QR destinations before publishing.
+
+## GitHub Pages deployment
+
+The workflow in `.github/workflows/static.yml` uploads the **committed** `dist/` directory. It runs on a pushed `v*.*.*` tag or by manual workflow dispatch once the workflow exists on the default branch. It does not build the deck in CI.
+
+Before deployment, run `pnpm run build`, verify the output and commit the resulting `dist/` changes. In GitHub repository settings, select **GitHub Actions** as the Pages source and ensure the `github-pages` environment permits the deployment. Then either dispatch the workflow with the intended ref or push a new version tag from the verified commit. Publishing requires repository access and is a separate action; a successful local build does not mean the site is deployed.

@@ -50,4 +50,4 @@ Inventory of the current PostHTML composition. Each row represents an active Rev
 
 - Experiment and case-study claims use `docs/research/benchmark-evidence.md`; no no-server baseline was measured.
 - The restored outro follows `src/slides/outro/outro.html`; the links include is commented out.
-- The speaker confirmed that the outro contains only music; the caption identifies it as outro music. No live demo is planned; a live rehearsal remains open.
+- The speaker confirmed that the outro contains only music; the caption identifies it as outro music. No live demo or timed rehearsal is planned.
