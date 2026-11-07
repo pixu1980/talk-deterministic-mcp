@@ -94,8 +94,8 @@
   <p data-kicker="">What I do</p>
   <h2>Shared standards.<br><mark>Continuity.</mark></h2>
   <ul data-layout="takeaways">
-    <li><mark>One standard</mark>: the rules do not change with the repository.</li>
-    <li><mark>No lost context</mark>: a handover keeps what the last person knew.</li>
+    <li class="fragment"><mark>One standard</mark>: the rules do not change with the repository.</li>
+    <li class="fragment"><mark>No lost context</mark>: a handover keeps what the last person knew.</li>
   </ul>
   <aside class="notes">These are goals for company workflows, not guarantees. Confirmed in the talk interview.</aside>
 </section>
@@ -104,8 +104,8 @@
   <p data-kicker="">What I do</p>
   <h2>Reviewable work.<br><mark>Measured cost.</mark></h2>
   <ul data-layout="takeaways">
-    <li><mark>Reviewable output</mark>: a change can be checked before it lands.</li>
-    <li><mark>Measured cost</mark>: tokens and time are part of the bill.</li>
+    <li class="fragment"><mark>Reviewable output</mark>: a change can be checked before it lands.</li>
+    <li class="fragment"><mark>Measured cost</mark>: tokens and time are part of the bill.</li>
   </ul>
   <aside class="notes">These are goals for company workflows, not guarantees. Context and cost needs were confirmed in the talk interview.</aside>
 </section>
@@ -136,9 +136,9 @@
   <h2>Without a shared server, the work repeats</h2>
   <p>Every session and every handover starts from zero.</p>
   <ul data-layout="steps">
-    <li>Explain every standard again.</li>
-    <li>Find the right guide.</li>
-    <li>Repeat the missing rules.</li>
+    <li class="fragment">Explain every standard again.</li>
+    <li class="fragment">Find the right guide.</li>
+    <li class="fragment">Repeat the missing rules.</li>
   </ul>
 </section>
 
@@ -146,8 +146,8 @@
   <p data-kicker="">The need</p>
   <h2>Then the <mark>review</mark> begins</h2>
   <ul data-layout="steps">
-    <li>Review the output.</li>
-    <li>Ask for fixes.</li>
+    <li class="fragment">Review the output.</li>
+    <li class="fragment">Ask for fixes.</li>
   </ul>
   <p><mark>Five steps</mark>, for every task and every new person.</p>
   <aside class="notes">Illustrative workflow, not a measured count. Repetition across sessions and handovers was confirmed in the talk interview.</aside>
@@ -157,9 +157,9 @@
   <p data-kicker="">The need</p>
   <h2>Prompt rules are <mark>weak contracts</mark></h2>
   <ul>
-    <li>Long prompts consume the context the task needs.</li>
-    <li>An agent can skip an instruction, and nothing stops it.</li>
-    <li>Reviews happen after generation, not before.</li>
+    <li class="fragment">Long prompts consume the context the task needs.</li>
+    <li class="fragment">An agent can skip an instruction, and nothing stops it.</li>
+    <li class="fragment">Reviews happen after generation, not before.</li>
   </ul>
   <aside class="notes">Prompt instructions can be missed and require review; the speaker confirmed this workflow in the talk interview.</aside>
 </section>
@@ -172,7 +172,7 @@
     <article><strong>Model B</strong><small>One fix needed</small></article>
     <article><strong>Model C</strong><small>Three fixes needed</small></article>
   </figure>
-  <small>Illustrative example, not benchmark results.</small>
+  
   <p><mark>Policy</mark> has to live somewhere a model cannot skip.</p>
   <aside class="notes">Illustrative example. For measured results, see docs/research/benchmark-evidence.md.</aside>
 </section>
@@ -192,9 +192,9 @@
   <p data-kicker="">Experiments</p>
   <h2>What we <mark>measured</mark></h2>
   <ul>
-    <li>Phonebook: Electron and React.</li>
-    <li>Bookmarks: React and Express.</li>
-    <li>Session logs report billed cost, iterations and outcomes.</li>
+    <li class="fragment">Phonebook: Electron and React.</li>
+    <li class="fragment">Bookmarks: React and Express.</li>
+    <li class="fragment">Session logs report billed cost, iterations and outcomes.</li>
   </ul>
   <aside class="notes">Method: docs/research/benchmark-evidence.md §1 and §4. The agents also differed across models; costs are billed API usage, not person-hours.</aside>
 </section>
@@ -226,7 +226,7 @@
 <section data-part="slide" data-chapter="experiments" data-menu-title="Experiments">
   <p data-kicker="">Experiments</p>
   <h2>Not every experiment <mark>worked</mark></h2>
-  <ul><li>None of the three models used caveman or tokensave for reading in either benchmark.</li><li>Outputs still needed review: monolithic code, missing tests or limited SSRF protection appeared in some results.</li><li>There was no measured baseline without the server.</li></ul>
+  <ul><li class="fragment">None of the three models used caveman or tokensave for reading in either benchmark.</li><li class="fragment">Outputs still needed review: monolithic code, missing tests or limited SSRF protection appeared in some results.</li><li class="fragment">There was no measured baseline without the server.</li></ul>
   <aside class="notes">Source: docs/research/benchmark-evidence.md §§2.1, 3.1 and 4. Do not infer a causal improvement from these observations.</aside>
 </section>
 
@@ -418,7 +418,7 @@
 <section data-part="slide" data-chapter="closing" data-menu-title="Contribute">
   <p data-kicker="">Contribute</p>
   <h2>Bring your <mark>standards</mark></h2>
-  <ul><li>Try the server.</li><li>Write a skill.</li><li>Report what breaks.</li><li>Share what your team needs.</li></ul>
+  <ul><li class="fragment">Try the server.</li><li class="fragment">Write a skill.</li><li class="fragment">Report what breaks.</li><li class="fragment">Share what your team needs.</li></ul>
   <aside class="notes">Audience calls to action agreed in the talk interview.</aside>
 </section>
 
@@ -426,9 +426,9 @@
   <p data-kicker="">Contribute</p>
   <h2>Get started with <mark>RuleMCP</mark></h2>
   <p><a href="https://github.com/pixu1980/rule-mcp">github.com/pixu1980/rule-mcp</a></p>
-  <pre><mark>git clone https://github.com/pixu1980/rule-mcp.git
+  <pre><code>git clone https://github.com/pixu1980/rule-mcp.git
 cd rule-mcp
-pnpm setup</mark></pre>
+pnpm setup</code></pre>
   <p>See the getting-started guide before running setup.</p>
   <aside class="notes">rule-mcp/docs/01-getting-started.md. Setup deletes node_modules and pnpm-lock.yaml before reinstalling; consult the guide first.</aside>
 </section>
@@ -437,14 +437,14 @@ pnpm setup</mark></pre>
   <p data-kicker="">Next steps</p>
   <h2>The <mark>roadmap</mark></h2>
   <ul>
-    <li>Finalize Decision Models integration for caching and routing.</li>
-    <li>Improve guardrails across skills, tools, prompts and resources.</li>
-    <li>Harden the installer and remove unsafe package fallbacks.</li>
-    <li>Improve test isolation for asynchronous operations.</li>
-    <li>Extend and verify agent integrations.</li>
-    <li>Expand multilingual routing evaluations.</li>
-    <li>Validate releases on Windows, Linux and Docker.</li>
-    <li>Make benchmarks reproducible with a no-server baseline.</li>
+    <li class="fragment">Finalize Decision Models integration for caching and routing.</li>
+    <li class="fragment">Improve guardrails across skills, tools, prompts and resources.</li>
+    <li class="fragment">Harden the installer and remove unsafe package fallbacks.</li>
+    <li class="fragment">Improve test isolation for asynchronous operations.</li>
+    <li class="fragment">Extend and verify agent integrations.</li>
+    <li class="fragment">Expand multilingual routing evaluations.</li>
+    <li class="fragment">Validate releases on Windows, Linux and Docker.</li>
+    <li class="fragment">Make benchmarks reproducible with a no-server baseline.</li>
   </ul>
 </section>
 
