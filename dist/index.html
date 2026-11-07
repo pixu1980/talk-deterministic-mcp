@@ -3,7 +3,7 @@
     <title>Deterministic MCP Server</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark">
-    <link rel="stylesheet" href="talk-deterministic-mcp.03ed21e3.css">
+    <link rel="stylesheet" href="talk-deterministic-mcp.9645be20.css">
   </head>
   <body>
     <main class="reveal">
@@ -80,7 +80,7 @@
 <!-- 2. What I do -->
 <section data-part="slide" data-chapter="who" data-menu-title="What I do">
   <p data-kicker="">What I do</p>
-  <h2>Head of <mark>DevX</mark> at <mark>Webidoo</mark></h2>
+  <h2>Head of <mark>DevX</mark> @ <mark>Webidoo</mark></h2>
   <p>I own the path from a developer's intent to a shipped change.</p>
   <figure data-layout="three-paths" aria-label="What the role covers">
     <article><strong>Guidance</strong><small>Docs, guides and standards a team can follow</small></article>
@@ -93,20 +93,20 @@
 <section data-part="slide" data-chapter="who" data-menu-title="In a company">
   <p data-kicker="">What I do</p>
   <h2>Shared standards.<br><mark>Continuity.</mark></h2>
-  <ol data-layout="takeaways">
+  <ul data-layout="takeaways">
     <li><mark>One standard</mark>: the rules do not change with the repository.</li>
     <li><mark>No lost context</mark>: a handover keeps what the last person knew.</li>
-  </ol>
+  </ul>
   <aside class="notes">These are goals for company workflows, not guarantees. Confirmed in the talk interview.</aside>
 </section>
 
 <section data-part="slide" data-chapter="who" data-menu-title="Review and cost">
   <p data-kicker="">What I do</p>
   <h2>Reviewable work.<br><mark>Measured cost.</mark></h2>
-  <ol data-layout="takeaways" start="3">
+  <ul data-layout="takeaways">
     <li><mark>Reviewable output</mark>: a change can be checked before it lands.</li>
     <li><mark>Measured cost</mark>: tokens and time are part of the bill.</li>
-  </ol>
+  </ul>
   <aside class="notes">These are goals for company workflows, not guarantees. Context and cost needs were confirmed in the talk interview.</aside>
 </section>
 
@@ -135,13 +135,20 @@
   <p data-kicker="">The need</p>
   <h2>Without a shared server, the work repeats</h2>
   <p>Every session and every handover starts from zero.</p>
-  <ol data-layout="steps">
+  <ul data-layout="steps">
     <li>Explain every standard again.</li>
     <li>Find the right guide.</li>
     <li>Repeat the missing rules.</li>
+  </ul>
+</section>
+
+<section data-part="slide" data-chapter="need" data-menu-title="Manual review">
+  <p data-kicker="">The need</p>
+  <h2>Then the <mark>review</mark> begins</h2>
+  <ul data-layout="steps">
     <li>Review the output.</li>
     <li>Ask for fixes.</li>
-  </ol>
+  </ul>
   <p><mark>Five steps</mark>, for every task and every new person.</p>
   <aside class="notes">Illustrative workflow, not a measured count. Repetition across sessions and handovers was confirmed in the talk interview.</aside>
 </section>
@@ -178,8 +185,17 @@
   <p data-kicker="">Experiments</p>
   <h2>Two projects. <mark>Three models.</mark></h2>
   <p>The same project prompt for each model; six measured sessions in total.</p>
-  <ul><li>Phonebook: Electron and React.</li><li>Bookmarks: React and Express.</li><li>Session logs report billed cost, iterations and outcomes.</li></ul>
   <p>These are case studies, not a controlled comparison without the server.</p>
+</section>
+
+<section data-part="slide" data-chapter="experiments" data-menu-title="Experiment method">
+  <p data-kicker="">Experiments</p>
+  <h2>What we <mark>measured</mark></h2>
+  <ul>
+    <li>Phonebook: Electron and React.</li>
+    <li>Bookmarks: React and Express.</li>
+    <li>Session logs report billed cost, iterations and outcomes.</li>
+  </ul>
   <aside class="notes">Method: docs/research/benchmark-evidence.md §1 and §4. The agents also differed across models; costs are billed API usage, not person-hours.</aside>
 </section>
 
@@ -284,7 +300,7 @@
   <p data-kicker="">The solution</p>
   <h2><mark>Cache</mark> the result</h2>
   <p>Reuse a tool response instead of computing it again.</p>
-  <p>Inspect it with <code>rule-mcp cache stats</code>.</p>
+  <p>Inspect it with <mark>rule-mcp cache stats</mark>.</p>
   <aside class="notes">rule-mcp/docs/01-getting-started.md, main flows: Cache.</aside>
 </section>
 
@@ -292,7 +308,7 @@
   <p data-kicker="">The solution</p>
   <h2><mark>Flight Recorder</mark></h2>
   <p>Calls and usage can be inspected on your machine.</p>
-  <p><code>rule-mcp stats</code> reads the local data.</p>
+  <p><mark>rule-mcp stats</mark> reads the local data.</p>
   <aside class="notes">rule-mcp/docs/11-privacy.md, summary and local data. Telemetry can be disabled; prompts may be recorded unless disabled.</aside>
 </section>
 
@@ -322,7 +338,7 @@
 <section data-part="slide" data-chapter="solution" data-menu-title="Guardrails">
   <p data-kicker="">The solution</p>
   <h2>Rules become <mark>checks</mark></h2>
-  <p><code>rule_tool_check</code> runs deterministic guardrails.</p>
+  <p><mark>rule_tool_check</mark> runs deterministic guardrails.</p>
   <p>A failure signals work that must be fixed before proceeding.</p>
   <aside class="notes">rule-mcp/docs/01-getting-started.md, main flows: Check and Fix. Workflow enforcement depends on the integration.</aside>
 </section>
@@ -338,7 +354,7 @@
   <p data-kicker="">The solution</p>
   <h2>Connect the <mark>agent</mark></h2>
   <p>The setup wizard detects agents and writes their MCP configuration.</p>
-  <p><code>rule-mcp doctor</code> checks the installation.</p>
+  <p><mark>rule-mcp doctor</mark> checks the installation.</p>
   <aside class="notes">rule-mcp/docs/01-getting-started.md, Install and Do a check of the install. Demo decision deferred.</aside>
 </section>
 
@@ -402,7 +418,7 @@
 <section data-part="slide" data-chapter="closing" data-menu-title="Contribute">
   <p data-kicker="">Contribute</p>
   <h2>Bring your <mark>standards</mark></h2>
-  <ol><li>Try the server.</li><li>Write a skill.</li><li>Report what breaks.</li><li>Share what your team needs.</li></ol>
+  <ul><li>Try the server.</li><li>Write a skill.</li><li>Report what breaks.</li><li>Share what your team needs.</li></ul>
   <aside class="notes">Audience calls to action agreed in the talk interview.</aside>
 </section>
 
@@ -410,10 +426,26 @@
   <p data-kicker="">Contribute</p>
   <h2>Get started with <mark>RuleMCP</mark></h2>
   <p><a href="https://github.com/pixu1980/rule-mcp">github.com/pixu1980/rule-mcp</a></p>
-  <pre><code>pnpm install --frozen-lockfile
-./scripts/install.sh</code></pre>
-  <p>Run from the cloned repository; see the getting-started guide.</p>
-  <aside class="notes">rule-mcp/docs/01-getting-started.md. Installation runs project setup; consult the guide before running commands.</aside>
+  <pre><mark>git clone https://github.com/pixu1980/rule-mcp.git
+cd rule-mcp
+pnpm setup</mark></pre>
+  <p>See the getting-started guide before running setup.</p>
+  <aside class="notes">rule-mcp/docs/01-getting-started.md. Setup deletes node_modules and pnpm-lock.yaml before reinstalling; consult the guide first.</aside>
+</section>
+
+<section data-part="slide" data-chapter="closing" data-menu-title="Roadmap">
+  <p data-kicker="">Next steps</p>
+  <h2>The <mark>roadmap</mark></h2>
+  <ul>
+    <li>Finalize Decision Models integration for caching and routing.</li>
+    <li>Improve guardrails across skills, tools, prompts and resources.</li>
+    <li>Harden the installer and remove unsafe package fallbacks.</li>
+    <li>Improve test isolation for asynchronous operations.</li>
+    <li>Extend and verify agent integrations.</li>
+    <li>Expand multilingual routing evaluations.</li>
+    <li>Validate releases on Windows, Linux and Docker.</li>
+    <li>Make benchmarks reproducible with a no-server baseline.</li>
+  </ul>
 </section>
 
 
@@ -426,11 +458,11 @@
   <section data-transition="convex">
     <h4><mark>Takeaways</mark></h4>
     <small>
-      <ol>
+      <ul>
         <li class="fragment"><mark>Cache + Flight Recorder</mark>: reuse the answer, measure the session</li>
         <li class="fragment"><mark>Handoff / Handon</mark>: a session ends with a file the next one verifies</li>
         <li class="fragment"><mark>Personas + Areas + Guardrails</mark>: one role, one hub, one gate per request</li>
-      </ol>
+      </ul>
     </small>
   </section>
 </section>

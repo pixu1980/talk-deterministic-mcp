@@ -15329,7 +15329,7 @@ p[data-kicker] {
   color: var(--r-highlight-color);
   letter-spacing: .12em;
   text-transform: uppercase;
-  font-size: .55em;
+  font-size: .66em;
   font-weight: 700;
 }
 
@@ -15453,7 +15453,7 @@ figure[data-layout="flow"] li:not(:last-child):after {
   margin-inline: .55em;
 }
 
-ol[data-layout="steps"], ol[data-layout="takeaways"] {
+ul[data-layout="steps"], ul[data-layout="takeaways"] {
   flex-direction: column;
   gap: .45em;
   max-inline-size: 24em;
@@ -15461,7 +15461,7 @@ ol[data-layout="steps"], ol[data-layout="takeaways"] {
   display: flex;
 }
 
-ol[data-layout="steps"] li, ol[data-layout="takeaways"] li {
+ul[data-layout="steps"] li, ul[data-layout="takeaways"] li {
   border-block-end: .04em solid var(--talk-border);
   padding: .4em .6em;
 }
@@ -15667,4 +15667,4 @@ section[data-matrix]:after {
   stroke: currentColor;
   stroke-width: 1.5px;
 }
-/*# sourceMappingURL=talk-deterministic-mcp.03ed21e3.css.map */
+/*# sourceMappingURL=talk-deterministic-mcp.9645be20.css.map */
