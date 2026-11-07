@@ -106,14 +106,14 @@ Total: **35 slides, ~38 minutes**.
 
 ### Phase 4 — Docs, QA, release
 
-- [x] **4.1** Update `docs/research/slide-map.md` with the 41 active slides and source paths.
+- [x] **4.1** Update `docs/research/slide-map.md` with the 44 active slides and source paths.
 - [x] **4.2** Update the README for the actual nine-chapter composition and restored outro.
 - [x] **4.3** Run Biome lint, the Node test suite, and Prettier checks on the updated documentation and tests.
 - [x] **4.4** Build the final static deck; inspect all 41 slides with axe-core and check 39 horizontal slide positions at three viewport sizes. Manual review remains in the rehearsal checklist.
 - [x] **4.5** A timed rehearsal is not required, per speaker confirmation.
 - [x] **4.6** No live demo is planned, per speaker confirmation; rebuild `dist/` once for the final production check.
 - [ ] **4.7** Translate remaining historical research and archived documents to English without changing evidence or quotations.
-- [x] **4.8** Prepare GitHub Pages deployment: the existing committed-`dist/` workflow also supports manual dispatch, and the README explains setup and release steps. No deployment has been triggered.
+- [x] **4.8** Prepare GitHub Pages deployment: the committed-`dist/` workflow runs on pushes to `master` and supports manual dispatch; the README explains setup and release steps.
 - [ ] **4.9** Investigate the rule-mcp project-health failure: rule-mcp reports 5034/10000; the newly tracked TokenSave branch reports 6088/10000, with equality at 0.0847. Both are below the 7000 threshold. The running TokenSave MCP server must be restarted to serve the newly tracked branch.
 
 ---

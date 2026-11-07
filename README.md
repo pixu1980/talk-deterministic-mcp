@@ -59,6 +59,6 @@ Run the tests and lint before building. The speaker confirmed that the TAF audio
 
 ## GitHub Pages deployment
 
-The workflow in `.github/workflows/static.yml` uploads the **committed** `dist/` directory. It runs on a pushed `v*.*.*` tag or by manual workflow dispatch once the workflow exists on the default branch. It does not build the deck in CI.
+The workflow in `.github/workflows/static.yml` uploads the **committed** `dist/` directory. It runs automatically on pushes to `master`, or by manual workflow dispatch with a selected branch once the workflow exists on the default branch. It does not build the deck in CI.
 
-Before deployment, run `pnpm run build`, verify the output and commit the resulting `dist/` changes. In GitHub repository settings, select **GitHub Actions** as the Pages source and ensure the `github-pages` environment permits the deployment. Then either dispatch the workflow with the intended ref or push a new version tag from the verified commit. Publishing requires repository access and is a separate action; a successful local build does not mean the site is deployed.
+Before deployment, run `pnpm run build`, verify the output and commit the resulting `dist/` changes. In GitHub repository settings, select **GitHub Actions** as the Pages source and ensure the `github-pages` environment permits the deployment. Then push the verified commit to `master` for automatic deployment, or manually dispatch the workflow with another branch as the ref. Publishing requires repository access and is a separate action; a successful local build does not mean the site is deployed.
