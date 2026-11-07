@@ -14,20 +14,20 @@
 | Duration         | **35-40 min**, ~30-34 slide declared, **35 planned** (some are bench reserve)                                  |
 | Language         | **English** everywhere, `lang="en"` unchanged                                                                  |
 | Structure        | **3 acts / 9 chapters**, chapter = vertical stack + opener; agenda stack removed                               |
-| 1 Presentazioni  | Speaker bio only (`_pixu` component), no Dev Dojo / Webidoo block in this chapter                              |
+| 1 Introductions  | Speaker bio only (`_pixu` component), no Dev Dojo / Webidoo block in this chapter                              |
 | Intro visual     | The intro keeps the reworked vocabulary (`data-part`, `data-kicker`, `figure[data-layout]`) **and** the matrix rain (`matrix-code.js` + CSS); the rest of the deck still uses the master theme vocabulary |
-| 2 Cosa faccio    | **Head of DevX @ Webidoo Engineering** + what working in a company demands from agents                         |
-| 3 Il bisogno     | All five blocks of the rework `02-problem`: simple request, manual workflow, model drift, weak prompt contracts, policy outside the model. Plus the **rotation** frame |
+| 2 What I do    | **Head of DevX @ Webidoo Engineering** + what working in a company demands from agents                         |
+| 3 The need     | All five blocks of the rework `02-problem`: simple request, manual workflow, model drift, weak prompt contracts, policy outside the model. Plus the **rotation** frame |
 | Rotation frame   | What rotates: **people** (turnover, onboarding) and **AI resources** (Claude/Codex/Gemini/Cursor)             |
-| 4 Gli esperimenti| Benchmark (2 projects × 3 models), **failed experiments**, **company PoCs without numbers**; 1 slide per experiment, budget 5 |
-| 5 L'idea         | Claim **"One rule set. Every coding agent. Every Dev."** (extension of the ported title claim) + 3 principles + conceptual diagram + the ported "One task. Many agents." story |
-| 6 La soluzione   | Architecture request path, deterministic gateway, the six mechanisms, validated surface, multi-agent installer; budget 9-10 |
+| 4 Experiments| Benchmark (2 projects × 3 models), **failed experiments**, **company PoCs without numbers**; 1 slide per experiment, budget 5 |
+| 5 The idea         | Claim **"One rule set. Every coding agent. Every Dev."** (extension of the ported title claim) + 3 principles + conceptual diagram + the ported "One task. Many agents." story |
+| 6 The solution   | Architecture request path, deterministic gateway, the six mechanisms, validated surface, multi-agent installer; budget 9-10 |
 | Demo             | **Deferred**: slides are demo-ready, live demo decided after the first full build                             |
 | 7 Case studies   | The 2 benchmark projects told as stories (not the KPI tables again) + the server in use by the DevX team; 1 slide per case, screenshot + one number |
-| 8 Contribuite    | 4 asks: install it, write a skill, report what breaks, bring your team's standards                            |
-| 9 Saluti         | Thanks + TAF + QR (slides repo, pixu.dev, Dev Dojo)                                                            |
+| 8 Contribute    | 4 asks: install it, write a skill, report what breaks, bring your team's standards                            |
+| 9 Goodbye         | Thanks + TAF + QR (slides repo, pixu.dev, Dev Dojo)                                                            |
 | Numbers          | Validated set only: 80 skills · 90 tools · 21 prompts · 168 resources · 2 projects · 6 measured sessions        |
-| Repo layout      | `src/slides/NN-capitolo/` per chapter, old files removed (content migrates)                                    |
+| Repo layout      | `src/slides/NN-chapter/` per chapter, old files removed (content migrates)                                    |
 | Docs             | This plan + `docs/research/slide-map.md` rewritten                                                             |
 | ADR              | **Not requested**; ADR 001 becomes stale and is listed under open decisions                                     |
 | Commits          | One Conventional Commit per chapter, plus one for the structure migration                                       |
@@ -38,15 +38,15 @@
 
 | Act | Chapter | Slides | Minutes | Files |
 | --- | ------- | ------ | ------- | ----- |
-| 1 — Who / why we are here | 1 Presentazioni | 2 | 1.5 | `01-presentazioni/_01-title.html`, `_02-speaker.html` |
-| | 2 Cosa faccio | 3 | 3 | `02-cosa-faccio/_01-role.html`, `_02-company.html`, `_03-community.html` |
-| | 3 Il bisogno | 3 | 4 | `03-bisogno/_01-simple-request.html`, `_02-manual-workflow.html`, `_03-weak-contracts.html` |
-| 2 — What we tried and what came out | 4 Gli esperimenti | 5 | 7 | `04-esperimenti/_01-method.html`, `_02-phonebook.html`, `_03-bookmarks.html`, `_04-failures.html`, `_05-poc.html` |
-| | 5 L'idea | 4 | 4 | `05-idea/_01-claim.html`, `_02-principles.html`, `_03-story.html`, `_04-diagram.html` |
-| | 6 La soluzione | 10 | 11 | `06-soluzione/_01-architecture.html` … `_10-installer.html` |
+| 1 — Who / why we are here | 1 Introductions | 2 | 1.5 | `01-introductions/_01-title.html`, `_02-speaker.html` |
+| | 2 What I do | 3 | 3 | `02-what-i-do/_01-role.html`, `_02-company.html`, `_03-community.html` |
+| | 3 The need | 3 | 4 | `03-the-need/_01-simple-request.html`, `_02-manual-workflow.html`, `_03-weak-contracts.html` |
+| 2 — What we tried and what came out | 4 Experiments | 5 | 7 | `04-experiments/_01-method.html`, `_02-phonebook.html`, `_03-bookmarks.html`, `_04-failures.html`, `_05-poc.html` |
+| | 5 The idea | 4 | 4 | `05-idea/_01-claim.html`, `_02-principles.html`, `_03-story.html`, `_04-diagram.html` |
+| | 6 The solution | 10 | 11 | `06-solution/_01-architecture.html` … `_10-installer.html` |
 | 3 — Proof, call to action, goodbye | 7 Case studies | 4 | 4 | `07-case-studies/_01-phonebook.html`, `_02-bookmarks.html`, `_03-devx-team.html`, `_04-insight.html` |
-| | 8 Contribuite | 2 | 2 | `08-contribuite/_01-cta.html`, `_02-where.html` |
-| | 9 Saluti | 2 | 1.5 | `09-saluti/_01-thanks.html`, `_02-links.html` |
+| | 8 Contribute | 2 | 2 | `08-contribute/_01-cta.html`, `_02-where.html` |
+| | 9 Goodbye | 2 | 1.5 | `09-goodbye/_01-thanks.html`, `_02-links.html` |
 
 Total: **35 slides, ~38 minutes**.
 
@@ -56,53 +56,53 @@ Total: **35 slides, ~38 minutes**.
 
 ### Phase 0 — Structure and migration (deck must keep building)
 
-- [ ] **0.1** Create `src/slides/NN-capitolo/` folders; move the ported intro slides (`_doodle` → `01-presentazioni/_01-title.html`, `_pixu` → `_02-speaker.html`)
-- [ ] **0.2** Split `intro/_main-topic.html`: question → `03-bisogno/_01-simple-request.html`, story → `05-idea/_03-story.html`
-- [ ] **0.3** Move `topics/features.html` → six files under `06-soluzione/` (cache, flight recorder, handoff, personas, areas, guardrails); `03-how.html` → architecture + gateway; `01-what.html` → surface
-- [ ] **0.4** Move `outro/_taf.html` + `_thanks.html` → `09-saluti/_01-thanks.html`; `outro/_links.html` → `09-saluti/_02-links.html`
+- [ ] **0.1** Create `src/slides/NN-chapter/` folders; move the ported intro slides (`_doodle` → `01-introductions/_01-title.html`, `_pixu` → `_02-speaker.html`)
+- [ ] **0.2** Split `intro/_main-topic.html`: question → `03-the-need/_01-simple-request.html`, story → `05-idea/_03-story.html`
+- [ ] **0.3** Move `topics/features.html` → six files under `06-solution/` (cache, flight recorder, handoff, personas, areas, guardrails); `03-how.html` → architecture + gateway; `01-what.html` → surface
+- [ ] **0.4** Move `outro/_taf.html` + `_thanks.html` → `09-goodbye/_01-thanks.html`; `outro/_links.html` → `09-goodbye/_02-links.html`
 - [ ] **0.5** Archive `summary/_topics.html`, `_dive-in.html`, `outro/_wrap-up.html`, `topics/02-why.html`, `04-proof.html`, `05-future.html` under `src/slides/_archive/`; move `boilerplate/` → `src/slides/_boilerplate/`
 - [ ] **0.6** Rewrite `src/slides/slides.html` with the 9-chapter composition (3 acts as comments)
 - [ ] **0.7** Placeholder files for the empty chapters (02, 04, 07, 08) so includes resolve; verify `pnpm dev` and commit `refactor(slides): regroup the deck into nine chapters`
 
 ### Phase 1 — Act 1 (chapters 1-3)
 
-- [ ] **1.1** `01-presentazioni`: title slide (reworked markup + matrix rain, claim bookend — see open decision O1) + speaker bio (verbatim from `fix/visual-rework`, Head of DevX and links)
-- [ ] **1.2** `02-cosa-faccio`: Head of DevX role, the company context (teams, standards, agents), Dev Dojo line
-- [ ] **1.3** `03-bisogno/_01`: simple request + rotation frame (people rotate, AI resources rotate)
-- [ ] **1.4** `03-bisogno/_02`: manual workflow without a shared server (5 steps list, existing `data-layout` style kept in master vocabulary)
-- [ ] **1.5** `03-bisogno/_03`: model drift + weak prompt contracts + "move the policy outside the model" close
-- [ ] **1.6** Speaker notes with the source of every claim (`docs/research/benchmark-evidence.md`)
+- [x] **1.1** `01-introductions`: preserve the reworked title and matrix rain and the speaker bio from `fix/visual-rework`; the extended claim belongs in chapter 5.
+- [x] **1.2** `02-what-i-do`: Head of DevX role, the company context (teams, standards, agents), Dev Dojo line
+- [x] **1.3** `03-the-need/_01`: simple request + rotation frame (people rotate, AI resources rotate)
+- [x] **1.4** `03-the-need/_02`: manual workflow without a shared server (5 steps list)
+- [x] **1.5** `03-the-need/_03`: model drift + weak prompt contracts + "move the policy outside the model" close; the comparison is labeled illustrative
+- [x] **1.6** Add speaker notes identifying interview-confirmed context and illustrative examples; reference `docs/research/benchmark-evidence.md` for measured results.
 - [ ] **1.7** Verify `pnpm dev`, commit `feat(slides): act one — who I am and what the work needs`
 
 ### Phase 2 — Act 2 (chapters 4-6)
 
-- [ ] **2.1** `04-esperimenti/_01`: method slide (real sessions, billed tokens, what is measured, what is not)
-- [ ] **2.2** `04-esperimenti/_02`: phonebook case, one number + screenshot slot
-- [ ] **2.3** `04-esperimenti/_03`: bookmarks case, one number + screenshot slot
-- [ ] **2.4** `04-esperimenti/_04`: failed experiments (0/3 activated caveman/tokensave, models shortcut the process)
-- [ ] **2.5** `04-esperimenti/_05`: company PoCs without numbers (link-manager, react-gantt, token-forge, vinyl-collection)
-- [ ] **2.6** `05-idea/_01`: claim slide "One rule set. Every coding agent. Every Dev."
-- [ ] **2.7** `05-idea/_02`: three principles (deterministic, local-first, measurable)
-- [ ] **2.8** `05-idea/_03`: ported story "One task. Many agents." (agent row)
-- [ ] **2.9** `05-idea/_04`: conceptual diagram (prompt-only vs server as policy)
-- [ ] **2.10** `06-soluzione/_01`: architecture request path (SVG from the archived `03-how.html`)
-- [ ] **2.11** `06-soluzione/_02`: deterministic gateway (dry-run, check, receipt, apply)
-- [ ] **2.12** `06-soluzione/_03`–`_08`: the six mechanisms, one slide each
-- [ ] **2.13** `06-soluzione/_09`: validated surface table (80/90/21/168)
-- [ ] **2.14** `06-soluzione/_10`: multi-agent installer, local-first, doctor
-- [ ] **2.15** Mark the demo slot (notes only) until the build is green
+- [x] **2.1** `04-experiments/_01`: method slide (real sessions, billed tokens, what is measured, what is not)
+- [x] **2.2** `04-experiments/_02`: phonebook results; application screenshot shown in chapter 7
+- [x] **2.3** `04-experiments/_03`: bookmarks results; application screenshot shown in chapter 7
+- [x] **2.4** `04-experiments/_04`: failed experiments (0/3 activated caveman/tokensave, models shortcut the process)
+- [x] **2.5** `04-experiments/_05`: company PoCs without numbers (link-manager, react-gantt, token-forge, vinyl-collection)
+- [x] **2.6** `05-idea/_01`: claim slide "One rule set. Every coding agent. Every Dev."
+- [x] **2.7** `05-idea/_02`: three principles (deterministic, local-first, measurable)
+- [x] **2.8** `05-idea/_03`: ported story "One task. Many agents." (agent row)
+- [x] **2.9** `05-idea/_04`: conceptual comparison (prompt-only vs shared server)
+- [x] **2.10** `06-solution/_01`: architecture request path, using a compact diagram
+- [x] **2.11** `06-solution/_02`: deterministic gateway, check, receipt, apply
+- [x] **2.12** `06-solution/_03`–`_08`: the six mechanisms, one slide each
+- [x] **2.13** `06-solution/_09`: tools, resources and prompts; counts omitted because the current server census differs from the historical plan
+- [x] **2.14** `06-solution/_10`: multi-agent installer and doctor
+- [x] **2.15** Mark the demo slot (notes only) until the build is green
 - [ ] **2.16** Commit per chapter: `feat(slides): experiments`, `feat(slides): the idea`, `feat(slides): the solution`
 
 ### Phase 3 — Act 3 (chapters 7-9)
 
-- [ ] **3.1** `07-case-studies/_01`: phonebook as a story (screenshot + one number)
-- [ ] **3.2** `07-case-studies/_02`: bookmarks manager as a story
-- [ ] **3.3** `07-case-studies/_03`: the server in use by the DevX team (no benchmark numbers)
-- [ ] **3.4** `07-case-studies/_04`: what stays true across cases (insight slide)
-- [ ] **3.5** `08-contribuite/_01`: the four asks
-- [ ] **3.6** `08-contribuite/_02`: where to start (repo, install command, docs)
-- [ ] **3.7** `09-saluti/_01`: thanks + TAF; `_02`: QR codes
-- [ ] **3.8** Commit `feat(slides): act three — case studies, contribute, saluti`
+- [x] **3.1** `07-case-studies/_01`: phonebook results and separate screenshot slide with bundled sample contacts
+- [x] **3.2** `07-case-studies/_02`: bookmarks results and separate screenshot slide with a mocked empty API response
+- [x] **3.3** `07-case-studies/_03`: qualitative DevX context and rotation need, without claiming adoption or measured outcomes
+- [x] **3.4** `07-case-studies/_04`: limitations shared across cases
+- [x] **3.5** `08-contribute/_01`: the four asks
+- [x] **3.6** `08-contribute/_02`: repository, install commands and documentation
+- [ ] **3.7** `09-goodbye/_01`: thanks + TAF; `_02`: QR codes; verify the generic audio caption and QR destinations before release
+- [ ] **3.8** Commit `feat(slides): act three — case studies, contribute, goodbye`
 
 ### Phase 4 — Docs, QA, release
 

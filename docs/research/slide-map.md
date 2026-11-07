@@ -6,14 +6,14 @@
 
 ## Act 1 — Who I am, what the work needs
 
-### 1. Presentazioni — 2 slides, 1.5 min — `src/slides/01-presentazioni/`
+### 1. Introductions — 2 slides, 1.5 min — `src/slides/01-introductions/`
 
 | # | File | Content | Source | Template |
 | - | ---- | ------- | ------ | -------- |
 | 1 | `_01-title.html` | Deck title + claim "One rule set. Every coding agent. Every Dev." | — | `_doodle` (`section intro`) |
 | 2 | `_02-speaker.html` | Emiliano Pisu — Head of DevX @ Webidoo Engineering, Sensei & Co-Host @ Dev Dojo IT, social links | T | `speaker` + `comparison` |
 
-### 2. Cosa faccio — 3 slides, 3 min — `src/slides/02-cosa-faccio/`
+### 2. What I do — 3 slides, 3 min — `src/slides/02-what-i-do/`
 
 | # | File | Content | Source | Template |
 | - | ---- | ------- | ------ | -------- |
@@ -21,7 +21,7 @@
 | 4 | `_02-company.html` | What working in a company demands: many teams, many repos, agents entering the flow, nobody to onboard them | — | concept |
 | 5 | `_03-community.html` | Dev Dojo IT as the other half: teaching the same standards outside the company | — | concept |
 
-### 3. Il bisogno — 3 slides, 4 min — `src/slides/03-bisogno/`
+### 3. The need — 3 slides, 4 min — `src/slides/03-the-need/`
 
 | # | File | Content | Source | Template |
 | - | ---- | ------- | ------ | -------- |
@@ -31,7 +31,7 @@
 
 ## Act 2 — What we tried, what came out, what the idea is
 
-### 4. Gli esperimenti — 5 slides, 7 min — `src/slides/04-esperimenti/`
+### 4. Experiments — 5 slides, 7 min — `src/slides/04-experiments/`
 
 | # | File | Content | Source | Template |
 | - | ---- | ------- | ------ | -------- |
@@ -41,7 +41,7 @@
 | 12 | `_04-failures.html` | What did not work: 0/3 used caveman/tokensave in reading, models shortcut the process (monolith, no build, minimal SSRF guard) | E §4 | support note |
 | 13 | `_05-poc.html` | Company PoCs without numbers: link-manager, react-gantt, token-forge, vinyl-collection | E §5 | concept (`ul` + `fragment`) |
 
-### 5. L'idea — 4 slides, 4 min — `src/slides/05-idea/`
+### 5. The idea — 4 slides, 4 min — `src/slides/05-idea/`
 
 | # | File | Content | Source | Template |
 | - | ---- | ------- | ------ | -------- |
@@ -50,7 +50,7 @@
 | 16 | `_03-story.html` | "One task. Many agents." + agent row (Claude · Codex · Gemini · Cursor · Pi) | ported from `fix/visual-rework` | concept |
 | 17 | `_04-diagram.html` | Conceptual diagram: prompt-only rules vs policy held by the server | — | inline SVG (`.diagram` classes) |
 
-### 6. La soluzione — 10 slides, 11 min — `src/slides/06-soluzione/`
+### 6. The solution — 10 slides, 11 min — `src/slides/06-solution/`
 
 | # | File | Content | Source | Template |
 | - | ---- | ------- | ------ | -------- |
@@ -74,14 +74,14 @@
 | 30 | `_03-devx-team.html` | The server in daily use by the DevX team (qualitative, no benchmark numbers) | — | concept |
 | 31 | `_04-insight.html` | What stays true across the cases: cost, adherence, and the bottleneck being inference | E §4 | concept |
 
-### 8. Contribuite — 2 slides, 2 min — `src/slides/08-contribuite/`
+### 8. Contribute — 2 slides, 2 min — `src/slides/08-contribute/`
 
 | # | File | Content | Source | Template |
 | - | ---- | ------- | ------ | -------- |
 | 32 | `_01-cta.html` | Four asks: install it, write a skill, report what breaks, bring your team's standards | — | `ol` + `fragment` |
 | 33 | `_02-where.html` | Where to start: repo, install command, `/pix-check` first run, docs site | R | code+output |
 
-### 9. Saluti — 2 slides, 1.5 min — `src/slides/09-saluti/`
+### 9. Goodbye — 2 slides, 1.5 min — `src/slides/09-goodbye/`
 
 | # | File | Content | Source | Template |
 | - | ---- | ------- | ------ | -------- |

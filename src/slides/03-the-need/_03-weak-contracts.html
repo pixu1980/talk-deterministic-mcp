@@ -1,0 +1,23 @@
+<section data-part="slide" data-chapter="need" data-menu-title="Weak contracts">
+  <p data-kicker>The need</p>
+  <h2>Prompt rules are <mark>weak contracts</mark></h2>
+  <ul>
+    <li>Long prompts consume the context the task needs.</li>
+    <li>An agent can skip an instruction, and nothing stops it.</li>
+    <li>Reviews happen after generation, not before.</li>
+  </ul>
+  <aside class="notes">Prompt instructions can be missed and require review; the speaker confirmed this workflow in the talk interview.</aside>
+</section>
+
+<section data-part="slide" data-chapter="need" data-menu-title="Model drift">
+  <p data-kicker>The need</p>
+  <h2>Same request. <mark>Different outcomes.</mark></h2>
+  <figure data-layout="three-paths" aria-label="Same prompt, three models">
+    <article><strong>Model A</strong><small>Complete</small></article>
+    <article><strong>Model B</strong><small>One fix needed</small></article>
+    <article><strong>Model C</strong><small>Three fixes needed</small></article>
+  </figure>
+  <small>Illustrative example, not benchmark results.</small>
+  <p><mark>Policy</mark> has to live somewhere a model cannot skip.</p>
+  <aside class="notes">Illustrative example. For measured results, see docs/research/benchmark-evidence.md.</aside>
+</section>

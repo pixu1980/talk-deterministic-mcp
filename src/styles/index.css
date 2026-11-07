@@ -1,13 +1,386 @@
-@import "npm:@pixu-talks/fonts";
-@import "npm:@pixu-talks/theme";
+/**
+ * FILE: index.css
+ * USAGE: Visual layouts for the RuleMCP presentation
+ * SCOPE: Reveal.js slide content
+ */
 
-/* The request-path line is wider than the theme's `pre` max-width, and the
-   theme hides the scrollbar, so a long line was clipped at the right edge.
-   Wrap it and center it instead. */
-.reveal .slides section pre {
-	white-space: pre-wrap;
-	text-align: center;
-	font-size: 1em;
+@import 'npm:@pixu-talks/fonts';
+@import 'npm:@pixu-talks/theme';
+
+/* Base */
+
+:root {
+  --talk-border: color-mix(in srgb, currentColor 24%, transparent);
+  --talk-surface: color-mix(in srgb, currentColor 7%, transparent);
+  --talk-soft: color-mix(in srgb, var(--r-highlight-color) 14%, transparent);
+}
+
+section[data-part='slide'] {
+  font-size: 0.68em;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+section[data-part='slide'] h1 {
+  font-size: 2.05em;
+  line-height: 1.05;
+}
+
+section[data-part='slide'] h2 {
+  font-size: 1.55em;
+  line-height: 1.1;
+}
+
+section[data-part='slide'] h3,
+section[data-part='slide'] h4 {
+  font-size: 1.3em;
+  line-height: 1.15;
+}
+
+section[data-part='slide'] p,
+section[data-part='slide'] li,
+section[data-part='slide'] td,
+section[data-part='slide'] th {
+  line-height: 1.3;
+}
+
+section[data-chapter] > p {
+  max-inline-size: 30em;
+  margin-inline: auto;
+}
+
+p[data-kicker] {
+  color: var(--r-highlight-color);
+  font-size: 0.55em;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+blockquote {
+  max-inline-size: 24em;
+  margin: 1.5em auto 0;
+  padding: 1em 1.2em;
+  border-inline-start: 0.16em solid var(--r-highlight-color);
+  background: var(--talk-surface);
+  text-align: start;
+}
+
+/* Visual layouts */
+
+figure[data-layout] {
+  max-inline-size: 32em;
+  margin: 1.4em auto 0;
+  line-height: 1.25;
+}
+
+section[data-part='slide'] figure[data-layout] + p,
+section[data-part='slide'] table[data-layout] + p {
+  margin-block-start: 0.8em;
+}
+
+figure[data-layout='many-to-one'] strong {
+  flex-basis: 100%;
+  margin-block-start: 0.5em;
+  color: var(--r-highlight-color);
+}
+
+figure[data-layout] article {
+  display: flex;
+  flex: 1 1 10em;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.35em;
+  min-block-size: 4.5em;
+  padding: 0.8em;
+  border: 0.04em solid var(--talk-border);
+  border-radius: 0.45em;
+  background: var(--talk-surface);
+}
+
+figure[data-layout] article strong {
+  color: var(--r-highlight-color);
+}
+
+figure[data-layout] article small {
+  font-size: 0.75em;
+}
+
+figure[data-layout='agent-row'],
+figure[data-layout='area-cloud'],
+figure[data-layout='many-to-one'] {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45em;
+}
+
+figure[data-layout='agent-row'] span,
+figure[data-layout='area-cloud'] span,
+figure[data-layout='many-to-one'] span {
+  padding: 0.35em 0.65em;
+  border: 0.04em solid var(--talk-border);
+  border-radius: 99em;
+  background: var(--talk-surface);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.62em;
+  line-height: 1.1;
+}
+
+figure[data-layout='three-paths'],
+figure[data-layout='split'],
+figure[data-layout='before-after'] {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0.8em;
+}
+
+figure[data-layout='equation'],
+figure[data-layout='gate'],
+figure[data-layout='compression'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65em;
+}
+
+figure[data-layout='equation'] > *,
+figure[data-layout='gate'] > * {
+  padding: 0.55em 0.7em;
+  border-radius: 0.35em;
+  background: var(--talk-surface);
+}
+
+figure[data-layout='compression'] > span {
+  color: var(--r-highlight-color);
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+figure[data-layout='focus'] {
+  padding: 1.3em;
+  border: 0.06em solid var(--r-highlight-color);
+  border-radius: 0.5em;
+  background: var(--talk-soft);
+}
+
+figure[data-layout='flow'] ol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 0;
+  list-style: none;
+}
+
+figure[data-layout='flow'] li {
+  display: flex;
+  align-items: center;
+  font-size: 0.85em;
+  font-weight: 700;
+}
+
+figure[data-layout='flow'] li:not(:last-child)::after {
+  content: '->';
+  margin-inline: 0.55em;
+  color: var(--r-highlight-color);
+}
+
+ol[data-layout='steps'],
+ol[data-layout='takeaways'] {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45em;
+  max-inline-size: 24em;
+  margin-inline: auto;
+}
+
+ol[data-layout='steps'] li,
+ol[data-layout='takeaways'] li {
+  padding: 0.4em 0.6em;
+  border-block-end: 0.04em solid var(--talk-border);
+}
+
+dl[data-layout='stats'] {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65em;
+  max-inline-size: 34em;
+  margin: 1.4em auto 0;
+}
+
+dl[data-layout='stats'] div {
+  display: flex;
+  flex: 1 1 4em;
+  flex-direction: column;
+  padding: 0.65em;
+  border: 0.04em solid var(--talk-border);
+  border-radius: 0.4em;
+  background: var(--talk-surface);
+}
+
+dl[data-layout='stats'] dt {
+  color: var(--r-highlight-color);
+  font-size: 1.3em;
+  font-weight: 800;
+}
+
+dl[data-layout='stats'] dd {
+  margin: 0;
+  font-size: 0.72em;
+}
+
+pre {
+  white-space: pre-wrap;
+  text-align: center;
+  font-size: 0.72em;
+}
+
+/* Data tables */
+
+table[data-layout] {
+  inline-size: min(100%, 34em);
+  margin: 1.2em auto 0;
+  border-collapse: collapse;
+  font-size: 0.8em;
+}
+
+table[data-layout] th,
+table[data-layout] td {
+  padding: 0.55em 0.7em;
+  border-block-end: 0.04em solid var(--talk-border);
+  text-align: start;
+}
+
+table[data-layout] th {
+  color: var(--r-highlight-color);
+}
+
+figure[data-layout='before-after'] article b {
+  color: var(--r-highlight-color);
+  font-size: 2em;
+}
+
+figure[data-layout='cta'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2em;
+}
+
+figure[data-layout='cta'] picture {
+  flex: 0 0 7em;
+}
+
+figure[data-layout='cta'] img {
+  inline-size: 100%;
+  margin: 0;
+  border-radius: 0.4em;
+}
+
+figure[data-layout='cta'] figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45em;
+  max-inline-size: 16em;
+  text-align: start;
+}
+
+/* Responsive layout */
+
+@media (max-width: 720px) {
+  figure[data-layout='three-paths'],
+  figure[data-layout='split'],
+  figure[data-layout='before-after'],
+  figure[data-layout='compression'],
+  figure[data-layout='cta'] {
+    flex-direction: column;
+  }
+
+  figure[data-layout='flow'] ol {
+    flex-wrap: wrap;
+    row-gap: 0.5em;
+  }
+}
+
+/* Matrix rain - deck background, shown only on the title slide */
+
+main.reveal > matrix-code {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Each column holds block chars of fixed height: line-height cannot change it. */
+main.reveal > matrix-code span {
+  display: block;
+  width: 1vmax;
+  height: 1vmax;
+  font-size: 1vmax;
+  color: #9bff9b11;
+  text-align: center;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+main.reveal > matrix-code[hidden] {
+  display: none;
+}
+
+/* Corner veils keep the deck controls readable over the rain. */
+main.reveal > matrix-code::before,
+main.reveal > matrix-code::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, color-mix(in srgb, var(--r-background-color) 94%, transparent) 0%, color-mix(in srgb, var(--r-background-color) 76%, transparent) 50%, transparent 84%);
+}
+
+main.reveal > matrix-code::before {
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inline-size: 360px;
+  block-size: 170px;
+}
+
+main.reveal > matrix-code::after {
+  inset-block-end: 0;
+  inset-inline-end: 0;
+  inline-size: 320px;
+  block-size: 240px;
+}
+
+/* Veil: paints over the rain and under the text, fading at the edges. */
+section[data-matrix] > * {
+  position: relative;
+  z-index: 1;
+}
+
+section[data-matrix]::after {
+  content: '';
+  position: absolute;
+  inset: -55% -12%;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    color-mix(in srgb, var(--r-background-color) 96%, transparent) 0%,
+    color-mix(in srgb, var(--r-background-color) 82%, transparent) 45%,
+    transparent 68%
+  );
+}
+
+@media (prefers-reduced-motion: reduce), print {
+  main.reveal > matrix-code {
+    display: none;
+  }
 }
 
 /* Talk diagrams (inline SVG) */
@@ -46,199 +419,4 @@
 .diagram .d-arrow {
 	stroke: currentColor;
 	stroke-width: 1.5;
-}
-/* Ported from fix/visual-rework: the intro slides keep their own vocabulary
-   (data-part, data-kicker, figure[data-layout]) and the matrix rain. */
-
-:root {
-	--talk-border: color-mix(in srgb, currentColor 24%, transparent);
-	--talk-surface: color-mix(in srgb, currentColor 7%, transparent);
-	--talk-soft: color-mix(in srgb, var(--r-highlight-color) 14%, transparent);
-}
-
-section[data-part="slide"] {
-	font-size: 0.68em;
-	line-height: 1.25;
-	text-wrap: balance;
-}
-
-section[data-part="slide"] h1 {
-	font-size: 2.05em;
-	line-height: 1.05;
-}
-
-section[data-part="slide"] h2 {
-	font-size: 1.55em;
-	line-height: 1.1;
-}
-
-section[data-part="slide"] h3,
-section[data-part="slide"] h4 {
-	font-size: 1.3em;
-	line-height: 1.15;
-}
-
-section[data-part="slide"] p,
-section[data-part="slide"] li,
-section[data-part="slide"] td,
-section[data-part="slide"] th {
-	line-height: 1.3;
-}
-
-section[data-chapter] > p {
-	max-inline-size: 30em;
-	margin-inline: auto;
-}
-
-p[data-kicker] {
-	color: var(--r-highlight-color);
-	font-size: 0.55em;
-	font-weight: 700;
-	letter-spacing: 0.12em;
-	text-transform: uppercase;
-}
-
-blockquote {
-	max-inline-size: 24em;
-	margin: 1.5em auto 0;
-	padding: 1em 1.2em;
-	border-inline-start: 0.16em solid var(--r-highlight-color);
-	background: var(--talk-surface);
-	text-align: start;
-}
-
-figure[data-layout] {
-	max-inline-size: 32em;
-	margin: 1.4em auto 0;
-	line-height: 1.25;
-}
-
-section[data-part="slide"] figure[data-layout] + p,
-section[data-part="slide"] table[data-layout] + p {
-	margin-block-start: 0.8em;
-}
-
-figure[data-layout] article {
-	display: flex;
-	flex: 1 1 10em;
-	flex-direction: column;
-	justify-content: center;
-	gap: 0.35em;
-	min-block-size: 4.5em;
-	padding: 0.8em;
-	border: 0.04em solid var(--talk-border);
-	border-radius: 0.45em;
-	background: var(--talk-surface);
-}
-
-figure[data-layout] article strong {
-	color: var(--r-highlight-color);
-}
-
-figure[data-layout] article small {
-	font-size: 0.75em;
-}
-
-figure[data-layout="agent-row"],
-figure[data-layout="area-cloud"],
-figure[data-layout="many-to-one"] {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 0.45em;
-}
-
-figure[data-layout="agent-row"] span,
-figure[data-layout="area-cloud"] span,
-figure[data-layout="many-to-one"] span {
-	padding: 0.35em 0.65em;
-	border: 0.04em solid var(--talk-border);
-	border-radius: 99em;
-	background: var(--talk-surface);
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 0.62em;
-	line-height: 1.1;
-}
-
-/* Matrix rain - deck background, shown only on the title slide */
-
-main.reveal > matrix-code {
-	position: absolute;
-	inset: 0;
-	z-index: 0;
-	display: flex;
-	justify-content: center;
-	overflow: hidden;
-	pointer-events: none;
-}
-
-/* Each column holds block chars of fixed height: line-height cannot change it. */
-main.reveal > matrix-code span {
-	display: block;
-	width: 1vmax;
-	height: 1vmax;
-	font-size: 1vmax;
-	color: #9bff9b11;
-	text-align: center;
-	font-family: "Helvetica Neue", Helvetica, sans-serif;
-}
-
-main.reveal > matrix-code[hidden] {
-	display: none;
-}
-
-/* Corner veils keep the deck controls readable over the rain. */
-main.reveal > matrix-code::before,
-main.reveal > matrix-code::after {
-	content: "";
-	position: absolute;
-	pointer-events: none;
-	background: radial-gradient(
-		ellipse at center,
-		color-mix(in srgb, var(--r-background-color) 94%, transparent) 0%,
-		color-mix(in srgb, var(--r-background-color) 76%, transparent) 50%,
-		transparent 84%
-	);
-}
-
-main.reveal > matrix-code::before {
-	inset-block-start: 0;
-	inset-inline-start: 0;
-	inline-size: 360px;
-	block-size: 170px;
-}
-
-main.reveal > matrix-code::after {
-	inset-block-end: 0;
-	inset-inline-end: 0;
-	inline-size: 320px;
-	block-size: 240px;
-}
-
-/* Veil: paints over the rain and under the text, fading at the edges. */
-section[data-matrix] > * {
-	position: relative;
-	z-index: 1;
-}
-
-section[data-matrix]::after {
-	content: "";
-	position: absolute;
-	inset: -55% -12%;
-	z-index: 0;
-	pointer-events: none;
-	background: radial-gradient(
-		ellipse at center,
-		color-mix(in srgb, var(--r-background-color) 96%, transparent) 0%,
-		color-mix(in srgb, var(--r-background-color) 82%, transparent) 45%,
-		transparent 68%
-	);
-}
-
-@media (prefers-reduced-motion: reduce), print {
-	main.reveal > matrix-code {
-		display: none;
-	}
 }
