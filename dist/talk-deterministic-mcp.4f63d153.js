@@ -339,12 +339,12 @@ function $parcel$interopDefault(a) {
 
 
 //#region js/utils/util.ts
-var $36b9ed5236646edc$var$e = (e, t)=>{
+var $940a81c445964e0e$var$e = (e, t)=>{
     for(let n in t)e[n] = t[n];
     return e;
-}, $36b9ed5236646edc$var$t = (e, t)=>Array.from(e.querySelectorAll(t)), $36b9ed5236646edc$var$n = (e, t, n)=>{
+}, $940a81c445964e0e$var$t = (e, t)=>Array.from(e.querySelectorAll(t)), $940a81c445964e0e$var$n = (e, t, n)=>{
     n ? e.classList.add(t) : e.classList.remove(t);
-}, $36b9ed5236646edc$var$r = (e)=>{
+}, $940a81c445964e0e$var$r = (e)=>{
     if (typeof e == "string") {
         if (e === "null") return null;
         if (e === "true") return !0;
@@ -352,23 +352,23 @@ var $36b9ed5236646edc$var$e = (e, t)=>{
         if (e.match(/^-?[\d\.]+$/)) return parseFloat(e);
     }
     return e;
-}, $36b9ed5236646edc$var$i = (e, t)=>{
+}, $940a81c445964e0e$var$i = (e, t)=>{
     e.style.transform = t;
-}, $36b9ed5236646edc$var$a = (e, t)=>{
+}, $940a81c445964e0e$var$a = (e, t)=>{
     let n = e.matches || e.matchesSelector || e.msMatchesSelector;
     return !!(n && n.call(e, t));
-}, $36b9ed5236646edc$var$o = (e, t)=>{
+}, $940a81c445964e0e$var$o = (e, t)=>{
     if (e && typeof e.closest == "function") return e.closest(t);
     for(; e;){
-        if ($36b9ed5236646edc$var$a(e, t)) return e;
+        if ($940a81c445964e0e$var$a(e, t)) return e;
         e = e.parentElement;
     }
     return null;
-}, $36b9ed5236646edc$var$s = (e)=>{
+}, $940a81c445964e0e$var$s = (e)=>{
     e = e || document.documentElement;
     let t = e.requestFullscreen || e.webkitRequestFullscreen || e.webkitRequestFullScreen || e.mozRequestFullScreen || e.msRequestFullscreen;
     t && t.apply(e);
-}, $36b9ed5236646edc$var$c = (e, t, n, r = "")=>{
+}, $940a81c445964e0e$var$c = (e, t, n, r = "")=>{
     let i = e.querySelectorAll("." + n);
     for(let t = 0; t < i.length; t++){
         let n = i[t];
@@ -376,10 +376,10 @@ var $36b9ed5236646edc$var$e = (e, t)=>{
     }
     let a = document.createElement(t);
     return a.className = n, a.innerHTML = r, e.appendChild(a), a;
-}, $36b9ed5236646edc$var$l = (e)=>{
+}, $940a81c445964e0e$var$l = (e)=>{
     let t = document.createElement("style");
     return e && e.length > 0 && t.appendChild(document.createTextNode(e)), document.head.appendChild(t), t;
-}, $36b9ed5236646edc$var$u = ()=>{
+}, $940a81c445964e0e$var$u = ()=>{
     let e = {};
     location.search.replace(/[A-Z0-9]+?=([\w\.%-]*)/gi, (t)=>{
         let n = t.split("=").shift(), r = t.split("=").pop();
@@ -387,28 +387,28 @@ var $36b9ed5236646edc$var$e = (e, t)=>{
     });
     for(let t in e){
         let n = e[t];
-        e[t] = $36b9ed5236646edc$var$r(unescape(n));
+        e[t] = $940a81c445964e0e$var$r(unescape(n));
     }
     return e.dependencies !== void 0 && delete e.dependencies, e;
-}, $36b9ed5236646edc$var$d = (e, t = 0)=>{
+}, $940a81c445964e0e$var$d = (e, t = 0)=>{
     if (e) {
         var n;
         let r, i = e.style.height;
         return e.style.height = "0px", e.parentElement && (e.parentElement.style.height = "auto"), r = t - (((n = e.parentElement) == null ? void 0 : n.offsetHeight) || 0), e.style.height = i + "px", e.parentElement && e.parentElement.style.removeProperty("height"), r;
     }
     return t;
-}, $36b9ed5236646edc$var$f = {
+}, $940a81c445964e0e$var$f = {
     mp4: "video/mp4",
     m4a: "video/mp4",
     ogv: "video/ogg",
     mpeg: "video/mpeg",
     webm: "video/webm"
-}, $36b9ed5236646edc$var$p = (e = "")=>{
+}, $940a81c445964e0e$var$p = (e = "")=>{
     let t = e.split(".").pop();
-    return t ? $36b9ed5236646edc$var$f[t] : void 0;
-}, $36b9ed5236646edc$var$m = (e = "")=>encodeURI(e).replace(/%5B/g, "[").replace(/%5D/g, "]").replace(/[!'()*]/g, (e)=>`%${e.charCodeAt(0).toString(16).toUpperCase()}`), $36b9ed5236646edc$var$h = navigator.userAgent, $36b9ed5236646edc$var$g = /(iphone|ipod|ipad|android)/gi.test($36b9ed5236646edc$var$h) || navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
-/chrome/i.test($36b9ed5236646edc$var$h) && /edge/i.test($36b9ed5236646edc$var$h);
-var $36b9ed5236646edc$var$_ = /android/gi.test($36b9ed5236646edc$var$h), $36b9ed5236646edc$var$v = function(e) {
+    return t ? $940a81c445964e0e$var$f[t] : void 0;
+}, $940a81c445964e0e$var$m = (e = "")=>encodeURI(e).replace(/%5B/g, "[").replace(/%5D/g, "]").replace(/[!'()*]/g, (e)=>`%${e.charCodeAt(0).toString(16).toUpperCase()}`), $940a81c445964e0e$var$h = navigator.userAgent, $940a81c445964e0e$var$g = /(iphone|ipod|ipad|android)/gi.test($940a81c445964e0e$var$h) || navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
+/chrome/i.test($940a81c445964e0e$var$h) && /edge/i.test($940a81c445964e0e$var$h);
+var $940a81c445964e0e$var$_ = /android/gi.test($940a81c445964e0e$var$h), $940a81c445964e0e$var$v = function(e) {
     if (e) {
         var t = function(e) {
             return [].slice.call(e);
@@ -537,36 +537,36 @@ var $36b9ed5236646edc$var$_ = /android/gi.test($36b9ed5236646edc$var$h), $36b9ed
 }(typeof window > "u" ? null : window);
 //#endregion
 //#region \0@oxc-project+runtime@0.146.0/helpers/esm/typeof.js
-function $36b9ed5236646edc$var$y(e) {
+function $940a81c445964e0e$var$y(e) {
     "@babel/helpers - typeof";
-    return $36b9ed5236646edc$var$y = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(e) {
+    return $940a81c445964e0e$var$y = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(e) {
         return typeof e;
     } : function(e) {
         return e && typeof Symbol == "function" && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e;
-    }, $36b9ed5236646edc$var$y(e);
+    }, $940a81c445964e0e$var$y(e);
 }
 //#endregion
 //#region \0@oxc-project+runtime@0.146.0/helpers/esm/toPrimitive.js
-function $36b9ed5236646edc$var$b(e, t) {
-    if ($36b9ed5236646edc$var$y(e) != "object" || !e) return e;
+function $940a81c445964e0e$var$b(e, t) {
+    if ($940a81c445964e0e$var$y(e) != "object" || !e) return e;
     var n = e[Symbol.toPrimitive];
     if (n !== void 0) {
         var r = n.call(e, t || "default");
-        if ($36b9ed5236646edc$var$y(r) != "object") return r;
+        if ($940a81c445964e0e$var$y(r) != "object") return r;
         throw TypeError("@@toPrimitive must return a primitive value.");
     }
     return (t === "string" ? String : Number)(e);
 }
 //#endregion
 //#region \0@oxc-project+runtime@0.146.0/helpers/esm/toPropertyKey.js
-function $36b9ed5236646edc$var$x(e) {
-    var t = $36b9ed5236646edc$var$b(e, "string");
-    return $36b9ed5236646edc$var$y(t) == "symbol" ? t : t + "";
+function $940a81c445964e0e$var$x(e) {
+    var t = $940a81c445964e0e$var$b(e, "string");
+    return $940a81c445964e0e$var$y(t) == "symbol" ? t : t + "";
 }
 //#endregion
 //#region \0@oxc-project+runtime@0.146.0/helpers/esm/defineProperty.js
-function $36b9ed5236646edc$var$S(e, t, n) {
-    return (t = $36b9ed5236646edc$var$x(t)) in e ? Object.defineProperty(e, t, {
+function $940a81c445964e0e$var$S(e, t, n) {
+    return (t = $940a81c445964e0e$var$x(t)) in e ? Object.defineProperty(e, t, {
         value: n,
         enumerable: !0,
         configurable: !0,
@@ -575,9 +575,9 @@ function $36b9ed5236646edc$var$S(e, t, n) {
 }
 //#endregion
 //#region js/controllers/slidecontent.js
-var $36b9ed5236646edc$var$ee = class {
+var $940a81c445964e0e$var$ee = class {
     constructor(e){
-        $36b9ed5236646edc$var$S(this, "allowedToPlayAudio", null), this.Reveal = e, this.startEmbeddedMedia = this.startEmbeddedMedia.bind(this), this.startEmbeddedIframe = this.startEmbeddedIframe.bind(this), this.preventIframeAutoFocus = this.preventIframeAutoFocus.bind(this), this.ensureMobileMediaPlaying = this.ensureMobileMediaPlaying.bind(this), this.failedAudioPlaybackTargets = /* @__PURE__ */ new Set(), this.failedVideoPlaybackTargets = /* @__PURE__ */ new Set(), this.failedMutedVideoPlaybackTargets = /* @__PURE__ */ new Set(), this.renderMediaPlayButton();
+        $940a81c445964e0e$var$S(this, "allowedToPlayAudio", null), this.Reveal = e, this.startEmbeddedMedia = this.startEmbeddedMedia.bind(this), this.startEmbeddedIframe = this.startEmbeddedIframe.bind(this), this.preventIframeAutoFocus = this.preventIframeAutoFocus.bind(this), this.ensureMobileMediaPlaying = this.ensureMobileMediaPlaying.bind(this), this.failedAudioPlaybackTargets = /* @__PURE__ */ new Set(), this.failedVideoPlaybackTargets = /* @__PURE__ */ new Set(), this.failedMutedVideoPlaybackTargets = /* @__PURE__ */ new Set(), this.renderMediaPlayButton();
     }
     renderMediaPlayButton() {
         this.mediaPlayButton = document.createElement("button"), this.mediaPlayButton.className = "r-overlay-button r-media-play-button", this.mediaPlayButton.addEventListener("click", ()=>{
@@ -603,14 +603,14 @@ var $36b9ed5236646edc$var$ee = class {
             let t = r.replace(/\s*!important\s*$/, "").trim();
             e.style.setProperty("display", t, "important");
         } else e.style.display = r;
-        $36b9ed5236646edc$var$t(e, "img[data-src], video[data-src], audio[data-src], iframe[data-src]").forEach((e)=>{
+        $940a81c445964e0e$var$t(e, "img[data-src], video[data-src], audio[data-src], iframe[data-src]").forEach((e)=>{
             let t = e.tagName === "IFRAME";
             (!t || this.shouldPreload(e)) && (e.setAttribute("src", e.getAttribute("data-src")), e.setAttribute("data-lazy-loaded", ""), e.removeAttribute("data-src"), t && e.addEventListener("load", this.preventIframeAutoFocus));
-        }), $36b9ed5236646edc$var$t(e, "video, audio").forEach((e)=>{
+        }), $940a81c445964e0e$var$t(e, "video, audio").forEach((e)=>{
             let n = 0;
-            $36b9ed5236646edc$var$t(e, "source[data-src]").forEach((e)=>{
+            $940a81c445964e0e$var$t(e, "source[data-src]").forEach((e)=>{
                 e.setAttribute("src", e.getAttribute("data-src")), e.removeAttribute("data-src"), e.setAttribute("data-lazy-loaded", ""), n += 1;
-            }), $36b9ed5236646edc$var$g && e.tagName === "VIDEO" && e.setAttribute("playsinline", ""), n > 0 && e.load();
+            }), $940a81c445964e0e$var$g && e.tagName === "VIDEO" && e.setAttribute("playsinline", ""), n > 0 && e.load();
         });
         let i = e.slideBackgroundElement;
         if (i) {
@@ -619,13 +619,13 @@ var $36b9ed5236646edc$var$ee = class {
             if (i.hasAttribute("data-loaded") === !1) {
                 i.setAttribute("data-loaded", "true");
                 let a = e.getAttribute("data-background-image"), o = e.getAttribute("data-background-video"), s = e.hasAttribute("data-background-video-loop"), c = e.hasAttribute("data-background-video-muted");
-                if (a) /^data:/.test(a.trim()) ? t.style.backgroundImage = `url(${a.trim()})` : t.style.backgroundImage = a.split(",").map((e)=>`url(${$36b9ed5236646edc$var$m(decodeURI(e.trim()))})`).join(",");
+                if (a) /^data:/.test(a.trim()) ? t.style.backgroundImage = `url(${a.trim()})` : t.style.backgroundImage = a.split(",").map((e)=>`url(${$940a81c445964e0e$var$m(decodeURI(e.trim()))})`).join(",");
                 else if (o) {
                     let e = document.createElement("video");
-                    s && e.setAttribute("loop", ""), (c || this.Reveal.isSpeakerNotes()) && (e.muted = !0), $36b9ed5236646edc$var$g && e.setAttribute("playsinline", ""), o.split(",").forEach((t)=>{
+                    s && e.setAttribute("loop", ""), (c || this.Reveal.isSpeakerNotes()) && (e.muted = !0), $940a81c445964e0e$var$g && e.setAttribute("playsinline", ""), o.split(",").forEach((t)=>{
                         let n = document.createElement("source");
                         n.setAttribute("src", t);
-                        let r = $36b9ed5236646edc$var$p(t);
+                        let r = $940a81c445964e0e$var$p(t);
                         r && n.setAttribute("type", r), e.appendChild(n);
                     }), t.appendChild(e);
                 } else if (r && n.excludeIframes !== !0) {
@@ -640,7 +640,7 @@ var $36b9ed5236646edc$var$ee = class {
     }
     layout(e) {
         Array.from(e.querySelectorAll(".r-fit-text")).forEach((e)=>{
-            $36b9ed5236646edc$var$v(e, {
+            $940a81c445964e0e$var$v(e, {
                 minSize: 24,
                 maxSize: this.Reveal.getConfig().height * .8,
                 observeMutations: !1,
@@ -651,17 +651,17 @@ var $36b9ed5236646edc$var$ee = class {
     unload(e) {
         e.style.display = "none";
         let n = this.Reveal.getSlideBackground(e);
-        n && (n.style.display = "none", $36b9ed5236646edc$var$t(n, "iframe[src]").forEach((e)=>{
+        n && (n.style.display = "none", $940a81c445964e0e$var$t(n, "iframe[src]").forEach((e)=>{
             e.removeAttribute("src");
-        })), $36b9ed5236646edc$var$t(e, "video[data-lazy-loaded][src], audio[data-lazy-loaded][src], iframe[data-lazy-loaded][src]").forEach((e)=>{
+        })), $940a81c445964e0e$var$t(e, "video[data-lazy-loaded][src], audio[data-lazy-loaded][src], iframe[data-lazy-loaded][src]").forEach((e)=>{
             e.setAttribute("data-src", e.getAttribute("src")), e.removeAttribute("src");
-        }), $36b9ed5236646edc$var$t(e, "video[data-lazy-loaded] source[src], audio source[src]").forEach((e)=>{
+        }), $940a81c445964e0e$var$t(e, "video[data-lazy-loaded] source[src], audio source[src]").forEach((e)=>{
             e.setAttribute("data-src", e.getAttribute("src")), e.removeAttribute("src");
         });
     }
     formatEmbeddedContent() {
         let e = (e, n, r)=>{
-            $36b9ed5236646edc$var$t(this.Reveal.getSlidesElement(), "iframe[" + e + "*=\"" + n + "\"]").forEach((t)=>{
+            $940a81c445964e0e$var$t(this.Reveal.getSlidesElement(), "iframe[" + e + "*=\"" + n + "\"]").forEach((t)=>{
                 let n = t.getAttribute(e);
                 n && n.indexOf(r) === -1 && t.setAttribute(e, n + (/\?/.test(n) ? "&" : "?") + r);
             });
@@ -671,23 +671,23 @@ var $36b9ed5236646edc$var$ee = class {
     startEmbeddedContent(e) {
         if (e) {
             let n = this.Reveal.isSpeakerNotes();
-            $36b9ed5236646edc$var$t(e, "img[src$=\".gif\"]").forEach((e)=>{
+            $940a81c445964e0e$var$t(e, "img[src$=\".gif\"]").forEach((e)=>{
                 e.setAttribute("src", e.getAttribute("src"));
-            }), $36b9ed5236646edc$var$t(e, "video, audio").forEach((e)=>{
-                if ($36b9ed5236646edc$var$o(e, ".fragment") && !$36b9ed5236646edc$var$o(e, ".fragment.visible")) return;
+            }), $940a81c445964e0e$var$t(e, "video, audio").forEach((e)=>{
+                if ($940a81c445964e0e$var$o(e, ".fragment") && !$940a81c445964e0e$var$o(e, ".fragment.visible")) return;
                 let t = this.Reveal.getConfig().autoPlayMedia;
-                if (typeof t != "boolean" && (t = e.hasAttribute("data-autoplay") || !!$36b9ed5236646edc$var$o(e, ".slide-background")), t && typeof e.play == "function") {
+                if (typeof t != "boolean" && (t = e.hasAttribute("data-autoplay") || !!$940a81c445964e0e$var$o(e, ".slide-background")), t && typeof e.play == "function") {
                     if (n && !e.muted) return;
                     e.readyState > 1 ? this.startEmbeddedMedia({
                         target: e
-                    }) : $36b9ed5236646edc$var$g ? (e.addEventListener("canplay", this.ensureMobileMediaPlaying), this.playMediaElement(e)) : (e.removeEventListener("loadeddata", this.startEmbeddedMedia), e.addEventListener("loadeddata", this.startEmbeddedMedia));
+                    }) : $940a81c445964e0e$var$g ? (e.addEventListener("canplay", this.ensureMobileMediaPlaying), this.playMediaElement(e)) : (e.removeEventListener("loadeddata", this.startEmbeddedMedia), e.addEventListener("loadeddata", this.startEmbeddedMedia));
                 }
-            }), n || ($36b9ed5236646edc$var$t(e, "iframe[src]").forEach((e)=>{
-                $36b9ed5236646edc$var$o(e, ".fragment") && !$36b9ed5236646edc$var$o(e, ".fragment.visible") || this.startEmbeddedIframe({
+            }), n || ($940a81c445964e0e$var$t(e, "iframe[src]").forEach((e)=>{
+                $940a81c445964e0e$var$o(e, ".fragment") && !$940a81c445964e0e$var$o(e, ".fragment.visible") || this.startEmbeddedIframe({
                     target: e
                 });
-            }), $36b9ed5236646edc$var$t(e, "iframe[data-src]").forEach((e)=>{
-                $36b9ed5236646edc$var$o(e, ".fragment") && !$36b9ed5236646edc$var$o(e, ".fragment.visible") || e.getAttribute("src") !== e.getAttribute("data-src") && (e.removeEventListener("load", this.startEmbeddedIframe), e.addEventListener("load", this.startEmbeddedIframe), e.setAttribute("src", e.getAttribute("data-src")));
+            }), $940a81c445964e0e$var$t(e, "iframe[data-src]").forEach((e)=>{
+                $940a81c445964e0e$var$o(e, ".fragment") && !$940a81c445964e0e$var$o(e, ".fragment.visible") || e.getAttribute("src") !== e.getAttribute("data-src") && (e.removeEventListener("load", this.startEmbeddedIframe), e.addEventListener("load", this.startEmbeddedIframe), e.setAttribute("src", e.getAttribute("data-src")));
             }));
         }
     }
@@ -699,7 +699,7 @@ var $36b9ed5236646edc$var$ee = class {
         }, 1e3);
     }
     startEmbeddedMedia(e) {
-        let t = !!$36b9ed5236646edc$var$o(e.target, "html"), n = !!$36b9ed5236646edc$var$o(e.target, ".present");
+        let t = !!$940a81c445964e0e$var$o(e.target, "html"), n = !!$940a81c445964e0e$var$o(e.target, ".present");
         t && n && (e.target.paused || e.target.ended) && (e.target.currentTime = 0, this.playMediaElement(e.target)), e.target.removeEventListener("loadeddata", this.startEmbeddedMedia);
     }
     playMediaElement(e) {
@@ -710,7 +710,7 @@ var $36b9ed5236646edc$var$ee = class {
             if (t.name === "NotAllowedError") {
                 if (this.allowedToPlayAudio = !1, e.tagName === "VIDEO") {
                     this.onVideoPlaybackNotAllowed(e);
-                    let t = !!$36b9ed5236646edc$var$o(e, "html"), n = !!$36b9ed5236646edc$var$o(e, ".present"), r = e.muted;
+                    let t = !!$940a81c445964e0e$var$o(e, "html"), n = !!$940a81c445964e0e$var$o(e, ".present"), r = e.muted;
                     t && n && !r && (e.setAttribute("data-muted-by-reveal", "true"), e.muted = !0, e.play().catch(()=>{
                         this.onMutedVideoPlaybackNotAllowed(e);
                     }));
@@ -721,25 +721,25 @@ var $36b9ed5236646edc$var$ee = class {
     startEmbeddedIframe(e) {
         let t = e.target;
         if (this.preventIframeAutoFocus(e), t && t.contentWindow) {
-            let n = !!$36b9ed5236646edc$var$o(e.target, "html"), r = !!$36b9ed5236646edc$var$o(e.target, ".present");
+            let n = !!$940a81c445964e0e$var$o(e.target, "html"), r = !!$940a81c445964e0e$var$o(e.target, ".present");
             if (n && r) {
                 let e = this.Reveal.getConfig().autoPlayMedia;
-                typeof e != "boolean" && (e = t.hasAttribute("data-autoplay") || !!$36b9ed5236646edc$var$o(t, ".slide-background")), /youtube\.com\/embed\//.test(t.getAttribute("src")) && e ? t.contentWindow.postMessage("{\"event\":\"command\",\"func\":\"playVideo\",\"args\":\"\"}", "*") : /player\.vimeo\.com\//.test(t.getAttribute("src")) && e ? t.contentWindow.postMessage("{\"method\":\"play\"}", "*") : t.contentWindow.postMessage("slide:start", "*");
+                typeof e != "boolean" && (e = t.hasAttribute("data-autoplay") || !!$940a81c445964e0e$var$o(t, ".slide-background")), /youtube\.com\/embed\//.test(t.getAttribute("src")) && e ? t.contentWindow.postMessage("{\"event\":\"command\",\"func\":\"playVideo\",\"args\":\"\"}", "*") : /player\.vimeo\.com\//.test(t.getAttribute("src")) && e ? t.contentWindow.postMessage("{\"method\":\"play\"}", "*") : t.contentWindow.postMessage("slide:start", "*");
             }
         }
     }
     stopEmbeddedContent(n, r = {}) {
-        r = $36b9ed5236646edc$var$e({
+        r = $940a81c445964e0e$var$e({
             unloadIframes: !0
-        }, r), n && n.parentNode && ($36b9ed5236646edc$var$t(n, "video, audio").forEach((e)=>{
-            !e.hasAttribute("data-ignore") && typeof e.pause == "function" && (e.setAttribute("data-paused-by-reveal", ""), e.pause(), $36b9ed5236646edc$var$g && e.removeEventListener("canplay", this.ensureMobileMediaPlaying));
-        }), $36b9ed5236646edc$var$t(n, "iframe").forEach((e)=>{
+        }, r), n && n.parentNode && ($940a81c445964e0e$var$t(n, "video, audio").forEach((e)=>{
+            !e.hasAttribute("data-ignore") && typeof e.pause == "function" && (e.setAttribute("data-paused-by-reveal", ""), e.pause(), $940a81c445964e0e$var$g && e.removeEventListener("canplay", this.ensureMobileMediaPlaying));
+        }), $940a81c445964e0e$var$t(n, "iframe").forEach((e)=>{
             e.contentWindow && e.contentWindow.postMessage("slide:stop", "*"), e.removeEventListener("load", this.preventIframeAutoFocus), e.removeEventListener("load", this.startEmbeddedIframe);
-        }), $36b9ed5236646edc$var$t(n, "iframe[src*=\"youtube.com/embed/\"]").forEach((e)=>{
+        }), $940a81c445964e0e$var$t(n, "iframe[src*=\"youtube.com/embed/\"]").forEach((e)=>{
             !e.hasAttribute("data-ignore") && e.contentWindow && typeof e.contentWindow.postMessage == "function" && e.contentWindow.postMessage("{\"event\":\"command\",\"func\":\"pauseVideo\",\"args\":\"\"}", "*");
-        }), $36b9ed5236646edc$var$t(n, "iframe[src*=\"player.vimeo.com/\"]").forEach((e)=>{
+        }), $940a81c445964e0e$var$t(n, "iframe[src*=\"player.vimeo.com/\"]").forEach((e)=>{
             !e.hasAttribute("data-ignore") && e.contentWindow && typeof e.contentWindow.postMessage == "function" && e.contentWindow.postMessage("{\"method\":\"pause\"}", "*");
-        }), r.unloadIframes === !0 && $36b9ed5236646edc$var$t(n, "iframe[data-src]").forEach((e)=>{
+        }), r.unloadIframes === !0 && $940a81c445964e0e$var$t(n, "iframe[data-src]").forEach((e)=>{
             e.setAttribute("src", "about:blank"), e.removeAttribute("src");
         }));
     }
@@ -783,7 +783,7 @@ var $36b9ed5236646edc$var$ee = class {
     afterSlideChanged() {
         this.clearMediaPlaybackErrors();
     }
-}, $36b9ed5236646edc$var$C = ".slides section", $36b9ed5236646edc$var$w = ".slides>section", $36b9ed5236646edc$var$te = ".slides>section.present>section", $36b9ed5236646edc$var$T = ".backgrounds>.slide-background", $36b9ed5236646edc$var$E = /registerPlugin|registerKeyboardShortcut|addKeyBinding|addEventListener|showPreview|previewIframe/, $36b9ed5236646edc$var$ne = class {
+}, $940a81c445964e0e$var$C = ".slides section", $940a81c445964e0e$var$w = ".slides>section", $940a81c445964e0e$var$te = ".slides>section.present>section", $940a81c445964e0e$var$T = ".backgrounds>.slide-background", $940a81c445964e0e$var$E = /registerPlugin|registerKeyboardShortcut|addKeyBinding|addEventListener|showPreview|previewIframe/, $940a81c445964e0e$var$ne = class {
     constructor(e){
         this.Reveal = e;
     }
@@ -832,7 +832,7 @@ var $36b9ed5236646edc$var$ee = class {
     destroy() {
         this.element.remove();
     }
-}, $36b9ed5236646edc$var$re = class {
+}, $940a81c445964e0e$var$re = class {
     constructor(e){
         this.Reveal = e, this.onInput = this.onInput.bind(this), this.onBlur = this.onBlur.bind(this), this.onKeyDown = this.onKeyDown.bind(this);
     }
@@ -887,7 +887,7 @@ var $36b9ed5236646edc$var$ee = class {
     onBlur() {
         setTimeout(()=>this.hide(), 1);
     }
-}, $36b9ed5236646edc$var$D = (e)=>{
+}, $940a81c445964e0e$var$D = (e)=>{
     let t = e.match(/^#([0-9a-f]{3})$/i);
     if (t && t[1]) {
         let e = t[1];
@@ -919,7 +919,7 @@ var $36b9ed5236646edc$var$ee = class {
         b: parseInt(i[3], 10),
         a: parseFloat(i[4])
     } : null;
-}, $36b9ed5236646edc$var$ie = (e)=>(typeof e == "string" && (e = $36b9ed5236646edc$var$D(e)), e ? (e.r * 299 + e.g * 587 + e.b * 114) / 1e3 : null), $36b9ed5236646edc$var$ae = class {
+}, $940a81c445964e0e$var$ie = (e)=>(typeof e == "string" && (e = $940a81c445964e0e$var$D(e)), e ? (e.r * 299 + e.g * 587 + e.b * 114) / 1e3 : null), $940a81c445964e0e$var$ae = class {
     constructor(e){
         this.Reveal = e;
     }
@@ -929,7 +929,7 @@ var $36b9ed5236646edc$var$ee = class {
     create() {
         this.element.innerHTML = "", this.element.classList.add("no-transition"), this.Reveal.getHorizontalSlides().forEach((e)=>{
             let n = this.createBackground(e, this.element);
-            $36b9ed5236646edc$var$t(e, "section").forEach((e)=>{
+            $940a81c445964e0e$var$t(e, "section").forEach((e)=>{
                 this.createBackground(e, n), n.classList.add("stack");
             });
         }), this.Reveal.getConfig().parallaxBackgroundImage ? (this.element.style.backgroundImage = "url(\"" + this.Reveal.getConfig().parallaxBackgroundImage + "\")", this.element.style.backgroundSize = this.Reveal.getConfig().parallaxBackgroundSize, this.element.style.backgroundRepeat = this.Reveal.getConfig().parallaxBackgroundRepeat, this.element.style.backgroundPosition = this.Reveal.getConfig().parallaxBackgroundPosition, setTimeout(()=>{
@@ -962,13 +962,13 @@ var $36b9ed5236646edc$var$ee = class {
     }
     getContrastClass(e) {
         let t = e.slideBackgroundElement, n = e.getAttribute("data-background-color");
-        if (!n || !$36b9ed5236646edc$var$D(n)) {
+        if (!n || !$940a81c445964e0e$var$D(n)) {
             let e = window.getComputedStyle(t);
             e && e.backgroundColor && (n = e.backgroundColor);
         }
         if (n) {
-            let e = $36b9ed5236646edc$var$D(n);
-            if (e && e.a !== 0) return $36b9ed5236646edc$var$ie(n) < 128 ? "has-dark-background" : "has-light-background";
+            let e = $940a81c445964e0e$var$D(n);
+            if (e && e.a !== 0) return $940a81c445964e0e$var$ie(n) < 128 ? "has-dark-background" : "has-light-background";
         }
         return null;
     }
@@ -983,7 +983,7 @@ var $36b9ed5236646edc$var$ee = class {
     update(e = !1) {
         let n = this.Reveal.getConfig(), r = this.Reveal.getCurrentSlide(), i = this.Reveal.getIndices(), a = null, o = n.rtl ? "future" : "past", s = n.rtl ? "past" : "future";
         if (Array.from(this.element.childNodes).forEach((n, r)=>{
-            n.classList.remove("past", "present", "future"), r < i.h ? n.classList.add(o) : r > i.h ? n.classList.add(s) : (n.classList.add("present"), a = n), (e || r === i.h) && $36b9ed5236646edc$var$t(n, ".slide-background").forEach((e, t)=>{
+            n.classList.remove("past", "present", "future"), r < i.h ? n.classList.add(o) : r > i.h ? n.classList.add(s) : (n.classList.add("present"), a = n), (e || r === i.h) && $940a81c445964e0e$var$t(n, ".slide-background").forEach((e, t)=>{
                 e.classList.remove("past", "present", "future");
                 let n = typeof i.v == "number" ? i.v : 0;
                 t < n ? e.classList.add("past") : t > n ? e.classList.add("future") : (e.classList.add("present"), r === i.h && (a = e));
@@ -1029,7 +1029,7 @@ var $36b9ed5236646edc$var$ee = class {
     destroy() {
         this.element.remove();
     }
-}, $36b9ed5236646edc$var$O = 0, $36b9ed5236646edc$var$oe = class {
+}, $940a81c445964e0e$var$O = 0, $940a81c445964e0e$var$oe = class {
     constructor(e){
         this.Reveal = e;
     }
@@ -1037,17 +1037,17 @@ var $36b9ed5236646edc$var$ee = class {
         this.reset();
         let n = this.Reveal.getSlides(), r = n.indexOf(t), i = n.indexOf(e);
         if (e && t && e.hasAttribute("data-auto-animate") && t.hasAttribute("data-auto-animate") && e.getAttribute("data-auto-animate-id") === t.getAttribute("data-auto-animate-id") && !(r > i ? t : e).hasAttribute("data-auto-animate-restart")) {
-            this.autoAnimateStyleSheet = this.autoAnimateStyleSheet || $36b9ed5236646edc$var$l();
+            this.autoAnimateStyleSheet = this.autoAnimateStyleSheet || $940a81c445964e0e$var$l();
             let n = this.getAutoAnimateOptions(t);
             e.dataset.autoAnimate = "pending", t.dataset.autoAnimate = "pending", n.slideDirection = r > i ? "forward" : "backward";
             let a = e.style.display === "none";
             a && (e.style.display = this.Reveal.getConfig().display);
-            let o = this.getAutoAnimatableElements(e, t).map((e)=>this.autoAnimateElements(e.from, e.to, e.options || {}, n, $36b9ed5236646edc$var$O++));
+            let o = this.getAutoAnimatableElements(e, t).map((e)=>this.autoAnimateElements(e.from, e.to, e.options || {}, n, $940a81c445964e0e$var$O++));
             if (a && (e.style.display = "none"), t.dataset.autoAnimateUnmatched !== "false" && this.Reveal.getConfig().autoAnimateUnmatched === !0) {
                 let e = n.duration * .8, r = n.duration * .2;
                 this.getUnmatchedAutoAnimateElements(t).forEach((e)=>{
                     let t = this.getAutoAnimateOptions(e, n), r = "unmatched";
-                    (t.duration !== n.duration || t.delay !== n.delay) && (r = "unmatched-" + $36b9ed5236646edc$var$O++, o.push(`[data-auto-animate="running"] [data-auto-animate-target="${r}"] { transition: opacity ${t.duration}s ease ${t.delay}s; }`)), e.dataset.autoAnimateTarget = r;
+                    (t.duration !== n.duration || t.delay !== n.delay) && (r = "unmatched-" + $940a81c445964e0e$var$O++, o.push(`[data-auto-animate="running"] [data-auto-animate-target="${r}"] { transition: opacity ${t.duration}s ease ${t.delay}s; }`)), e.dataset.autoAnimateTarget = r;
                 }, this), o.push(`[data-auto-animate="running"] [data-auto-animate-target="unmatched"] { transition: opacity ${e}s ease ${r}s; }`);
             }
             this.autoAnimateStyleSheet.innerHTML = o.join(""), requestAnimationFrame(()=>{
@@ -1063,9 +1063,9 @@ var $36b9ed5236646edc$var$ee = class {
         }
     }
     reset() {
-        $36b9ed5236646edc$var$t(this.Reveal.getRevealElement(), "[data-auto-animate]:not([data-auto-animate=\"\"])").forEach((e)=>{
+        $940a81c445964e0e$var$t(this.Reveal.getRevealElement(), "[data-auto-animate]:not([data-auto-animate=\"\"])").forEach((e)=>{
             e.dataset.autoAnimate = "";
-        }), $36b9ed5236646edc$var$t(this.Reveal.getRevealElement(), "[data-auto-animate-target]").forEach((e)=>{
+        }), $940a81c445964e0e$var$t(this.Reveal.getRevealElement(), "[data-auto-animate-target]").forEach((e)=>{
             delete e.dataset.autoAnimateTarget;
         }), this.autoAnimateStyleSheet && this.autoAnimateStyleSheet.parentNode && (this.autoAnimateStyleSheet.parentNode.removeChild(this.autoAnimateStyleSheet), this.autoAnimateStyleSheet = null);
     }
@@ -1106,8 +1106,8 @@ var $36b9ed5236646edc$var$ee = class {
             duration: this.Reveal.getConfig().autoAnimateDuration,
             delay: 0
         };
-        if (r = $36b9ed5236646edc$var$e(r, n), t.parentNode) {
-            let e = $36b9ed5236646edc$var$o(t.parentNode, "[data-auto-animate-target]");
+        if (r = $940a81c445964e0e$var$e(r, n), t.parentNode) {
+            let e = $940a81c445964e0e$var$o(t.parentNode, "[data-auto-animate-target]");
             e && (r = this.getAutoAnimateOptions(e, r));
         }
         return t.dataset.autoAnimateEasing && (r.easing = t.dataset.autoAnimateEasing), t.dataset.autoAnimateDuration && (r.duration = parseFloat(t.dataset.autoAnimateDuration)), t.dataset.autoAnimateDelay && (r.delay = parseFloat(t.dataset.autoAnimateDelay)), r;
@@ -1154,9 +1154,9 @@ var $36b9ed5236646edc$var$ee = class {
     getAutoAnimatePairs(e, t) {
         let n = [], r = "h1, h2, h3, h4, h5, h6, p, li";
         return this.findAutoAnimateMatches(n, e, t, "[data-id]", (e)=>e.nodeName + ":::" + e.getAttribute("data-id")), this.findAutoAnimateMatches(n, e, t, r, (e)=>e.nodeName + ":::" + e.textContent.trim()), this.findAutoAnimateMatches(n, e, t, "img, video, iframe", (e)=>e.nodeName + ":::" + (e.getAttribute("src") || e.getAttribute("data-src"))), this.findAutoAnimateMatches(n, e, t, "pre", (e)=>e.nodeName + ":::" + e.textContent.trim()), n.forEach((e)=>{
-            $36b9ed5236646edc$var$a(e.from, r) ? e.options = {
+            $940a81c445964e0e$var$a(e.from, r) ? e.options = {
                 scale: !1
-            } : $36b9ed5236646edc$var$a(e.from, "pre") && (e.options = {
+            } : $940a81c445964e0e$var$a(e.from, "pre") && (e.options = {
                 scale: !1,
                 styles: [
                     "width",
@@ -1210,7 +1210,7 @@ var $36b9ed5236646edc$var$ee = class {
             return !t.hasAttribute("data-auto-animate-target") && !n && e.push(t), t.querySelector("[data-auto-animate-target]") && (e = e.concat(this.getUnmatchedAutoAnimateElements(t))), e;
         }, []);
     }
-}, $36b9ed5236646edc$var$k = 500, $36b9ed5236646edc$var$se = 4, $36b9ed5236646edc$var$ce = 6, $36b9ed5236646edc$var$A = 8, $36b9ed5236646edc$var$le = class {
+}, $940a81c445964e0e$var$k = 500, $940a81c445964e0e$var$se = 4, $940a81c445964e0e$var$ce = 6, $940a81c445964e0e$var$A = 8, $940a81c445964e0e$var$le = class {
     constructor(e){
         this.Reveal = e, this.active = !1, this.activeProgressBarPage = null, this.activeProgressBarTrigger = null, this.activatedCallbacks = [], this.onScroll = this.onScroll.bind(this);
     }
@@ -1218,7 +1218,7 @@ var $36b9ed5236646edc$var$ee = class {
         if (this.active) return;
         let e = this.Reveal.getState();
         this.active = !0, this.slideHTMLBeforeActivation = this.Reveal.getSlidesElement().innerHTML;
-        let n = $36b9ed5236646edc$var$t(this.Reveal.getRevealElement(), $36b9ed5236646edc$var$w), r = $36b9ed5236646edc$var$t(this.Reveal.getRevealElement(), $36b9ed5236646edc$var$T);
+        let n = $940a81c445964e0e$var$t(this.Reveal.getRevealElement(), $940a81c445964e0e$var$w), r = $940a81c445964e0e$var$t(this.Reveal.getRevealElement(), $940a81c445964e0e$var$T);
         this.viewportElement.classList.add("loading-scroll-mode", "reveal-scroll");
         let i, a = window.getComputedStyle(this.viewportElement);
         a && a.background && (i = a.background);
@@ -1240,7 +1240,7 @@ var $36b9ed5236646edc$var$ee = class {
             this.Reveal.isVerticalStack(e) ? e.querySelectorAll("section").forEach((e, n)=>{
                 l(e, t, n, !0);
             }) : l(e, t, 0);
-        }, this), this.createProgressBar(), $36b9ed5236646edc$var$t(this.Reveal.getRevealElement(), ".stack").forEach((e)=>e.remove()), o.forEach((e)=>s.appendChild(e)), this.Reveal.slideContent.layout(this.Reveal.getSlidesElement()), this.Reveal.layout(), this.Reveal.setState(e), this.activatedCallbacks.forEach((e)=>e()), this.activatedCallbacks = [], this.restoreScrollPosition(), this.viewportElement.classList.remove("loading-scroll-mode"), this.viewportElement.addEventListener("scroll", this.onScroll, {
+        }, this), this.createProgressBar(), $940a81c445964e0e$var$t(this.Reveal.getRevealElement(), ".stack").forEach((e)=>e.remove()), o.forEach((e)=>s.appendChild(e)), this.Reveal.slideContent.layout(this.Reveal.getSlidesElement()), this.Reveal.layout(), this.Reveal.setState(e), this.activatedCallbacks.forEach((e)=>e()), this.activatedCallbacks = [], this.restoreScrollPosition(), this.viewportElement.classList.remove("loading-scroll-mode"), this.viewportElement.addEventListener("scroll", this.onScroll, {
             passive: !0
         });
     }
@@ -1355,9 +1355,9 @@ var $36b9ed5236646edc$var$ee = class {
             e.progressBarSlide = null, e.scrollTriggers.forEach((e)=>e.progressBarElement = null);
         });
         let e = this.viewportElement.scrollHeight, t = this.viewportElement.offsetHeight, n = t / e;
-        this.progressBarHeight = this.progressBarInner.offsetHeight, this.playheadHeight = Math.max(n * this.progressBarHeight, $36b9ed5236646edc$var$A), this.progressBarScrollableHeight = this.progressBarHeight - this.playheadHeight;
-        let r = t / e * this.progressBarHeight, i = Math.min(r / 8, $36b9ed5236646edc$var$se);
-        this.progressBarPlayhead.style.height = this.playheadHeight - i + "px", r > $36b9ed5236646edc$var$ce && this.slideTriggers.forEach((e)=>{
+        this.progressBarHeight = this.progressBarInner.offsetHeight, this.playheadHeight = Math.max(n * this.progressBarHeight, $940a81c445964e0e$var$A), this.progressBarScrollableHeight = this.progressBarHeight - this.playheadHeight;
+        let r = t / e * this.progressBarHeight, i = Math.min(r / 8, $940a81c445964e0e$var$se);
+        this.progressBarPlayhead.style.height = this.playheadHeight - i + "px", r > $940a81c445964e0e$var$ce && this.slideTriggers.forEach((e)=>{
             let { page: t } = e;
             t.progressBarSlide = document.createElement("div"), t.progressBarSlide.className = "scrollbar-slide", t.progressBarSlide.style.top = e.range[0] * this.progressBarHeight + "px", t.progressBarSlide.style.height = (e.range[1] - e.range[0]) * this.progressBarHeight - i + "px", t.progressBarSlide.classList.toggle("has-triggers", t.scrollTriggers.length > 0), this.progressBarInner.appendChild(t.progressBarSlide), t.scrollTriggers.forEach((n, r)=>{
                 let a = document.createElement("div");
@@ -1390,7 +1390,7 @@ var $36b9ed5236646edc$var$ee = class {
     showProgressBar() {
         this.progressBar.classList.add("visible"), clearTimeout(this.hideProgressBarTimeout), this.Reveal.getConfig().scrollProgress === "auto" && !this.draggingProgressBar && (this.hideProgressBarTimeout = setTimeout(()=>{
             this.progressBar && this.progressBar.classList.remove("visible");
-        }, $36b9ed5236646edc$var$k));
+        }, $940a81c445964e0e$var$k));
     }
     prev() {
         this.viewportElement.scrollTop -= this.scrollTriggerHeight;
@@ -1456,7 +1456,7 @@ var $36b9ed5236646edc$var$ee = class {
 };
 //#endregion
 //#region \0@oxc-project+runtime@0.146.0/helpers/esm/asyncToGenerator.js
-function $36b9ed5236646edc$var$j(e, t, n, r, i, a, o) {
+function $940a81c445964e0e$var$j(e, t, n, r, i, a, o) {
     try {
         var s = e[a](o), c = s.value;
     } catch (e) {
@@ -1465,16 +1465,16 @@ function $36b9ed5236646edc$var$j(e, t, n, r, i, a, o) {
     }
     s.done ? t(c) : Promise.resolve(c).then(r, i);
 }
-function $36b9ed5236646edc$var$M(e) {
+function $940a81c445964e0e$var$M(e) {
     return function() {
         var t = this, n = arguments;
         return new Promise(function(r, i) {
             var a = e.apply(t, n);
             function o(e) {
-                $36b9ed5236646edc$var$j(a, r, i, o, s, "next", e);
+                $940a81c445964e0e$var$j(a, r, i, o, s, "next", e);
             }
             function s(e) {
-                $36b9ed5236646edc$var$j(a, r, i, o, s, "throw", e);
+                $940a81c445964e0e$var$j(a, r, i, o, s, "throw", e);
             }
             o(void 0);
         });
@@ -1482,15 +1482,15 @@ function $36b9ed5236646edc$var$M(e) {
 }
 //#endregion
 //#region js/controllers/printview.js
-var $36b9ed5236646edc$var$ue = class {
+var $940a81c445964e0e$var$ue = class {
     constructor(e){
         this.Reveal = e;
     }
     activate() {
         var e = this;
-        return $36b9ed5236646edc$var$M(function*() {
-            let n = e.Reveal.getConfig(), r = $36b9ed5236646edc$var$t(e.Reveal.getRevealElement(), $36b9ed5236646edc$var$C), i = n.slideNumber && /all|print/i.test(n.showSlideNumber), a = e.Reveal.getComputedSlideSize(window.innerWidth, window.innerHeight), o = Math.floor(a.width * (1 + n.margin)), s = Math.floor(a.height * (1 + n.margin)), c = a.width, u = a.height;
-            yield new Promise(requestAnimationFrame), $36b9ed5236646edc$var$l("@page{size:" + o + "px " + s + "px; margin: 0px;}"), $36b9ed5236646edc$var$l(".reveal section>img, .reveal section>video, .reveal section>iframe{max-width: " + c + "px; max-height:" + u + "px}"), document.documentElement.classList.add("reveal-print", "print-pdf"), document.body.style.width = o + "px", document.body.style.height = s + "px";
+        return $940a81c445964e0e$var$M(function*() {
+            let n = e.Reveal.getConfig(), r = $940a81c445964e0e$var$t(e.Reveal.getRevealElement(), $940a81c445964e0e$var$C), i = n.slideNumber && /all|print/i.test(n.showSlideNumber), a = e.Reveal.getComputedSlideSize(window.innerWidth, window.innerHeight), o = Math.floor(a.width * (1 + n.margin)), s = Math.floor(a.height * (1 + n.margin)), c = a.width, u = a.height;
+            yield new Promise(requestAnimationFrame), $940a81c445964e0e$var$l("@page{size:" + o + "px " + s + "px; margin: 0px;}"), $940a81c445964e0e$var$l(".reveal section>img, .reveal section>video, .reveal section>iframe{max-width: " + c + "px; max-height:" + u + "px}"), document.documentElement.classList.add("reveal-print", "print-pdf"), document.body.style.width = o + "px", document.body.style.height = s + "px";
             let d = e.Reveal.getViewportElement(), f;
             if (d) {
                 let e = window.getComputedStyle(d);
@@ -1533,7 +1533,7 @@ var $36b9ed5236646edc$var$ue = class {
                                 e.classList.remove("visible", "current-fragment");
                             });
                         });
-                    } else $36b9ed5236646edc$var$t(_, ".fragment:not(.fade-out)").forEach(function(e) {
+                    } else $940a81c445964e0e$var$t(_, ".fragment:not(.fade-out)").forEach(function(e) {
                         e.classList.add("visible");
                     });
                 }
@@ -1545,7 +1545,7 @@ var $36b9ed5236646edc$var$ue = class {
     isActive() {
         return this.Reveal.getConfig().view === "print";
     }
-}, $36b9ed5236646edc$var$de = class {
+}, $940a81c445964e0e$var$de = class {
     constructor(e){
         this.Reveal = e;
     }
@@ -1553,12 +1553,12 @@ var $36b9ed5236646edc$var$ue = class {
         e.fragments === !1 ? this.disable() : t.fragments === !1 && this.enable();
     }
     disable() {
-        $36b9ed5236646edc$var$t(this.Reveal.getSlidesElement(), ".fragment").forEach((e)=>{
+        $940a81c445964e0e$var$t(this.Reveal.getSlidesElement(), ".fragment").forEach((e)=>{
             e.classList.add("visible"), e.classList.remove("current-fragment");
         });
     }
     enable() {
-        $36b9ed5236646edc$var$t(this.Reveal.getSlidesElement(), ".fragment").forEach((e)=>{
+        $940a81c445964e0e$var$t(this.Reveal.getSlidesElement(), ".fragment").forEach((e)=>{
             e.classList.remove("visible"), e.classList.remove("current-fragment");
         });
     }
@@ -1596,7 +1596,7 @@ var $36b9ed5236646edc$var$ue = class {
     }
     sortAll() {
         this.Reveal.getHorizontalSlides().forEach((e)=>{
-            let n = $36b9ed5236646edc$var$t(e, "section");
+            let n = $940a81c445964e0e$var$t(e, "section");
             n.forEach((e, t)=>{
                 this.sort(e.querySelectorAll(".fragment"));
             }, this), n.length === 0 && this.sort(e.querySelectorAll(".fragment"));
@@ -1670,13 +1670,13 @@ var $36b9ed5236646edc$var$ue = class {
     prev() {
         return this.goto(null, -1);
     }
-}, $36b9ed5236646edc$var$fe = class {
+}, $940a81c445964e0e$var$fe = class {
     constructor(e){
         this.Reveal = e, this.active = !1, this.onSlideClicked = this.onSlideClicked.bind(this);
     }
     activate() {
         if (this.Reveal.getConfig().overview && !this.Reveal.isScrollView() && !this.isActive()) {
-            this.active = !0, this.Reveal.getRevealElement().classList.add("overview"), this.Reveal.cancelAutoSlide(), this.Reveal.getSlidesElement().appendChild(this.Reveal.getBackgroundsElement()), $36b9ed5236646edc$var$t(this.Reveal.getRevealElement(), $36b9ed5236646edc$var$C).forEach((e)=>{
+            this.active = !0, this.Reveal.getRevealElement().classList.add("overview"), this.Reveal.cancelAutoSlide(), this.Reveal.getSlidesElement().appendChild(this.Reveal.getBackgroundsElement()), $940a81c445964e0e$var$t(this.Reveal.getRevealElement(), $940a81c445964e0e$var$C).forEach((e)=>{
                 e.classList.contains("stack") || e.addEventListener("click", this.onSlideClicked, !0);
             });
             let e = this.Reveal.getComputedSlideSize();
@@ -1694,12 +1694,12 @@ var $36b9ed5236646edc$var$ue = class {
     }
     layout() {
         this.Reveal.getHorizontalSlides().forEach((e, n)=>{
-            e.setAttribute("data-index-h", n), $36b9ed5236646edc$var$i(e, "translate3d(" + n * this.overviewSlideWidth + "px, 0, 0)"), e.classList.contains("stack") && $36b9ed5236646edc$var$t(e, "section").forEach((e, t)=>{
-                e.setAttribute("data-index-h", n), e.setAttribute("data-index-v", t), $36b9ed5236646edc$var$i(e, "translate3d(0, " + t * this.overviewSlideHeight + "px, 0)");
+            e.setAttribute("data-index-h", n), $940a81c445964e0e$var$i(e, "translate3d(" + n * this.overviewSlideWidth + "px, 0, 0)"), e.classList.contains("stack") && $940a81c445964e0e$var$t(e, "section").forEach((e, t)=>{
+                e.setAttribute("data-index-h", n), e.setAttribute("data-index-v", t), $940a81c445964e0e$var$i(e, "translate3d(0, " + t * this.overviewSlideHeight + "px, 0)");
             });
         }), Array.from(this.Reveal.getBackgroundsElement().childNodes).forEach((e, n)=>{
-            $36b9ed5236646edc$var$i(e, "translate3d(" + n * this.overviewSlideWidth + "px, 0, 0)"), $36b9ed5236646edc$var$t(e, ".slide-background").forEach((e, t)=>{
-                $36b9ed5236646edc$var$i(e, "translate3d(0, " + t * this.overviewSlideHeight + "px, 0)");
+            $940a81c445964e0e$var$i(e, "translate3d(" + n * this.overviewSlideWidth + "px, 0, 0)"), $940a81c445964e0e$var$t(e, ".slide-background").forEach((e, t)=>{
+                $940a81c445964e0e$var$i(e, "translate3d(0, " + t * this.overviewSlideHeight + "px, 0)");
             });
         });
     }
@@ -1717,10 +1717,10 @@ var $36b9ed5236646edc$var$ue = class {
         if (this.Reveal.getConfig().overview) {
             this.active = !1, this.Reveal.getRevealElement().classList.remove("overview"), this.Reveal.getRevealElement().classList.add("overview-deactivating"), setTimeout(()=>{
                 this.Reveal.getRevealElement().classList.remove("overview-deactivating");
-            }, 1), this.Reveal.getRevealElement().appendChild(this.Reveal.getBackgroundsElement()), $36b9ed5236646edc$var$t(this.Reveal.getRevealElement(), $36b9ed5236646edc$var$C).forEach((e)=>{
-                $36b9ed5236646edc$var$i(e, ""), e.removeEventListener("click", this.onSlideClicked, !0);
-            }), $36b9ed5236646edc$var$t(this.Reveal.getBackgroundsElement(), ".slide-background").forEach((e)=>{
-                $36b9ed5236646edc$var$i(e, "");
+            }, 1), this.Reveal.getRevealElement().appendChild(this.Reveal.getBackgroundsElement()), $940a81c445964e0e$var$t(this.Reveal.getRevealElement(), $940a81c445964e0e$var$C).forEach((e)=>{
+                $940a81c445964e0e$var$i(e, ""), e.removeEventListener("click", this.onSlideClicked, !0);
+            }), $940a81c445964e0e$var$t(this.Reveal.getBackgroundsElement(), ".slide-background").forEach((e)=>{
+                $940a81c445964e0e$var$i(e, "");
             }), this.Reveal.transformSlides({
                 overview: ""
             });
@@ -1752,7 +1752,7 @@ var $36b9ed5236646edc$var$ue = class {
             }
         }
     }
-}, $36b9ed5236646edc$var$pe = class {
+}, $940a81c445964e0e$var$pe = class {
     constructor(e){
         this.Reveal = e, this.shortcuts = {}, this.bindings = {}, this.onDocumentKeyDown = this.onDocumentKeyDown.bind(this);
     }
@@ -1876,12 +1876,12 @@ var $36b9ed5236646edc$var$ue = class {
             66,
             86,
             190
-        ].includes(n) || n === 191 && !e.shiftKey ? this.Reveal.togglePause() : n === 70 ? $36b9ed5236646edc$var$s(t.embedded ? this.Reveal.getViewportElement() : document.documentElement) : n === 65 ? t.autoSlideStoppable && this.Reveal.toggleAutoSlide(r) : n === 71 ? t.jumpToSlide && this.Reveal.toggleJumpToSlide() : n === 67 && this.Reveal.isOverlayOpen() ? this.Reveal.closeOverlay() : (n === 63 || n === 191) && e.shiftKey || n === 112 ? this.Reveal.toggleHelp() : f = !1), f ? e.preventDefault && e.preventDefault() : n === 27 || n === 79 ? (this.Reveal.closeOverlay() === !1 && this.Reveal.overview.toggle(), e.preventDefault && e.preventDefault()) : n === 13 && this.Reveal.overview.isActive() && (this.Reveal.overview.deactivate(), e.preventDefault && e.preventDefault()), this.Reveal.cueAutoSlide();
+        ].includes(n) || n === 191 && !e.shiftKey ? this.Reveal.togglePause() : n === 70 ? $940a81c445964e0e$var$s(t.embedded ? this.Reveal.getViewportElement() : document.documentElement) : n === 65 ? t.autoSlideStoppable && this.Reveal.toggleAutoSlide(r) : n === 71 ? t.jumpToSlide && this.Reveal.toggleJumpToSlide() : n === 67 && this.Reveal.isOverlayOpen() ? this.Reveal.closeOverlay() : (n === 63 || n === 191) && e.shiftKey || n === 112 ? this.Reveal.toggleHelp() : f = !1), f ? e.preventDefault && e.preventDefault() : n === 27 || n === 79 ? (this.Reveal.closeOverlay() === !1 && this.Reveal.overview.toggle(), e.preventDefault && e.preventDefault()) : n === 13 && this.Reveal.overview.isActive() && (this.Reveal.overview.deactivate(), e.preventDefault && e.preventDefault()), this.Reveal.cueAutoSlide();
     }
 };
 //#endregion
 //#region \0@oxc-project+runtime@0.146.0/helpers/esm/objectSpread2.js
-function $36b9ed5236646edc$var$N(e, t) {
+function $940a81c445964e0e$var$N(e, t) {
     var n = Object.keys(e);
     if (Object.getOwnPropertySymbols) {
         var r = Object.getOwnPropertySymbols(e);
@@ -1891,12 +1891,12 @@ function $36b9ed5236646edc$var$N(e, t) {
     }
     return n;
 }
-function $36b9ed5236646edc$var$P(e) {
+function $940a81c445964e0e$var$P(e) {
     for(var t = 1; t < arguments.length; t++){
         var n = arguments[t] == null ? {} : arguments[t];
-        t % 2 ? $36b9ed5236646edc$var$N(Object(n), !0).forEach(function(t) {
-            $36b9ed5236646edc$var$S(e, t, n[t]);
-        }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : $36b9ed5236646edc$var$N(Object(n)).forEach(function(t) {
+        t % 2 ? $940a81c445964e0e$var$N(Object(n), !0).forEach(function(t) {
+            $940a81c445964e0e$var$S(e, t, n[t]);
+        }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : $940a81c445964e0e$var$N(Object(n)).forEach(function(t) {
             Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t));
         });
     }
@@ -1904,9 +1904,9 @@ function $36b9ed5236646edc$var$P(e) {
 }
 //#endregion
 //#region js/controllers/location.js
-var $36b9ed5236646edc$var$me = class {
+var $940a81c445964e0e$var$me = class {
     constructor(e){
-        $36b9ed5236646edc$var$S(this, "MAX_REPLACE_STATE_FREQUENCY", 1e3), this.Reveal = e, this.writeURLTimeout = 0, this.replaceStateTimestamp = 0, this.onWindowHashChange = this.onWindowHashChange.bind(this);
+        $940a81c445964e0e$var$S(this, "MAX_REPLACE_STATE_FREQUENCY", 1e3), this.Reveal = e, this.writeURLTimeout = 0, this.replaceStateTimestamp = 0, this.onWindowHashChange = this.onWindowHashChange.bind(this);
     }
     bind() {
         window.addEventListener("hashchange", this.onWindowHashChange, !1);
@@ -1923,7 +1923,7 @@ var $36b9ed5236646edc$var$me = class {
                 let t = decodeURIComponent(n);
                 e = (document.getElementById(t) || document.querySelector(`[data-id="${t}"]`)).closest(".slides section");
             } catch (e) {}
-            if (e) return $36b9ed5236646edc$var$P($36b9ed5236646edc$var$P({}, this.Reveal.getIndices(e)), {}, {
+            if (e) return $940a81c445964e0e$var$P($940a81c445964e0e$var$P({}, this.Reveal.getIndices(e)), {}, {
                 f: t
             });
         } else {
@@ -1968,7 +1968,7 @@ var $36b9ed5236646edc$var$me = class {
     onWindowHashChange(e) {
         this.readURL();
     }
-}, $36b9ed5236646edc$var$he = class {
+}, $940a81c445964e0e$var$he = class {
     constructor(e){
         this.Reveal = e, this.onNavigateLeftClicked = this.onNavigateLeftClicked.bind(this), this.onNavigateRightClicked = this.onNavigateRightClicked.bind(this), this.onNavigateUpClicked = this.onNavigateUpClicked.bind(this), this.onNavigateDownClicked = this.onNavigateDownClicked.bind(this), this.onNavigatePrevClicked = this.onNavigatePrevClicked.bind(this), this.onNavigateNextClicked = this.onNavigateNextClicked.bind(this), this.onEnterFullscreen = this.onEnterFullscreen.bind(this);
     }
@@ -1977,7 +1977,7 @@ var $36b9ed5236646edc$var$me = class {
         this.element = document.createElement("aside"), this.element.className = "controls", this.element.innerHTML = `<button class="navigate-left" aria-label="${e ? "next slide" : "previous slide"}"><div class="controls-arrow"></div></button>
 			<button class="navigate-right" aria-label="${e ? "previous slide" : "next slide"}"><div class="controls-arrow"></div></button>
 			<button class="navigate-up" aria-label="above slide"><div class="controls-arrow"></div></button>
-			<button class="navigate-down" aria-label="below slide"><div class="controls-arrow"></div></button>`, this.Reveal.getRevealElement().appendChild(this.element), this.controlsLeft = $36b9ed5236646edc$var$t(n, ".navigate-left"), this.controlsRight = $36b9ed5236646edc$var$t(n, ".navigate-right"), this.controlsUp = $36b9ed5236646edc$var$t(n, ".navigate-up"), this.controlsDown = $36b9ed5236646edc$var$t(n, ".navigate-down"), this.controlsPrev = $36b9ed5236646edc$var$t(n, ".navigate-prev"), this.controlsNext = $36b9ed5236646edc$var$t(n, ".navigate-next"), this.controlsFullscreen = $36b9ed5236646edc$var$t(n, ".enter-fullscreen"), this.controlsRightArrow = this.element.querySelector(".navigate-right"), this.controlsLeftArrow = this.element.querySelector(".navigate-left"), this.controlsDownArrow = this.element.querySelector(".navigate-down");
+			<button class="navigate-down" aria-label="below slide"><div class="controls-arrow"></div></button>`, this.Reveal.getRevealElement().appendChild(this.element), this.controlsLeft = $940a81c445964e0e$var$t(n, ".navigate-left"), this.controlsRight = $940a81c445964e0e$var$t(n, ".navigate-right"), this.controlsUp = $940a81c445964e0e$var$t(n, ".navigate-up"), this.controlsDown = $940a81c445964e0e$var$t(n, ".navigate-down"), this.controlsPrev = $940a81c445964e0e$var$t(n, ".navigate-prev"), this.controlsNext = $940a81c445964e0e$var$t(n, ".navigate-next"), this.controlsFullscreen = $940a81c445964e0e$var$t(n, ".enter-fullscreen"), this.controlsRightArrow = this.element.querySelector(".navigate-right"), this.controlsLeftArrow = this.element.querySelector(".navigate-left"), this.controlsDownArrow = this.element.querySelector(".navigate-down");
     }
     configure(e, t) {
         let n = e.controls === "speaker" || e.controls === "speaker-only";
@@ -1988,7 +1988,7 @@ var $36b9ed5236646edc$var$me = class {
             "touchstart",
             "click"
         ];
-        $36b9ed5236646edc$var$_ && (e = [
+        $940a81c445964e0e$var$_ && (e = [
             "touchend"
         ]), e.forEach((e)=>{
             this.controlsLeft.forEach((t)=>t.addEventListener(e, this.onNavigateLeftClicked, !1)), this.controlsRight.forEach((t)=>t.addEventListener(e, this.onNavigateRightClicked, !1)), this.controlsUp.forEach((t)=>t.addEventListener(e, this.onNavigateUpClicked, !1)), this.controlsDown.forEach((t)=>t.addEventListener(e, this.onNavigateDownClicked, !1)), this.controlsPrev.forEach((t)=>t.addEventListener(e, this.onNavigatePrevClicked, !1)), this.controlsNext.forEach((t)=>t.addEventListener(e, this.onNavigateNextClicked, !1)), this.controlsFullscreen.forEach((t)=>t.addEventListener(e, this.onEnterFullscreen, !1));
@@ -2074,9 +2074,9 @@ var $36b9ed5236646edc$var$me = class {
     }
     onEnterFullscreen(e) {
         let t = this.Reveal.getConfig(), n = this.Reveal.getViewportElement();
-        $36b9ed5236646edc$var$s(t.embedded ? n : n.parentElement);
+        $940a81c445964e0e$var$s(t.embedded ? n : n.parentElement);
     }
-}, $36b9ed5236646edc$var$ge = class {
+}, $940a81c445964e0e$var$ge = class {
     constructor(e){
         this.Reveal = e, this.onProgressClicked = this.onProgressClicked.bind(this);
     }
@@ -2111,7 +2111,7 @@ var $36b9ed5236646edc$var$me = class {
     destroy() {
         this.element.remove();
     }
-}, $36b9ed5236646edc$var$_e = class {
+}, $940a81c445964e0e$var$_e = class {
     constructor(e){
         this.Reveal = e, this.lastMouseWheelStep = 0, this.cursorHidden = !1, this.cursorInactiveTimeout = 0, this.onDocumentCursorActive = this.onDocumentCursorActive.bind(this), this.onDocumentMouseScroll = this.onDocumentMouseScroll.bind(this);
     }
@@ -2137,7 +2137,7 @@ var $36b9ed5236646edc$var$me = class {
             t > 0 ? this.Reveal.next() : t < 0 && this.Reveal.prev();
         }
     }
-}, $36b9ed5236646edc$var$ve = (e, t)=>{
+}, $940a81c445964e0e$var$ve = (e, t)=>{
     let n = document.createElement("script");
     n.type = "text/javascript", n.async = !1, n.defer = !1, n.src = e, typeof t == "function" && (n.onload = (e)=>{
         e.type === "load" && (n.onload = n.onerror = null, t());
@@ -2146,7 +2146,7 @@ var $36b9ed5236646edc$var$me = class {
     });
     let r = document.querySelector("head");
     r && r.insertBefore(n, r.lastChild);
-}, $36b9ed5236646edc$var$ye = class {
+}, $940a81c445964e0e$var$ye = class {
     constructor(e){
         this.Reveal = e, this.state = "idle", this.registeredPlugins = {}, this.asyncDependencies = [];
     }
@@ -2161,7 +2161,7 @@ var $36b9ed5236646edc$var$me = class {
                     t && typeof t.callback == "function" && t.callback(), --r === 0 && this.initPlugins().then(e);
                 };
                 n.forEach((e)=>{
-                    typeof e.id == "string" ? (this.registerPlugin(e), t(e)) : typeof e.src == "string" ? $36b9ed5236646edc$var$ve(e.src, ()=>t(e)) : (console.warn("Unrecognized plugin format", e), t());
+                    typeof e.id == "string" ? (this.registerPlugin(e), t(e)) : typeof e.src == "string" ? $940a81c445964e0e$var$ve(e.src, ()=>t(e)) : (console.warn("Unrecognized plugin format", e), t());
                 });
             } else this.initPlugins().then(e);
         });
@@ -2186,7 +2186,7 @@ var $36b9ed5236646edc$var$me = class {
     }
     loadAsync() {
         return this.state = "loaded", this.asyncDependencies.length && this.asyncDependencies.forEach((e)=>{
-            $36b9ed5236646edc$var$ve(e.src, e.callback);
+            $940a81c445964e0e$var$ve(e.src, e.callback);
         }), Promise.resolve();
     }
     registerPlugin(e) {
@@ -2208,7 +2208,7 @@ var $36b9ed5236646edc$var$me = class {
             typeof e.destroy == "function" && e.destroy();
         }), this.registeredPlugins = {}, this.asyncDependencies = [];
     }
-}, $36b9ed5236646edc$var$be = class {
+}, $940a81c445964e0e$var$be = class {
     constructor(e){
         this.Reveal = e, this.onSlidesClicked = this.onSlidesClicked.bind(this), this.iframeTriggerSelector = null, this.mediaTriggerSelector = "[data-preview-image], [data-preview-video]", this.stateProps = [
             "previewIframe",
@@ -2368,7 +2368,7 @@ var $36b9ed5236646edc$var$me = class {
     destroy() {
         this.close();
     }
-}, $36b9ed5236646edc$var$F = 40, $36b9ed5236646edc$var$I = 1.03, $36b9ed5236646edc$var$xe = class {
+}, $940a81c445964e0e$var$F = 40, $940a81c445964e0e$var$I = 1.03, $940a81c445964e0e$var$xe = class {
     constructor(e){
         this.Reveal = e, this.touchStartX = 0, this.touchStartY = 0, this.touchStartCount = 0, this.touchCaptured = !1, this.activePointers = /* @__PURE__ */ new Map(), this.onPointerDown = this.onPointerDown.bind(this), this.onPointerMove = this.onPointerMove.bind(this), this.onPointerUp = this.onPointerUp.bind(this), this.onPointerCancel = this.onPointerCancel.bind(this), this.onTouchStart = this.onTouchStart.bind(this), this.onTouchMove = this.onTouchMove.bind(this), this.onTouchEnd = this.onTouchEnd.bind(this);
     }
@@ -2381,7 +2381,7 @@ var $36b9ed5236646edc$var$me = class {
         e.removeEventListener("pointerdown", this.onPointerDown, !1), e.removeEventListener("pointermove", this.onPointerMove, !1), e.removeEventListener("pointerup", this.onPointerUp, !1), e.removeEventListener("pointercancel", this.onPointerCancel, !1), e.removeEventListener("touchstart", this.onTouchStart, !1), e.removeEventListener("touchmove", this.onTouchMove, !1), e.removeEventListener("touchend", this.onTouchEnd, !1);
     }
     isSwipePrevented(e) {
-        if ($36b9ed5236646edc$var$a(e, "video[controls], audio[controls]")) return !0;
+        if ($940a81c445964e0e$var$a(e, "video[controls], audio[controls]")) return !0;
         for(; e && typeof e.hasAttribute == "function";){
             if (e.hasAttribute("data-prevent-swipe")) return !0;
             e = e.parentNode;
@@ -2391,7 +2391,7 @@ var $36b9ed5236646edc$var$me = class {
     isViewportZoomed() {
         if (!window.visualViewport || typeof window.visualViewport.scale != "number") return !1;
         let e = window.visualViewport.scale;
-        return this.visualViewportBaseScale = this.visualViewportBaseScale === void 0 ? e : Math.min(this.visualViewportBaseScale, e), e / this.visualViewportBaseScale > $36b9ed5236646edc$var$I;
+        return this.visualViewportBaseScale = this.visualViewportBaseScale === void 0 ? e : Math.min(this.visualViewportBaseScale, e), e / this.visualViewportBaseScale > $940a81c445964e0e$var$I;
     }
     onTouchStart(e) {
         if (this.touchCaptured = !1, this.isSwipePrevented(e.target)) return !0;
@@ -2400,7 +2400,7 @@ var $36b9ed5236646edc$var$me = class {
     onTouchMove(e) {
         if (this.isSwipePrevented(e.target)) return !0;
         let t = this.Reveal.getConfig();
-        if (this.touchCaptured) $36b9ed5236646edc$var$_ && e.preventDefault();
+        if (this.touchCaptured) $940a81c445964e0e$var$_ && e.preventDefault();
         else {
             this.Reveal.onUserInput(e);
             let n = e.touches[0].clientX, r = e.touches[0].clientY;
@@ -2408,7 +2408,7 @@ var $36b9ed5236646edc$var$me = class {
                 let i = this.Reveal.availableRoutes({
                     includeFragments: !0
                 }), a = n - this.touchStartX, o = r - this.touchStartY;
-                a > $36b9ed5236646edc$var$F && Math.abs(a) > Math.abs(o) ? (this.touchCaptured = !0, t.navigationMode === "linear" ? t.rtl ? this.Reveal.next() : this.Reveal.prev() : this.Reveal.left()) : a < -40 && Math.abs(a) > Math.abs(o) ? (this.touchCaptured = !0, t.navigationMode === "linear" ? t.rtl ? this.Reveal.prev() : this.Reveal.next() : this.Reveal.right()) : o > $36b9ed5236646edc$var$F && i.up ? (this.touchCaptured = !0, t.navigationMode === "linear" ? this.Reveal.prev() : this.Reveal.up()) : o < -40 && i.down && (this.touchCaptured = !0, t.navigationMode === "linear" ? this.Reveal.next() : this.Reveal.down()), t.embedded ? (this.touchCaptured || this.Reveal.isVerticalSlide()) && e.preventDefault() : e.preventDefault();
+                a > $940a81c445964e0e$var$F && Math.abs(a) > Math.abs(o) ? (this.touchCaptured = !0, t.navigationMode === "linear" ? t.rtl ? this.Reveal.next() : this.Reveal.prev() : this.Reveal.left()) : a < -40 && Math.abs(a) > Math.abs(o) ? (this.touchCaptured = !0, t.navigationMode === "linear" ? t.rtl ? this.Reveal.prev() : this.Reveal.next() : this.Reveal.right()) : o > $940a81c445964e0e$var$F && i.up ? (this.touchCaptured = !0, t.navigationMode === "linear" ? this.Reveal.prev() : this.Reveal.up()) : o < -40 && i.down && (this.touchCaptured = !0, t.navigationMode === "linear" ? this.Reveal.next() : this.Reveal.down()), t.embedded ? (this.touchCaptured || this.Reveal.isVerticalSlide()) && e.preventDefault() : e.preventDefault();
             }
         }
     }
@@ -2433,7 +2433,7 @@ var $36b9ed5236646edc$var$me = class {
     onPointerCancel(e) {
         e.pointerType === "touch" && (this.activePointers.delete(e.pointerId), e.touches = this.getActiveTouches(), this.onTouchEnd(e));
     }
-}, $36b9ed5236646edc$var$L = "focus", $36b9ed5236646edc$var$R = "blur", $36b9ed5236646edc$var$Se = class {
+}, $940a81c445964e0e$var$L = "focus", $940a81c445964e0e$var$R = "blur", $940a81c445964e0e$var$Se = class {
     constructor(e){
         this.Reveal = e, this.onRevealPointerDown = this.onRevealPointerDown.bind(this), this.onDocumentPointerDown = this.onDocumentPointerDown.bind(this);
     }
@@ -2447,13 +2447,13 @@ var $36b9ed5236646edc$var$me = class {
         this.Reveal.getRevealElement().removeEventListener("pointerdown", this.onRevealPointerDown, !1), document.removeEventListener("pointerdown", this.onDocumentPointerDown, !1);
     }
     focus() {
-        this.state !== $36b9ed5236646edc$var$L && (this.Reveal.getRevealElement().classList.add("focused"), document.addEventListener("pointerdown", this.onDocumentPointerDown, !1)), this.state = $36b9ed5236646edc$var$L;
+        this.state !== $940a81c445964e0e$var$L && (this.Reveal.getRevealElement().classList.add("focused"), document.addEventListener("pointerdown", this.onDocumentPointerDown, !1)), this.state = $940a81c445964e0e$var$L;
     }
     blur() {
-        this.state !== $36b9ed5236646edc$var$R && (this.Reveal.getRevealElement().classList.remove("focused"), document.removeEventListener("pointerdown", this.onDocumentPointerDown, !1)), this.state = $36b9ed5236646edc$var$R;
+        this.state !== $940a81c445964e0e$var$R && (this.Reveal.getRevealElement().classList.remove("focused"), document.removeEventListener("pointerdown", this.onDocumentPointerDown, !1)), this.state = $940a81c445964e0e$var$R;
     }
     isFocused() {
-        return this.state === $36b9ed5236646edc$var$L;
+        return this.state === $940a81c445964e0e$var$L;
     }
     destroy() {
         this.Reveal.getRevealElement().classList.remove("focused");
@@ -2462,10 +2462,10 @@ var $36b9ed5236646edc$var$me = class {
         this.focus();
     }
     onDocumentPointerDown(e) {
-        let t = $36b9ed5236646edc$var$o(e.target, ".reveal");
+        let t = $940a81c445964e0e$var$o(e.target, ".reveal");
         (!t || t !== this.Reveal.getRevealElement()) && this.blur();
     }
-}, $36b9ed5236646edc$var$Ce = class {
+}, $940a81c445964e0e$var$Ce = class {
     constructor(e){
         this.Reveal = e;
     }
@@ -2495,7 +2495,7 @@ var $36b9ed5236646edc$var$me = class {
     destroy() {
         this.element.remove();
     }
-}, $36b9ed5236646edc$var$we = class {
+}, $940a81c445964e0e$var$we = class {
     constructor(e, t){
         this.diameter = 100, this.diameter2 = this.diameter / 2, this.thickness = 6, this.playing = !1, this.progress = 0, this.progressOffset = 1, this.container = e, this.progressCheck = t, this.canvas = document.createElement("canvas"), this.canvas.className = "playback", this.canvas.width = this.diameter, this.canvas.height = this.diameter, this.canvas.style.width = this.diameter2 + "px", this.canvas.style.height = this.diameter2 + "px", this.context = this.canvas.getContext("2d"), this.container.appendChild(this.canvas), this.render();
     }
@@ -2522,7 +2522,7 @@ var $36b9ed5236646edc$var$me = class {
     destroy() {
         this.playing = !1, this.canvas.parentNode && this.container.removeChild(this.canvas);
     }
-}, $36b9ed5236646edc$var$Te = {
+}, $940a81c445964e0e$var$Te = {
     width: 960,
     height: 700,
     margin: .04,
@@ -2612,10 +2612,10 @@ var $36b9ed5236646edc$var$me = class {
     pdfPageHeightOffset: -1,
     dependencies: [],
     plugins: []
-}, $36b9ed5236646edc$var$Ee = "6.0.2";
+}, $940a81c445964e0e$var$Ee = "6.0.2";
 //#endregion
 //#region js/reveal.js
-function $36b9ed5236646edc$var$z(a, s) {
+function $940a81c445964e0e$var$z(a, s) {
     arguments.length < 2 && (s = arguments[0], a = document.querySelector(".reveal"));
     let l = {}, f = {}, p = !1, m = !1, h, _, v, y, b = {
         hasNavigatedHorizontally: !1,
@@ -2623,15 +2623,15 @@ function $36b9ed5236646edc$var$z(a, s) {
     }, x = [], S = 1, T = {
         layout: "",
         overview: ""
-    }, D = {}, ie = "idle", O = 0, k, se = 0, ce = -1, A = !1, j = new $36b9ed5236646edc$var$ee(l), M = new $36b9ed5236646edc$var$ne(l), N = new $36b9ed5236646edc$var$re(l), ve = new $36b9ed5236646edc$var$oe(l), F = new $36b9ed5236646edc$var$ae(l), I = new $36b9ed5236646edc$var$le(l), L = new $36b9ed5236646edc$var$ue(l), R = new $36b9ed5236646edc$var$de(l), z = new $36b9ed5236646edc$var$fe(l), B = new $36b9ed5236646edc$var$pe(l), V = new $36b9ed5236646edc$var$me(l), H = new $36b9ed5236646edc$var$he(l), U = new $36b9ed5236646edc$var$ge(l), De = new $36b9ed5236646edc$var$_e(l), W = new $36b9ed5236646edc$var$ye(l), G = new $36b9ed5236646edc$var$be(l), K = new $36b9ed5236646edc$var$Se(l), Oe = new $36b9ed5236646edc$var$xe(l), q = new $36b9ed5236646edc$var$Ce(l);
+    }, D = {}, ie = "idle", O = 0, k, se = 0, ce = -1, A = !1, j = new $940a81c445964e0e$var$ee(l), M = new $940a81c445964e0e$var$ne(l), N = new $940a81c445964e0e$var$re(l), ve = new $940a81c445964e0e$var$oe(l), F = new $940a81c445964e0e$var$ae(l), I = new $940a81c445964e0e$var$le(l), L = new $940a81c445964e0e$var$ue(l), R = new $940a81c445964e0e$var$de(l), z = new $940a81c445964e0e$var$fe(l), B = new $940a81c445964e0e$var$pe(l), V = new $940a81c445964e0e$var$me(l), H = new $940a81c445964e0e$var$he(l), U = new $940a81c445964e0e$var$ge(l), De = new $940a81c445964e0e$var$_e(l), W = new $940a81c445964e0e$var$ye(l), G = new $940a81c445964e0e$var$be(l), K = new $940a81c445964e0e$var$Se(l), Oe = new $940a81c445964e0e$var$xe(l), q = new $940a81c445964e0e$var$Ce(l);
     function ke(e) {
         if (!a) throw "Unable to find presentation root (<div class=\"reveal\">).";
         if (p) throw "Reveal.js has already been initialized.";
         if (p = !0, D.wrapper = a, D.slides = a.querySelector(".slides"), !D.slides) throw "Unable to find slides container (<div class=\"slides\">).";
-        return f = $36b9ed5236646edc$var$P($36b9ed5236646edc$var$P($36b9ed5236646edc$var$P($36b9ed5236646edc$var$P($36b9ed5236646edc$var$P({}, $36b9ed5236646edc$var$Te), f), s), e), $36b9ed5236646edc$var$u()), /print-pdf/gi.test(window.location.search) && (f.view = "print"), Ae(), window.addEventListener("load", Y, !1), W.load(f.plugins, f.dependencies).then(je), new Promise((e)=>l.on("ready", e));
+        return f = $940a81c445964e0e$var$P($940a81c445964e0e$var$P($940a81c445964e0e$var$P($940a81c445964e0e$var$P($940a81c445964e0e$var$P({}, $940a81c445964e0e$var$Te), f), s), e), $940a81c445964e0e$var$u()), /print-pdf/gi.test(window.location.search) && (f.view = "print"), Ae(), window.addEventListener("load", Y, !1), W.load(f.plugins, f.dependencies).then(je), new Promise((e)=>l.on("ready", e));
     }
     function Ae() {
-        f.embedded === !0 ? D.viewport = $36b9ed5236646edc$var$o(a, ".reveal-viewport") || a : (D.viewport = document.body, document.documentElement.classList.add("reveal-full-page")), D.viewport.classList.add("reveal-viewport");
+        f.embedded === !0 ? D.viewport = $940a81c445964e0e$var$o(a, ".reveal-viewport") || a : (D.viewport = document.body, document.documentElement.classList.add("reveal-full-page")), D.viewport.classList.add("reveal-viewport");
     }
     function je() {
         p !== !1 && (m = !0, Ne(), Pe(), Ve(), ze(), Be(), vt(), He(), F.update(!0), Me(), V.readURL(), setTimeout(()=>{
@@ -2650,13 +2650,13 @@ function $36b9ed5236646edc$var$z(a, s) {
         (e || t) && (e ? We() : Oe.unbind(), D.viewport.classList.add("loading-scroll-mode"), e ? document.readyState === "complete" ? L.activate() : window.addEventListener("load", ()=>L.activate()) : I.activate());
     }
     function Ne() {
-        f.showHiddenSlides || $36b9ed5236646edc$var$t(D.wrapper, "section[data-visibility=\"hidden\"]").forEach((e)=>{
+        f.showHiddenSlides || $940a81c445964e0e$var$t(D.wrapper, "section[data-visibility=\"hidden\"]").forEach((e)=>{
             let t = e.parentNode;
             t.childElementCount === 1 && /section/i.test(t.nodeName) ? t.remove() : e.remove();
         });
     }
     function Pe() {
-        D.slides.classList.add("no-transition"), $36b9ed5236646edc$var$g ? D.wrapper.classList.add("no-hover") : D.wrapper.classList.remove("no-hover"), F.render(), M.render(), N.render(), H.render(), U.render(), q.render(), D.pauseOverlay = $36b9ed5236646edc$var$c(D.wrapper, "div", "pause-overlay", f.controls ? "<button class=\"resume-button\">Resume presentation</button>" : null), D.statusElement = Fe(), D.wrapper.setAttribute("role", "application");
+        D.slides.classList.add("no-transition"), $940a81c445964e0e$var$g ? D.wrapper.classList.add("no-hover") : D.wrapper.classList.remove("no-hover"), F.render(), M.render(), N.render(), H.render(), U.render(), q.render(), D.pauseOverlay = $940a81c445964e0e$var$c(D.wrapper, "div", "pause-overlay", f.controls ? "<button class=\"resume-button\">Resume presentation</button>" : null), D.statusElement = Fe(), D.wrapper.setAttribute("role", "application");
     }
     function Fe() {
         let e = D.wrapper.querySelector(".aria-status");
@@ -2711,10 +2711,10 @@ function $36b9ed5236646edc$var$z(a, s) {
         f.postMessage && window.addEventListener("message", Jt, !1);
     }
     function He(t) {
-        let r = $36b9ed5236646edc$var$P({}, f);
-        if (typeof t == "object" && $36b9ed5236646edc$var$e(f, t), l.isReady() === !1) return;
-        let i = D.wrapper.querySelectorAll($36b9ed5236646edc$var$C).length;
-        D.wrapper.classList.remove(r.transition), D.wrapper.classList.add(f.transition), D.wrapper.setAttribute("data-transition-speed", f.transitionSpeed), D.wrapper.setAttribute("data-background-transition", f.backgroundTransition), D.viewport.style.setProperty("--slide-width", typeof f.width == "string" ? f.width : f.width + "px"), D.viewport.style.setProperty("--slide-height", typeof f.height == "string" ? f.height : f.height + "px"), f.shuffle && yt(), $36b9ed5236646edc$var$n(D.wrapper, "embedded", f.embedded), $36b9ed5236646edc$var$n(D.wrapper, "rtl", f.rtl), $36b9ed5236646edc$var$n(D.wrapper, "center", f.center), f.pause === !1 && ct(), ve.reset(), k && (k.destroy(), k = null), i > 1 && f.autoSlide && f.autoSlideStoppable && (k = new $36b9ed5236646edc$var$we(D.wrapper, ()=>Math.min(Math.max((Date.now() - ce) / O, 0), 1)), k.on("click", en), A = !1), f.navigationMode === "default" ? D.wrapper.removeAttribute("data-navigation-mode") : D.wrapper.setAttribute("data-navigation-mode", f.navigationMode), q.configure(f, r), K.configure(f, r), De.configure(f, r), H.configure(f, r), U.configure(f, r), B.configure(f, r), R.configure(f, r), M.configure(f, r), gt();
+        let r = $940a81c445964e0e$var$P({}, f);
+        if (typeof t == "object" && $940a81c445964e0e$var$e(f, t), l.isReady() === !1) return;
+        let i = D.wrapper.querySelectorAll($940a81c445964e0e$var$C).length;
+        D.wrapper.classList.remove(r.transition), D.wrapper.classList.add(f.transition), D.wrapper.setAttribute("data-transition-speed", f.transitionSpeed), D.wrapper.setAttribute("data-background-transition", f.backgroundTransition), D.viewport.style.setProperty("--slide-width", typeof f.width == "string" ? f.width : f.width + "px"), D.viewport.style.setProperty("--slide-height", typeof f.height == "string" ? f.height : f.height + "px"), f.shuffle && yt(), $940a81c445964e0e$var$n(D.wrapper, "embedded", f.embedded), $940a81c445964e0e$var$n(D.wrapper, "rtl", f.rtl), $940a81c445964e0e$var$n(D.wrapper, "center", f.center), f.pause === !1 && ct(), ve.reset(), k && (k.destroy(), k = null), i > 1 && f.autoSlide && f.autoSlideStoppable && (k = new $940a81c445964e0e$var$we(D.wrapper, ()=>Math.min(Math.max((Date.now() - ce) / O, 0), 1)), k.on("click", en), A = !1), f.navigationMode === "default" ? D.wrapper.removeAttribute("data-navigation-mode") : D.wrapper.setAttribute("data-navigation-mode", f.navigationMode), q.configure(f, r), K.configure(f, r), De.configure(f, r), H.configure(f, r), U.configure(f, r), B.configure(f, r), R.configure(f, r), M.configure(f, r), gt();
     }
     function Ue() {
         window.addEventListener("resize", Zt, !1), f.touch && Oe.bind(), f.keyboard && B.bind(), f.progress && U.bind(), f.respondToHashChanges && V.bind(), H.bind(), K.bind(), D.slides.addEventListener("click", Xt, !1), D.slides.addEventListener("transitionend", Yt, !1), D.pauseOverlay.addEventListener("click", ct, !1), f.focusBodyOnPageVisibilityChange && document.addEventListener("visibilitychange", Qt, !1);
@@ -2723,7 +2723,7 @@ function $36b9ed5236646edc$var$z(a, s) {
         Oe.unbind(), K.unbind(), B.unbind(), H.unbind(), U.unbind(), V.unbind(), window.removeEventListener("resize", Zt, !1), D.slides.removeEventListener("click", Xt, !1), D.slides.removeEventListener("transitionend", Yt, !1), D.pauseOverlay.removeEventListener("click", ct, !1);
     }
     function Ge() {
-        p = !1, m !== !1 && (We(), Rt(), q.destroy(), K.destroy(), G.destroy(), W.destroy(), De.destroy(), H.destroy(), U.destroy(), F.destroy(), M.destroy(), N.destroy(), document.removeEventListener("fullscreenchange", $t), document.removeEventListener("webkitfullscreenchange", $t), document.removeEventListener("visibilitychange", Qt, !1), window.removeEventListener("message", Jt, !1), window.removeEventListener("load", Y, !1), D.pauseOverlay && D.pauseOverlay.remove(), D.statusElement && D.statusElement.remove(), document.documentElement.classList.remove("reveal-full-page"), D.wrapper.classList.remove("ready", "center", "has-horizontal-slides", "has-vertical-slides"), D.wrapper.removeAttribute("data-transition-speed"), D.wrapper.removeAttribute("data-background-transition"), D.viewport.classList.remove("reveal-viewport"), D.viewport.style.removeProperty("--slide-width"), D.viewport.style.removeProperty("--slide-height"), D.slides.style.removeProperty("width"), D.slides.style.removeProperty("height"), D.slides.style.removeProperty("zoom"), D.slides.style.removeProperty("left"), D.slides.style.removeProperty("top"), D.slides.style.removeProperty("bottom"), D.slides.style.removeProperty("right"), D.slides.style.removeProperty("transform"), Array.from(D.wrapper.querySelectorAll($36b9ed5236646edc$var$C)).forEach((e)=>{
+        p = !1, m !== !1 && (We(), Rt(), q.destroy(), K.destroy(), G.destroy(), W.destroy(), De.destroy(), H.destroy(), U.destroy(), F.destroy(), M.destroy(), N.destroy(), document.removeEventListener("fullscreenchange", $t), document.removeEventListener("webkitfullscreenchange", $t), document.removeEventListener("visibilitychange", Qt, !1), window.removeEventListener("message", Jt, !1), window.removeEventListener("load", Y, !1), D.pauseOverlay && D.pauseOverlay.remove(), D.statusElement && D.statusElement.remove(), document.documentElement.classList.remove("reveal-full-page"), D.wrapper.classList.remove("ready", "center", "has-horizontal-slides", "has-vertical-slides"), D.wrapper.removeAttribute("data-transition-speed"), D.wrapper.removeAttribute("data-background-transition"), D.viewport.classList.remove("reveal-viewport"), D.viewport.style.removeProperty("--slide-width"), D.viewport.style.removeProperty("--slide-height"), D.slides.style.removeProperty("width"), D.slides.style.removeProperty("height"), D.slides.style.removeProperty("zoom"), D.slides.style.removeProperty("left"), D.slides.style.removeProperty("top"), D.slides.style.removeProperty("bottom"), D.slides.style.removeProperty("right"), D.slides.style.removeProperty("transform"), Array.from(D.wrapper.querySelectorAll($940a81c445964e0e$var$C)).forEach((e)=>{
             e.style.removeProperty("display"), e.style.removeProperty("top"), e.removeAttribute("hidden"), e.removeAttribute("aria-hidden"), e.removeAttribute("inert");
         }));
     }
@@ -2734,11 +2734,11 @@ function $36b9ed5236646edc$var$z(a, s) {
         a.removeEventListener(e, t, n);
     }
     function Je(e) {
-        typeof e.layout == "string" && (T.layout = e.layout), typeof e.overview == "string" && (T.overview = e.overview), T.layout ? $36b9ed5236646edc$var$i(D.slides, T.layout + " " + T.overview) : $36b9ed5236646edc$var$i(D.slides, T.overview);
+        typeof e.layout == "string" && (T.layout = e.layout), typeof e.overview == "string" && (T.overview = e.overview), T.layout ? $940a81c445964e0e$var$i(D.slides, T.layout + " " + T.overview) : $940a81c445964e0e$var$i(D.slides, T.overview);
     }
     function J({ target: t = D.wrapper, type: n, data: r, bubbles: i = !0 }) {
         let a = document.createEvent("HTMLEvents", 1, 2);
-        return a.initEvent(n, i, !0), $36b9ed5236646edc$var$e(a, r), t.dispatchEvent(a), t === D.wrapper && Xe(n), a;
+        return a.initEvent(n, i, !0), $940a81c445964e0e$var$e(a, r), t.dispatchEvent(a), t === D.wrapper && Xe(n), a;
     }
     function Ye(e) {
         J({
@@ -2759,21 +2759,21 @@ function $36b9ed5236646edc$var$z(a, s) {
                 eventName: t,
                 state: It()
             };
-            $36b9ed5236646edc$var$e(r, n), window.parent.postMessage(JSON.stringify(r), "*");
+            $940a81c445964e0e$var$e(r, n), window.parent.postMessage(JSON.stringify(r), "*");
         }
     }
     function Y() {
         if (D.wrapper && !L.isActive()) {
             let e = D.viewport.offsetWidth, t = D.viewport.offsetHeight;
             if (!f.disableLayout) {
-                $36b9ed5236646edc$var$g && !f.embedded && document.documentElement.style.setProperty("--vh", window.innerHeight * .01 + "px");
+                $940a81c445964e0e$var$g && !f.embedded && document.documentElement.style.setProperty("--vh", window.innerHeight * .01 + "px");
                 let n = I.isActive() ? $e(e, t) : $e(), r = S;
                 Ze(f.width, f.height), D.slides.style.width = n.width + "px", D.slides.style.height = n.height + "px", S = Math.min(n.presentationWidth / n.width, n.presentationHeight / n.height), S = Math.max(S, f.minScale), S = Math.min(S, f.maxScale), S = Math.round(S * 100) / 100, S === 1 || I.isActive() ? (D.slides.style.zoom = "", D.slides.style.left = "", D.slides.style.top = "", D.slides.style.bottom = "", D.slides.style.right = "", Je({
                     layout: ""
                 })) : (D.slides.style.zoom = "", D.slides.style.left = "50%", D.slides.style.top = "50%", D.slides.style.bottom = "auto", D.slides.style.right = "auto", Je({
                     layout: "translate(-50%, -50%) scale(" + S + ")"
                 }));
-                let i = Array.from(D.wrapper.querySelectorAll($36b9ed5236646edc$var$C)).filter((e)=>e.style.display !== "none"), a = Array(i.length);
+                let i = Array.from(D.wrapper.querySelectorAll($940a81c445964e0e$var$C)).filter((e)=>e.style.display !== "none"), a = Array(i.length);
                 for(let e = 0, t = i.length; e < t; e++){
                     let t = i[e];
                     f.center || t.classList.contains("center") ? t.classList.contains("stack") ? a[e] = 0 : a[e] = Math.max((n.height - t.scrollHeight) / 2, 0) + "px" : a[e] = "";
@@ -2792,8 +2792,8 @@ function $36b9ed5236646edc$var$z(a, s) {
         }
     }
     function Ze(e, n) {
-        $36b9ed5236646edc$var$t(D.slides, "section > .stretch, section > .r-stretch").forEach((t)=>{
-            let r = $36b9ed5236646edc$var$d(t, n);
+        $940a81c445964e0e$var$t(D.slides, "section > .stretch, section > .r-stretch").forEach((t)=>{
+            let r = $940a81c445964e0e$var$d(t, n);
             if (/(img|video)/gi.test(t.nodeName)) {
                 let n = t.naturalWidth || t.videoWidth, i = t.naturalHeight || t.videoHeight, a = Math.min(e / n, r / i);
                 t.style.width = n * a + "px", t.style.height = i * a + "px";
@@ -2881,7 +2881,7 @@ function $36b9ed5236646edc$var$z(a, s) {
             }
         }).defaultPrevented) return;
         v = y;
-        let i = D.wrapper.querySelectorAll($36b9ed5236646edc$var$w);
+        let i = D.wrapper.querySelectorAll($940a81c445964e0e$var$w);
         if (I.isActive()) {
             let n = I.getSlideByIndices(e, t);
             n && I.scrollToSlide(n);
@@ -2892,7 +2892,7 @@ function $36b9ed5236646edc$var$z(a, s) {
         let o = x.concat();
         x.length = 0;
         let s = h || 0, c = _ || 0;
-        h = bt($36b9ed5236646edc$var$w, e === void 0 ? h : e), _ = bt($36b9ed5236646edc$var$te, t === void 0 ? _ : t);
+        h = bt($940a81c445964e0e$var$w, e === void 0 ? h : e), _ = bt($940a81c445964e0e$var$te, t === void 0 ? _ : t);
         let l = h !== s || _ !== c;
         l || (v = null);
         let u = i[h], d = u.querySelectorAll("section");
@@ -2931,7 +2931,7 @@ function $36b9ed5236646edc$var$z(a, s) {
         }), Ye();
     }
     function gt() {
-        We(), Ue(), Y(), O = f.autoSlide, $(), F.create(), V.writeURL(), f.sortFragmentsOnSync === !0 && R.sortAll(), h !== void 0 && (h = bt($36b9ed5236646edc$var$w, h), _ = bt($36b9ed5236646edc$var$te, _)), H.update(), U.update(), Ct(), q.update(), q.updateVisibility(), G.update(), F.update(!0), M.update(), j.formatEmbeddedContent(), f.autoPlayMedia === !1 ? j.stopEmbeddedContent(y, {
+        We(), Ue(), Y(), O = f.autoSlide, $(), F.create(), V.writeURL(), f.sortFragmentsOnSync === !0 && R.sortAll(), h !== void 0 && (h = bt($940a81c445964e0e$var$w, h), _ = bt($940a81c445964e0e$var$te, _)), H.update(), U.update(), Ct(), q.update(), q.updateVisibility(), G.update(), F.update(!0), M.update(), j.formatEmbeddedContent(), f.autoPlayMedia === !1 ? j.stopEmbeddedContent(y, {
             unloadIframes: !1
         }) : j.startEmbeddedContent(y), z.isActive() && z.layout(), J({
             type: "sync"
@@ -2947,7 +2947,7 @@ function $36b9ed5236646edc$var$z(a, s) {
     }
     function vt() {
         Q().forEach((e)=>{
-            $36b9ed5236646edc$var$t(e, "section").forEach((e, t)=>{
+            $940a81c445964e0e$var$t(e, "section").forEach((e, t)=>{
                 t > 0 && (e.classList.remove("present"), e.classList.remove("past"), e.classList.add("future"), e.setAttribute("aria-hidden", "true"));
             });
         });
@@ -2961,7 +2961,7 @@ function $36b9ed5236646edc$var$z(a, s) {
         });
     }
     function bt(e, n) {
-        let r = $36b9ed5236646edc$var$t(D.wrapper, e), i = r.length, a = I.isActive() || L.isActive(), o = !1, s = !1;
+        let r = $940a81c445964e0e$var$t(D.wrapper, e), i = r.length, a = I.isActive() || L.isActive(), o = !1, s = !1;
         if (i) {
             f.loop && (n >= i && (o = !0), n %= i, n < 0 && (n = i + n, s = !0)), n = Math.max(Math.min(n, i - 1), 0);
             for(let e = 0; e < i; e++){
@@ -2984,12 +2984,12 @@ function $36b9ed5236646edc$var$z(a, s) {
         return n;
     }
     function xt(e) {
-        $36b9ed5236646edc$var$t(e, ".fragment").forEach((e)=>{
+        $940a81c445964e0e$var$t(e, ".fragment").forEach((e)=>{
             e.classList.add("visible"), e.classList.remove("current-fragment");
         });
     }
     function St(e) {
-        $36b9ed5236646edc$var$t(e, ".fragment.visible").forEach((e)=>{
+        $940a81c445964e0e$var$t(e, ".fragment.visible").forEach((e)=>{
             e.classList.remove("visible", "current-fragment");
         });
     }
@@ -2997,9 +2997,9 @@ function $36b9ed5236646edc$var$z(a, s) {
         let e = Q(), n = e.length, r, i;
         if (n && h !== void 0) {
             let a = z.isActive(), o = a ? 10 : f.viewDistance;
-            $36b9ed5236646edc$var$g && (o = a ? 6 : f.mobileViewDistance), L.isActive() && (o = Number.MAX_VALUE);
+            $940a81c445964e0e$var$g && (o = a ? 6 : f.mobileViewDistance), L.isActive() && (o = Number.MAX_VALUE);
             for(let s = 0; s < n; s++){
-                let c = e[s], l = $36b9ed5236646edc$var$t(c, "section"), u = l.length;
+                let c = e[s], l = $940a81c445964e0e$var$t(c, "section"), u = l.length;
                 if (r = Math.abs((h || 0) - s) || 0, f.loop && (r = Math.abs(((h || 0) - s) % (n - o)) || 0), r < o ? j.load(c) : j.unload(c), u) {
                     let e = a ? 0 : tt(c);
                     for(let t = 0; t < u; t++){
@@ -3011,12 +3011,12 @@ function $36b9ed5236646edc$var$z(a, s) {
             jt() ? D.wrapper.classList.add("has-vertical-slides") : D.wrapper.classList.remove("has-vertical-slides"), At() ? D.wrapper.classList.add("has-horizontal-slides") : D.wrapper.classList.remove("has-horizontal-slides");
         }
         let a = z.isActive() || I.isActive() || L.isActive();
-        $36b9ed5236646edc$var$t(D.wrapper, $36b9ed5236646edc$var$C).forEach((e)=>{
+        $940a81c445964e0e$var$t(D.wrapper, $940a81c445964e0e$var$C).forEach((e)=>{
             e.toggleAttribute("inert", !a && e !== y && !e.contains(y));
         });
     }
     function Z({ includeFragments: e = !1 } = {}) {
-        let t = D.wrapper.querySelectorAll($36b9ed5236646edc$var$w), n = D.wrapper.querySelectorAll($36b9ed5236646edc$var$te), r = {
+        let t = D.wrapper.querySelectorAll($940a81c445964e0e$var$w), n = D.wrapper.querySelectorAll($940a81c445964e0e$var$te), r = {
             left: h > 0,
             right: h < t.length - 1,
             up: _ > 0,
@@ -3062,7 +3062,7 @@ function $36b9ed5236646edc$var$z(a, s) {
             if (I.isActive()) n = parseInt(e.getAttribute("data-index-h"), 10), e.getAttribute("data-index-v") && (r = parseInt(e.getAttribute("data-index-v"), 10));
             else {
                 let i = nt(e), a = i ? e.parentNode : e, o = Q();
-                n = Math.max(o.indexOf(a), 0), r = void 0, i && (r = Math.max($36b9ed5236646edc$var$t(e.parentNode, "section").indexOf(e), 0));
+                n = Math.max(o.indexOf(a), 0), r = void 0, i && (r = Math.max($940a81c445964e0e$var$t(e.parentNode, "section").indexOf(e), 0));
             }
         }
         if (!e && y && y.querySelectorAll(".fragment").length > 0) {
@@ -3076,16 +3076,16 @@ function $36b9ed5236646edc$var$z(a, s) {
         };
     }
     function Dt() {
-        return $36b9ed5236646edc$var$t(D.wrapper, $36b9ed5236646edc$var$C + ":not(.stack):not([data-visibility=\"uncounted\"])");
+        return $940a81c445964e0e$var$t(D.wrapper, $940a81c445964e0e$var$C + ":not(.stack):not([data-visibility=\"uncounted\"])");
     }
     function Q() {
-        return $36b9ed5236646edc$var$t(D.wrapper, $36b9ed5236646edc$var$w);
+        return $940a81c445964e0e$var$t(D.wrapper, $940a81c445964e0e$var$w);
     }
     function Ot() {
-        return $36b9ed5236646edc$var$t(D.wrapper, ".slides>section>section");
+        return $940a81c445964e0e$var$t(D.wrapper, ".slides>section>section");
     }
     function kt() {
-        return $36b9ed5236646edc$var$t(D.wrapper, $36b9ed5236646edc$var$w + ".stack");
+        return $940a81c445964e0e$var$t(D.wrapper, $940a81c445964e0e$var$w + ".stack");
     }
     function At() {
         return Q().length > 1;
@@ -3116,7 +3116,7 @@ function $36b9ed5236646edc$var$z(a, s) {
     }
     function It() {
         let e = Et();
-        return $36b9ed5236646edc$var$P({
+        return $940a81c445964e0e$var$P({
             indexh: e.h,
             indexv: e.v,
             indexf: e.f,
@@ -3126,15 +3126,15 @@ function $36b9ed5236646edc$var$z(a, s) {
     }
     function Lt(e) {
         if (typeof e == "object") {
-            X($36b9ed5236646edc$var$r(e.indexh), $36b9ed5236646edc$var$r(e.indexv), $36b9ed5236646edc$var$r(e.indexf));
-            let t = $36b9ed5236646edc$var$r(e.paused), n = $36b9ed5236646edc$var$r(e.overview);
+            X($940a81c445964e0e$var$r(e.indexh), $940a81c445964e0e$var$r(e.indexv), $940a81c445964e0e$var$r(e.indexf));
+            let t = $940a81c445964e0e$var$r(e.paused), n = $940a81c445964e0e$var$r(e.overview);
             typeof t == "boolean" && t !== ut() && lt(t), typeof n == "boolean" && n !== z.isActive() && z.toggle(n), G.setState(e);
         }
     }
     function $() {
         if (Rt(), y && f.autoSlide !== !1) {
             let e = y.querySelector(".current-fragment[data-autoslide]"), n = e ? e.getAttribute("data-autoslide") : null, r = y.parentNode ? y.parentNode.getAttribute("data-autoslide") : null, i = y.getAttribute("data-autoslide");
-            n ? O = parseInt(n, 10) : i ? O = parseInt(i, 10) : r ? O = parseInt(r, 10) : (O = f.autoSlide, y.querySelectorAll(".fragment").length === 0 && $36b9ed5236646edc$var$t(y, "video, audio").forEach((e)=>{
+            n ? O = parseInt(n, 10) : i ? O = parseInt(i, 10) : r ? O = parseInt(r, 10) : (O = f.autoSlide, y.querySelectorAll(".fragment").length === 0 && $940a81c445964e0e$var$t(y, "video, audio").forEach((e)=>{
                 e.hasAttribute("data-autoplay") && O && e.duration * 1e3 / e.playbackRate > O && (O = e.duration * 1e3 / e.playbackRate + 1e3);
             })), O && !A && !ut() && !z.isActive() && (!ot() || R.availableRoutes().next || f.loop === !0) && (se = setTimeout(()=>{
                 typeof f.autoSlideMethod == "function" ? f.autoSlideMethod() : Kt(), $();
@@ -3178,7 +3178,7 @@ function $36b9ed5236646edc$var$z(a, s) {
             });
             else {
                 let n;
-                if (n = f.rtl ? $36b9ed5236646edc$var$t(D.wrapper, $36b9ed5236646edc$var$w + ".future").pop() : $36b9ed5236646edc$var$t(D.wrapper, $36b9ed5236646edc$var$w + ".past").pop(), n && n.classList.contains("stack")) {
+                if (n = f.rtl ? $940a81c445964e0e$var$t(D.wrapper, $940a81c445964e0e$var$w + ".future").pop() : $940a81c445964e0e$var$t(D.wrapper, $940a81c445964e0e$var$w + ".past").pop(), n && n.classList.contains("stack")) {
                     let e = n.querySelectorAll("section").length - 1 || void 0;
                     X(h - 1, e);
                 } else f.rtl ? Ht({
@@ -3208,7 +3208,7 @@ function $36b9ed5236646edc$var$z(a, s) {
     function Jt(e) {
         let t = e.data;
         if (typeof t == "string" && t.charAt(0) === "{" && t.charAt(t.length - 1) === "}" && (t = JSON.parse(t), t.method && typeof l[t.method] == "function")) {
-            if ($36b9ed5236646edc$var$E.test(t.method) === !1) {
+            if ($940a81c445964e0e$var$E.test(t.method) === !1) {
                 let e = l[t.method].apply(l, t.args);
                 Xe("callback", {
                     method: t.method,
@@ -3229,7 +3229,7 @@ function $36b9ed5236646edc$var$z(a, s) {
         }));
     }
     function Xt(e) {
-        let t = $36b9ed5236646edc$var$o(e.target, "a[href^=\"#\"]");
+        let t = $940a81c445964e0e$var$o(e.target, "a[href^=\"#\"]");
         if (t) {
             let n = t.getAttribute("href"), r = V.getIndicesFromHash(n);
             r && (l.slide(r.h, r.v, r.f), e.preventDefault());
@@ -3250,7 +3250,7 @@ function $36b9ed5236646edc$var$z(a, s) {
         ot() && f.loop === !1 ? (X(0, 0), Bt()) : A ? Bt() : zt();
     }
     let tn = {
-        VERSION: $36b9ed5236646edc$var$Ee,
+        VERSION: $940a81c445964e0e$var$Ee,
         initialize: ke,
         configure: He,
         destroy: Ge,
@@ -3344,7 +3344,7 @@ function $36b9ed5236646edc$var$z(a, s) {
         removeHiddenSlides: Ne,
         getScale: ()=>S,
         getConfig: ()=>f,
-        getQueryHash: $36b9ed5236646edc$var$u,
+        getQueryHash: $940a81c445964e0e$var$u,
         getSlidePath: V.getHash.bind(V),
         getRevealElement: ()=>a,
         getSlidesElement: ()=>D.slides,
@@ -3355,7 +3355,7 @@ function $36b9ed5236646edc$var$z(a, s) {
         getPlugin: W.getPlugin.bind(W),
         getPlugins: W.getRegisteredPlugins.bind(W)
     };
-    return $36b9ed5236646edc$var$e(l, $36b9ed5236646edc$var$P($36b9ed5236646edc$var$P({}, tn), {}, {
+    return $940a81c445964e0e$var$e(l, $940a81c445964e0e$var$P($940a81c445964e0e$var$P({}, tn), {}, {
         announceStatus: Ie,
         getStatusText: Le,
         focus: K,
@@ -3380,11 +3380,11 @@ function $36b9ed5236646edc$var$z(a, s) {
 }
 //#endregion
 //#region js/index.ts
-var $36b9ed5236646edc$export$2e2bcd8739ae039 = $36b9ed5236646edc$var$z, $36b9ed5236646edc$var$V = [];
-$36b9ed5236646edc$export$2e2bcd8739ae039.initialize = (e)=>{
+var $940a81c445964e0e$export$2e2bcd8739ae039 = $940a81c445964e0e$var$z, $940a81c445964e0e$var$V = [];
+$940a81c445964e0e$export$2e2bcd8739ae039.initialize = (e)=>{
     let t = document.querySelector(".reveal");
     if (!(t instanceof HTMLElement)) throw Error("Unable to find presentation root (<div class=\"reveal\">).");
-    return Object.assign($36b9ed5236646edc$export$2e2bcd8739ae039, new $36b9ed5236646edc$var$z(t, e)), $36b9ed5236646edc$var$V.map((e)=>e($36b9ed5236646edc$export$2e2bcd8739ae039)), $36b9ed5236646edc$export$2e2bcd8739ae039.initialize();
+    return Object.assign($940a81c445964e0e$export$2e2bcd8739ae039, new $940a81c445964e0e$var$z(t, e)), $940a81c445964e0e$var$V.map((e)=>e($940a81c445964e0e$export$2e2bcd8739ae039)), $940a81c445964e0e$export$2e2bcd8739ae039.initialize();
 }, [
     "configure",
     "on",
@@ -3393,16 +3393,16 @@ $36b9ed5236646edc$export$2e2bcd8739ae039.initialize = (e)=>{
     "removeEventListener",
     "registerPlugin"
 ].forEach((e)=>{
-    $36b9ed5236646edc$export$2e2bcd8739ae039[e] = (...t)=>{
-        $36b9ed5236646edc$var$V.push((n)=>n[e].call(null, ...t));
+    $940a81c445964e0e$export$2e2bcd8739ae039[e] = (...t)=>{
+        $940a81c445964e0e$var$V.push((n)=>n[e].call(null, ...t));
     };
-}), $36b9ed5236646edc$export$2e2bcd8739ae039.isReady = ()=>!1, $36b9ed5236646edc$export$2e2bcd8739ae039.VERSION = $36b9ed5236646edc$var$Ee;
+}), $940a81c445964e0e$export$2e2bcd8739ae039.isReady = ()=>!1, $940a81c445964e0e$export$2e2bcd8739ae039.VERSION = $940a81c445964e0e$var$Ee;
 
 
-var $51737f233fb87602$exports = {};
+var $ac8b15d98606a806$exports = {};
 (function(e, t) {
-    "object" == `object` && "object" < `u` ? $51737f233fb87602$exports = t() : typeof define == `function` && define.amd ? define([], t) : (e = typeof globalThis < `u` ? globalThis : e || self, e.RevealHighlight = t());
-})($51737f233fb87602$exports, function() {
+    "object" == `object` && "object" < `u` ? $ac8b15d98606a806$exports = t() : typeof define == `function` && define.amd ? define([], t) : (e = typeof globalThis < `u` ? globalThis : e || self, e.RevealHighlight = t());
+})($ac8b15d98606a806$exports, function() {
     var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescriptor, r = Object.getOwnPropertyNames, i = Object.getPrototypeOf, a = Object.prototype.hasOwnProperty, o = (e, t)=>()=>(t || (e((t = {
                 exports: {}
             }).exports, t), e = null), t.exports), s = (e, i, o, s)=>{
@@ -26070,10 +26070,10 @@ https://github.com/highlightjs/highlight.js/issues/2277`), i = e, r = t), n === 
 });
 
 
-var $8674f3dc16cc360d$exports = {};
+var $ed1dd2c4d4143d88$exports = {};
 (function(e, t) {
-    "object" == `object` && "object" < `u` ? $8674f3dc16cc360d$exports = t() : typeof define == `function` && define.amd ? define([], t) : (e = typeof globalThis < `u` ? globalThis : e || self, e.RevealMarkdown = t());
-})($8674f3dc16cc360d$exports, function() {
+    "object" == `object` && "object" < `u` ? $ed1dd2c4d4143d88$exports = t() : typeof define == `function` && define.amd ? define([], t) : (e = typeof globalThis < `u` ? globalThis : e || self, e.RevealMarkdown = t());
+})($ed1dd2c4d4143d88$exports, function() {
     function e() {
         return {
             async: !1,
@@ -27857,10 +27857,10 @@ Please report this to https://github.com/markedjs/marked.`, e) {
 });
 
 
-var $f7fa66b493b16dd6$exports = {};
+var $8258806994d5ca27$exports = {};
 (function(e, t) {
-    "object" == `object` && "object" < `u` ? $f7fa66b493b16dd6$exports = t() : typeof define == `function` && define.amd ? define([], t) : (e = typeof globalThis < `u` ? globalThis : e || self, e.RevealZoom = t());
-})($f7fa66b493b16dd6$exports, function() {
+    "object" == `object` && "object" < `u` ? $8258806994d5ca27$exports = t() : typeof define == `function` && define.amd ? define([], t) : (e = typeof globalThis < `u` ? globalThis : e || self, e.RevealZoom = t());
+})($8258806994d5ca27$exports, function() {
     var e = {
         id: `zoom`,
         init: function(e) {
@@ -27939,10 +27939,10 @@ var $f7fa66b493b16dd6$exports = {};
 });
 
 
-var $9bbfcd6a8fc0c435$exports = {};
+var $d97a79a986e33c26$exports = {};
 (function(e, t) {
-    "object" == `object` && "object" < `u` ? $9bbfcd6a8fc0c435$exports = t() : typeof define == `function` && define.amd ? define([], t) : (e = typeof globalThis < `u` ? globalThis : e || self, e.RevealNotes = t());
-})($9bbfcd6a8fc0c435$exports, function() {
+    "object" == `object` && "object" < `u` ? $d97a79a986e33c26$exports = t() : typeof define == `function` && define.amd ? define([], t) : (e = typeof globalThis < `u` ? globalThis : e || self, e.RevealNotes = t());
+})($d97a79a986e33c26$exports, function() {
     function e() {
         return {
             async: !1,
@@ -31808,7 +31808,7 @@ window.pixuTalks = {
 
 
 addEventListener("DOMContentLoaded", ()=>{
-    let deck = new (0, $36b9ed5236646edc$export$2e2bcd8739ae039)(document.querySelector(".reveal"), {
+    let deck = new (0, $940a81c445964e0e$export$2e2bcd8739ae039)(document.querySelector(".reveal"), {
         ...window.location.href.includes("?print-pdf") && {
             pdfSeparateFragments: false
         },
@@ -31816,10 +31816,10 @@ addEventListener("DOMContentLoaded", ()=>{
         // plugins: [Markdown, Highlight, Zoom, Notes, Menu, Toolbar, Header],
         // plugins: [Markdown, Highlight, Zoom, Notes, Toolbar, Menu],
         plugins: [
-            (0, (/*@__PURE__*/$parcel$interopDefault($8674f3dc16cc360d$exports))),
-            (0, (/*@__PURE__*/$parcel$interopDefault($51737f233fb87602$exports))),
-            (0, (/*@__PURE__*/$parcel$interopDefault($f7fa66b493b16dd6$exports))),
-            (0, (/*@__PURE__*/$parcel$interopDefault($9bbfcd6a8fc0c435$exports))),
+            (0, (/*@__PURE__*/$parcel$interopDefault($ed1dd2c4d4143d88$exports))),
+            (0, (/*@__PURE__*/$parcel$interopDefault($ac8b15d98606a806$exports))),
+            (0, (/*@__PURE__*/$parcel$interopDefault($8258806994d5ca27$exports))),
+            (0, (/*@__PURE__*/$parcel$interopDefault($d97a79a986e33c26$exports))),
             (0, $b03278a6677e60e6$export$2e2bcd8739ae039)
         ],
         navigationMode: "linear",
@@ -32093,4 +32093,4 @@ if ($a97e4c5219cfc1c1$var$matrixCode && $a97e4c5219cfc1c1$var$titleSlide && !$a9
 
 
 
-//# sourceMappingURL=talk-deterministic-mcp.92459834.js.map
+//# sourceMappingURL=talk-deterministic-mcp.4f63d153.js.map
