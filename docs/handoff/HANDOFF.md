@@ -6,10 +6,11 @@ them by `handoff doctor`, so editing it by hand is work the next run throws away
 
 ## Index
 
-| #                              | Title                 | Date       | Branch |
-| ------------------------------ | --------------------- | ---------- | ------ |
-| [02](02-talk-rework.md)        | Talk rework and Pages | 2026-11-07 | master |
-| [01](01-short-deck-rewrite.md) | Short deck rewrite    | 2026-09-27 | master |
+| #                              | Title                                  | Date       | Branch |
+| ------------------------------ | -------------------------------------- | ---------- | ------ |
+| [03](03-production-build.md)   | Production build and outstanding rules | 2026-11-07 | master |
+| [02](02-talk-rework.md)        | Talk rework and Pages                  | 2026-11-07 | master |
+| [01](01-short-deck-rewrite.md) | Short deck rewrite                     | 2026-09-27 | master |
 
 ## Operating rules
 
