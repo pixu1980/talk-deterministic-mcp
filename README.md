@@ -1,5 +1,7 @@
 # Deterministic MCP Server
 
+**Live deck: <https://pixu1980.github.io/talk-deterministic-mcp/>**
+
 An English-language Reveal.js talk about shared engineering standards for people and coding agents. The presentation follows nine chapters across three acts, from the need for continuity to experiments, the solution, case studies and contribution.
 
 ## Requirements
@@ -58,6 +60,8 @@ Benchmark results describe two projects and six recorded sessions, not a control
 Run the tests and lint before building. The speaker confirmed that the TAF audio contains only music; its caption labels the outro music. The restored outro has the original thanks text and commented-out links. No live demo or timed rehearsal is planned. Check the final QR destinations before publishing.
 
 ## GitHub Pages deployment
+
+Published site: <https://pixu1980.github.io/talk-deterministic-mcp/> (GitHub Pages, `gh-pages` artifact from `dist/`).
 
 The workflow in `.github/workflows/static.yml` uploads the **committed** `dist/` directory. It runs automatically on pushes to `master`, or by manual workflow dispatch with a selected branch once the workflow exists on the default branch. It does not build the deck in CI.
 
