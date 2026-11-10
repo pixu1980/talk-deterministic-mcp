@@ -61,8 +61,8 @@ Run the tests and lint before building. The speaker confirmed that the TAF audio
 
 ## GitHub Pages deployment
 
-Published site: <https://pixu1980.github.io/talk-deterministic-mcp/> (GitHub Pages, `gh-pages` artifact from `dist/`).
+Published site: <https://pixu1980.github.io/talk-deterministic-mcp/>. GitHub Actions deploys the `dist/` artifact to Pages.
 
-The workflow in `.github/workflows/static.yml` uploads the **committed** `dist/` directory. It runs automatically on pushes to `master`, or by manual workflow dispatch with a selected branch once the workflow exists on the default branch. It does not build the deck in CI.
+The workflow in `.github/workflows/static.yml` uploads the **committed** `dist/` directory. It runs automatically on pushes to `main` (the default branch), or by manual workflow dispatch with a selected branch once the workflow exists on the default branch. It does not build the deck in CI.
 
-Before deployment, run `pnpm run build`, verify the output and commit the resulting `dist/` changes. In GitHub repository settings, select **GitHub Actions** as the Pages source and ensure the `github-pages` environment permits the deployment. Then push the verified commit to `master` for automatic deployment, or manually dispatch the workflow with another branch as the ref. Publishing requires repository access and is a separate action; a successful local build does not mean the site is deployed.
+Before deployment, run `pnpm run build`, verify the output and commit the resulting `dist/` changes. In GitHub repository settings, select **GitHub Actions** as the Pages source and ensure the `github-pages` environment permits the deployment. Then push the verified commit to `main` for automatic deployment, or manually dispatch the workflow with another branch as the ref. Publishing requires repository access and is a separate action; a successful local build does not mean the site is deployed.
