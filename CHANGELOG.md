@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.4.0](https://github.com/pixu1980/talk-deterministic-mcp/compare/v0.3.0...v0.4.0) (2026-11-23)
+
+### Features
+
+* **deck:** align the solution slides with the measured surface ([58002b5](https://github.com/pixu1980/talk-deterministic-mcp/commit/58002b5d8a82ab1b458d10164517da71014ffbda))
+* **slides:** add the get-started QR and restore the slides links panel ([4738674](https://github.com/pixu1980/talk-deterministic-mcp/commit/47386743fcf0ca8cf1a015229992a360aeddfc58))
+
+### Bug Fixes
+
+* **matrix:** paint the title veil as a section background ([6fdf3e9](https://github.com/pixu1980/talk-deterministic-mcp/commit/6fdf3e9e41dae7066dce94c47118220c750eb645))
+* **scripts:** build dev output into .dev-dist ([c4ec8bd](https://github.com/pixu1980/talk-deterministic-mcp/commit/c4ec8bd3c3d65e8b5ba25ba950ab8b7274128a96))
+
 ## 0.3.0 (2026-11-10)
 
 ### Features
