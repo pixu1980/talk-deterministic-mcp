@@ -322,40 +322,50 @@
 <section data-part="slide" data-chapter="solution" data-menu-title="Personas">
   <p data-kicker="">The solution</p>
   <h2>One task. <mark>Different lenses.</mark></h2>
-  <p>Personas bring review roles to an audit, review or plan.</p>
+  <p><mark>19</mark> review roles can join an audit, a review or a plan.</p>
   <figure data-layout="agent-row" aria-label="Example review roles"><span>Security</span><span>Accessibility</span><span>Architecture</span></figure>
-  <aside class="notes">rule-mcp/docs/01-getting-started.md, main flows: Personas; docs/18-personas.md.</aside>
+  <aside class="notes">rule-mcp/docs/18-personas.md, the 19 active review roles (security, a11y, architect, backend, data, devops, devx, docs, frontend, i18n, oss, performance, privacy, qa, simplicity, supply-chain, ui, ai, auth); docs/01-getting-started.md, main flows: Personas.</aside>
 </section>
 
 <section data-part="slide" data-chapter="solution" data-menu-title="Areas">
   <p data-kicker="">The solution</p>
   <h2>From a request to <mark>the right skill</mark></h2>
-  <p>Area hubs route broad requests to more specific skills.</p>
-  <figure data-layout="agent-row" aria-label="Examples of area hubs"><span>Frontend</span><span>Backend</span><span>Data</span><span>Styleguide</span></figure>
-  <aside class="notes">rule-mcp/docs/02-architecture.md, skill layers and design rules; docs/21-surface-map.md.</aside>
+  <p>Eleven area hubs route broad requests to more specific skills.</p>
+  <figure data-layout="area-cloud" aria-label="The eleven area hubs"><span>AI</span><span>Backend</span><span>Data</span><span>DevOps</span><span>Frontend</span><span>Meta</span><span>Platform</span><span>Process</span><span>Styleguide</span><span>Toolchain</span><span>UI</span></figure>
+  <aside class="notes">rule-mcp/docs/21-surface-map.md, the area commands: ai, backend, data, devops, frontend, meta, platform, process, styleguide, toolchain, ui. docs/02-architecture.md, skill layers and design rules.</aside>
 </section>
 
 <section data-part="slide" data-chapter="solution" data-menu-title="Guardrails">
   <p data-kicker="">The solution</p>
   <h2>Rules become <mark>checks</mark></h2>
-  <p><mark>rule_tool_check</mark> runs deterministic guardrails.</p>
+  <p><mark>rule_tool_check</mark> runs <mark>124</mark> deterministic guardrails.</p>
   <p>A failure signals work that must be fixed before proceeding.</p>
-  <aside class="notes">rule-mcp/docs/01-getting-started.md, main flows: Check and Fix. Workflow enforcement depends on the integration.</aside>
+  <aside class="notes">rule-mcp/docs/21-surface-map.md counts 124 guardrail rules, defined under skills/*/guardrails/ and packages/mcp/core/guardrails/index.js. docs/01-getting-started.md, main flows: Check and Fix. Workflow enforcement depends on the integration.</aside>
 </section>
 
 <section data-part="slide" data-chapter="solution" data-menu-title="Surface">
   <p data-kicker="">The solution</p>
   <h2>The server's <mark>surface</mark></h2>
-  <figure data-layout="three-paths" aria-label="MCP surfaces"><article><strong>Tools</strong><small>Route and check</small></article><article><strong>Resources</strong><small>Read skill evidence</small></article><article><strong>Prompts</strong><small>Start workflows</small></article></figure>
-  <aside class="notes">rule-mcp/README.md and docs/02-architecture.md, Surfaces. Counts intentionally omitted: the local current census differs from the historical talk plan.</aside>
+  <dl data-layout="stats">
+    <div><dt>105</dt><dd>MCP tools</dd></div>
+    <div><dt>172</dt><dd>resources</dd></div>
+    <div><dt>13</dt><dd>prompts</dd></div>
+    <div><dt>82</dt><dd>skills</dd></div>
+    <div><dt>19</dt><dd>review personas</dd></div>
+    <div><dt>124</dt><dd>guardrail rules</dd></div>
+    <div><dt>16</dt><dd>slash commands</dd></div>
+    <div><dt>28</dt><dd>CLI commands</dd></div>
+  </dl>
+  <p><mark>23</mark> action tools route and check; <mark>82</mark> skill tools load the evidence.</p>
+  <aside class="notes">rule-mcp/docs/21-surface-map.md, written by pnpm census from the live registries: 105 MCP tools (23 action + 82 skill), 172 MCP resources, 13 prompts, 82 skills, 19 review personas, 124 guardrail rules, 16 agent slash commands, 15 command targets, 28 CLI commands, 4 hook events, 251 architecture decisions.</aside>
 </section>
 
 <section data-part="slide" data-chapter="solution" data-menu-title="Installer">
   <p data-kicker="">The solution</p>
   <h2>Connect the <mark>agent</mark></h2>
-  <p>The setup wizard detects agents and writes their MCP configuration.</p>
-  <p><mark>rule-mcp doctor</mark> checks the installation.</p>
-  <aside class="notes">rule-mcp/docs/01-getting-started.md, Install and Do a check of the install. Demo decision deferred.</aside>
+  <figure data-layout="split" aria-label="Installer reach"><article><strong>23</strong><small>install targets</small></article><article><strong>15</strong><small>slash-command sets, 11 hosts</small></article></figure>
+  <p><mark>pnpm setup</mark> writes the MCP configuration; <mark>rule-mcp doctor</mark> reports tools, agents and hooks.</p>
+  <aside class="notes">rule-mcp/docs/22-install-targets.md: 23 install targets, and 15 slash-command targets for 11 hosts. docs/01-getting-started.md: pnpm setup runs the wizard, which finds the agents, writes their MCP configuration and runs the health check; rule-mcp doctor prints the registered tools, the detected agents and the hook state. Demo decision deferred.</aside>
 </section>
 
 
@@ -426,12 +436,10 @@
   <p data-kicker="">Contribute</p>
   <h2>Get started with <mark>RuleMCP</mark></h2>
   <p><a href="https://github.com/pixu1980/rule-mcp">github.com/pixu1980/rule-mcp</a></p>
-  <p>See the getting-started guide before running setup.</p>
-  <pre><code>
-    git clone https://github.com/pixu1980/rule-mcp.git
-    cd rule-mcp
-    pnpm setup
-  </code></pre>
+  <pre>git clone https://github.com/pixu1980/rule-mcp.git
+cd rule-mcp
+pnpm setup</pre>
+  <p>See the getting-started guide before running <mark>pnpm setup</mark>.</p>
   <aside class="notes">rule-mcp/docs/01-getting-started.md. Setup deletes node_modules and pnpm-lock.yaml before reinstalling; consult the guide first.</aside>
 </section>
 
