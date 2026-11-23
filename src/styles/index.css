@@ -357,24 +357,21 @@ main.reveal > matrix-code::after {
   block-size: 240px;
 }
 
-/* Veil: paints over the rain and under the text, fading at the edges. */
-section[data-matrix] > * {
-  position: relative;
-  z-index: 1;
-}
-
-section[data-matrix]::after {
-  content: '';
-  position: absolute;
-  inset: -55% -12%;
-  z-index: 0;
-  pointer-events: none;
-  background: radial-gradient(
+/* Veil: dims the rain under the title text. It is painted as the section
+   background on purpose: reveal.js centres a slide with
+   top = (deck height - section.scrollHeight) / 2, so an absolutely positioned
+   overlay that overflows the slide inflates scrollHeight and pins the content
+   to the top. Background images create no scrollable overflow. */
+section[data-matrix] {
+  background-image: radial-gradient(
     ellipse at center,
     color-mix(in srgb, var(--r-background-color) 96%, transparent) 0%,
     color-mix(in srgb, var(--r-background-color) 82%, transparent) 45%,
     transparent 68%
   );
+  background-size: 124% 210%; /* the canvas the old inset: -55% -12% covered */
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 @media (prefers-reduced-motion: reduce), print {
