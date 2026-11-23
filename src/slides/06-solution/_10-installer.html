@@ -1,7 +1,7 @@
 <section data-part="slide" data-chapter="solution" data-menu-title="Installer">
   <p data-kicker>The solution</p>
   <h2>Connect the <mark>agent</mark></h2>
-  <p>The setup wizard detects agents and writes their MCP configuration.</p>
-  <p><mark>rule-mcp doctor</mark> checks the installation.</p>
-  <aside class="notes">rule-mcp/docs/01-getting-started.md, Install and Do a check of the install. Demo decision deferred.</aside>
+  <figure data-layout="split" aria-label="Installer reach"><article><strong>23</strong><small>install targets</small></article><article><strong>15</strong><small>slash-command sets, 11 hosts</small></article></figure>
+  <p><mark>pnpm setup</mark> writes the MCP configuration; <mark>rule-mcp doctor</mark> reports tools, agents and hooks.</p>
+  <aside class="notes">rule-mcp/docs/22-install-targets.md: 23 install targets, and 15 slash-command targets for 11 hosts. docs/01-getting-started.md: pnpm setup runs the wizard, which finds the agents, writes their MCP configuration and runs the health check; rule-mcp doctor prints the registered tools, the detected agents and the hook state. Demo decision deferred.</aside>
 </section>
