@@ -14,8 +14,8 @@ Install dependencies with `pnpm install`. The lockfile includes the sibling work
 ## Commands
 
 ```bash
-pnpm dev       # Parcel development server on port 6001; predev clears dist and cache
-pnpm run build # Production deck in dist/; prebuild clears dist and cache
+pnpm dev       # Parcel development server on port 3001, dev output in .dev-dist
+pnpm run build # Production deck in dist/; clears dist and cache
 pnpm run lint  # Biome lint
 node --test tests/*.test.mjs
 ```

@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "clean": "rm -rf dist .parcel-cache",
-    "dev": "pnpm run clean && parcel src/index.html -p 6001",
+    "dev": "rm -rf .dev-dist .parcel-cache && parcel src/index.html -p 3001 --dist-dir .dev-dist",
     "build": "pnpm run clean && parcel build src/index.html --no-optimize --public-url ./",
     "format": "prettier --write \"**/*.{md,yml,yaml}\" && biome check --write .",
     "lint": "prettier --check \"**/*.{md,yml,yaml}\" && biome check .",
