@@ -15549,6 +15549,18 @@ figure[data-layout="cta"] figcaption {
   display: flex;
 }
 
+figure[data-layout="qr"] {
+  justify-content: center;
+  max-inline-size: none;
+  display: flex;
+}
+
+figure[data-layout="qr"] img {
+  aspect-ratio: 1;
+  object-fit: contain;
+  inline-size: min(40vw, 40vh);
+}
+
 @media (width <= 720px) {
   figure[data-layout="three-paths"], figure[data-layout="split"], figure[data-layout="before-after"], figure[data-layout="compression"], figure[data-layout="cta"] {
     flex-direction: column;
@@ -15605,21 +15617,14 @@ main.reveal > matrix-code:after {
   inset-inline-end: 0;
 }
 
-section[data-matrix] > * {
-  z-index: 1;
-  position: relative;
-}
-
-section[data-matrix]:after {
-  content: "";
-  z-index: 0;
-  pointer-events: none;
-  background: radial-gradient(ellipse at center,
+section[data-matrix] {
+  background-image: radial-gradient(ellipse at center,
     color-mix(in srgb, var(--r-background-color) 96%, transparent) 0%,
     color-mix(in srgb, var(--r-background-color) 82%, transparent) 45%,
     transparent 68%);
-  position: absolute;
-  inset: -55% -12%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 124% 210%;
 }
 
 @media (prefers-reduced-motion: reduce), print {
@@ -15667,4 +15672,4 @@ section[data-matrix]:after {
   stroke: currentColor;
   stroke-width: 1.5px;
 }
-/*# sourceMappingURL=talk-deterministic-mcp.9645be20.css.map */
+/*# sourceMappingURL=talk-deterministic-mcp.f666317e.css.map */
