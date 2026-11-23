@@ -290,6 +290,24 @@ figure[data-layout='cta'] figcaption {
   text-align: start;
 }
 
+/* ─── QR layout ─── */
+
+/* Single QR figure: drop the 32em layout cap so the viewport cap governs, and
+   centre the square inside the slide content width. */
+figure[data-layout='qr'] {
+  display: flex;
+  justify-content: center;
+  max-inline-size: none;
+}
+
+/* Square QR, never wider than 40% of the viewport. The vh cap keeps the square
+   inside a 16:9 slide, where 40vw alone would be taller than the slide. */
+figure[data-layout='qr'] img {
+  inline-size: min(40vw, 40vh);
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
 /* Responsive layout */
 
 @media (max-width: 720px) {
